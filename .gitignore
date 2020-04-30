@@ -1,11 +1,11 @@
 # Logs
-./Web+API/accesslog
+*.log
 
 #environment variables
-./Web+API/.env
+.env
 
-# Dependency directories
-./Web+API/node_modules
+# Dependency directorienode_modules
+node_modules
 
 =======
 # Miscellaneous
