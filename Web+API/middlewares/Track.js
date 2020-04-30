@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/pelerin');
@@ -5,7 +7,7 @@ const User = require('../models/pelerin');
 module.exports = {
     findUser: (req, res, next)=>{
         if(req.params.trackToken)
-        jwt.verify(req.params.trackToken, 'forgotthekey', (err, decoded)=>{
+        jwt.verify(req.params.trackToken, process.env.TRACK_SECRET, (err, decoded)=>{
             if(!err)
             User.findById(decoded.userId)
             .then((user)=>{
