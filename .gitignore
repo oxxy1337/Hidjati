@@ -1,0 +1,8 @@
+# Logs
+./accesslog
+
+#environment variables
+./.env
+
+# Dependency directories
+./node_modules
