@@ -16,31 +16,39 @@ module.exports = {
                         User.create(req.body)
                         .then((user)=>{
                             mailer.sendEmailConfirmation(req, res, user);
-                        });
+                        })
+                        .catch(next);
                     });
                 });
-            else res.json({message:'user exist'});
+            else {
+                const err = new Error();
+                
+                err.message = 'User exist';
+                throw err;
+            }
         })
-        .catch((err)=> next(err));
+        .catch(next);
     },
     getUser: (req, res, next)=>{
-        if(req.params.userId || req.query.id) User.findById(req.params.userId || req.query.id).then((user)=>{res.json(user)}).catch((err)=>next(err))
+        if(req.params.userId || req.query.id) User.findById(req.params.userId || req.query.id).then((user)=>{res.json(user)}).catch(next)
         else if(req.user.isAdmin){ 
-            if(req.query.username) User.findOne({username: req.query.username}).then((user)=>{res.json(user)}).catch((err)=>next(err))
-            else if(req.query.email) User.findOne({username: req.query.email}).then((user)=>{res.json(user)}).catch((err)=>next(err))
+            if(req.query.username) User.findOne({username: req.query.username}).then((user)=>{res.json(user)}).catch(next)
+            else if(req.query.email) User.findOne({username: req.query.email}).then((user)=>{res.json(user)}).catch(next)
         }else 
             User.find({})
             .then((users)=>{
                 res.json(users);
-            });
+            })
+            .catch(next);
     },
     deleteUser: (req, res, next)=>{
-        if(req.params.userId) User.findByIdAndDelete(req.params.userId).then((user)=>{res.json(user)}).catch((err)=>next(err))
+        if(req.params.userId) User.findByIdAndDelete(req.params.userId).then((user)=>{res.json(user)}).catch(next)
         else
         User.deleteMany({})
         .then((info)=>{
             res.json(info);
-        });
+        })
+        .catch(err);
     },
     redirectIfLoggedIn: (req, res, next)=>{
         if(req.user) return res.redirect('/');
@@ -52,6 +60,7 @@ module.exports = {
     },
     genTrackToken: (req, res, next)=>{
         jwt.sign({userId: req.user._id}, 'forgotthekey', (err, token)=>{
+            if(err) return next(err);
             res.json(token);
         });
     },
@@ -59,4 +68,4 @@ module.exports = {
         req.logOut();
         return res.status(200).json({message: 'logged out!'});
     }
-}
+};

@@ -2,14 +2,14 @@ const Agency = require('../models/agency')
 
 module.exports = {
     getAgency : (req, res, next)=>{
-        if(req.params.agencyId) Agency.findById(req.params.agencyId).then((agency)=>{res.json(agency)}).catch((err)=>next(err))
-        else if(req.query.name) Agency.findOne({name: req.query.name}).then((agency)=>{res.json(agency);}).catch((err)=>next(err))
+        if(req.params.agencyId) Agency.findById(req.params.agencyId).then((agency)=>{res.json(agency)}).catch(next)
+        else if(req.query.name) Agency.findOne({name: req.query.name}).then((agency)=>{res.json(agency);}).catch(next)
         else
         Agency.find({})
         .then((agencies)=>{
             res.json({Agencies: agencies}); 
         })
-        .catch((err)=> next(err));
+        .catch(next);
     },
     createAgency: (req, res, next)=>{
         Agency.findOne({email: req.body.email})
@@ -21,7 +21,7 @@ module.exports = {
                 });
             else res.json({message: 'agency exist'});
         })
-        .catch((err)=> next(err));
+        .catch(next);
     },
     deleteAgency: (req, res, next)=>{
         if(req.params.agencyId) Agency.findByIdAndDelete(req.params.agencyId).then((user)=>{res.json(user)}).catch((err)=>{next(err);})
@@ -30,12 +30,13 @@ module.exports = {
         .then((users)=>{
             res.json(users);
         })
-        .catch((err)=>{err});
+        .catch(next);
     },
     updateAgency: (req, res, next)=>{
         Agency.findByIdAndUpdate(req.params.agencyId, {$set:req.body})
         .then((user)=>{
             res.json(user);
-        });
+        })
+        .catch(next);
     }
 }

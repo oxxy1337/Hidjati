@@ -19,6 +19,7 @@ adminRouter.route('/login')
 adminRouter.use(aController.isAdmin);
 
 adminRouter.route('/operations')
+.get(aController.getAdmin)
 .post(aController.createAdmin)
 .delete(aController.deleteAdmin);
 

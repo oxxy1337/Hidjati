@@ -13,13 +13,14 @@ module.exports = {
         .then((user)=>{
             if(!user) return res.json({message: 'there is no account registred with this email'})
             mailer.sendEmailResetPassword(req, res, user);
-        });
+        })
+        .catch(next);
     },
     resetPass: (req, res, next)=>{
         if(req.params.passToken)
         jwt.verify(req.params.passToken, process.env.RESETPASS_SECRET, (err, decoded)=>{
-
-            console.log(err);
+            
+            if(err) return next(err);
             User.findById(decoded.userId)
             .then((user)=>{
                 bcrypt.genSalt(10, (err, salt)=>{
@@ -30,9 +31,9 @@ module.exports = {
                     });
                 });
             })
-            .catch((err)=>next(err));
+            .catch(next);
         })
         else
         res.redirect('/');     
     }
-}
+};

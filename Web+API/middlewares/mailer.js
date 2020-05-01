@@ -22,9 +22,9 @@ module.exports = {
                 html: `Hello ${user.username}, confirm your acocunt <a href="${url}">Here.</a> `
                 };
             transporter.sendMail(mailOptions, (err, info)=>{
-                if(err) console.log(err)
+                console.log(err);
                 if(log) req.login(user, (err)=>{
-                    if(!err) res.redirect('/');})
+                     res.redirect('/');})
                 else res.json(user);
 
             });
@@ -40,7 +40,7 @@ module.exports = {
                 html: `Hello ${user.username}, reset your password <a href="${url}">Here.</a> `
                 };
             transporter.sendMail(mailOptions, (err, info)=>{
-                if(err) console.log(err)
+                if(err) console.log(err);
                 res.redirect('/user/login');
             });
         });

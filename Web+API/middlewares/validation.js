@@ -173,7 +173,7 @@ const updatePlaceVlidation = (data) =>{
 
 const check = (fct, req, res, next)=>{
         const {error} = fct(req.body);
-        if(error) return res.status(400).send(error.details[0].message); next();}
+        if(error) return next(error); next();}
 
 module.exports = {
         registerValidation : (req, res, next)=>{check(registerValidation, req, res, next)},
@@ -182,4 +182,4 @@ module.exports = {
         createAgencyValidation : (req, res, next)=>{check(createAgencyValidation, req, res, next)},        
         updatePlaceVlidation: (req, res, next)=>{check(updatePlaceVlidation, req, res, next)},
         updateAgencyValidation: (req, res, next)=>{check(updateAgencyValidation, req, res, next)}
-}
+};

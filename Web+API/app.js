@@ -11,6 +11,7 @@ const fs = require('fs');
 
 const upload = require('./middlewares/upload');
 const auth = require('./middlewares/auth');
+const handler = require('./middlewares/Errorhandler');
 
 const userRouter = require('./routes/User');
 const confirmationRouter = require('./routes/Confirmation');
@@ -61,5 +62,7 @@ app.use('/agency', agencyRouter);
 app.use('/place', placeRouter);
 app.use('/admin', adminRouter);
 app.use('/resetpassword', resetpassRouter);
+
+app.use(handler.notFound,handler.err);
 
 module.exports = app;

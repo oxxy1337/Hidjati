@@ -19,23 +19,25 @@ module.exports = {
                 });
             else res.json({message: 'userexist'});
         })
-        .catch((err)=>next(err));
+        .catch(next);
     },
     getAdmin: (req, res, next)=>{
-        if(req.params.adminUsername) Admin.findOne({username: req.params.adminUsername}).then((admin)=>{res.json(admin)}).catch((err)=>next(err))
+        if(req.params.adminUsername) Admin.findOne({username: req.params.adminUsername}).then((admin)=>{res.json(admin)}).catch(next)
         else
         Admin.find({})
         .then((admins)=>{
             res.json(admins);
-        });
+        })
+        .catch(next);
     },
     deleteAdmin: (req, res, next)=>{
-        if(req.params.adminId) Admin.findOneAndDelete({username: req.params.adminId}).then((admin)=>{res.json(admin)}).catch((err)=>next(err))
+        if(req.params.adminId) Admin.findOneAndDelete({username: req.params.adminId}).then((admin)=>{res.json(admin)}).catch(next)
         else
         Admin.deleteMany({})
         .then((admins)=>{
             res.json(admins);
-        });
+        })
+        .catch(next);
     },
     connectAdmin: (req, res, next)=>{
         Admin.findOne({email: req.body.email})
@@ -60,5 +62,5 @@ module.exports = {
         req.logOut();
         return res.status(200).json({message: 'logged out!'});
     }
-}
+};
 
