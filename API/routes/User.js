@@ -13,18 +13,18 @@ const userRouter = express.Router();
 userRouter.use(bodyParser.json());
 
 userRouter.route('/register')
-.all(uController.redirectIfLoggedIn)
+//.all(uController.redirectIfLoggedIn)
 .post(validator.registerValidation, uController.createUser);
 
 userRouter.route('/login')
-.all(uController.redirectIfLoggedIn)
+//.all(uController.redirectIfLoggedIn)
 .post(validator.loginValidation, auth.logInUser)
 .get((req, res, next)=>{
     res.status(200).json({message: 'log in!'});
 });
 
 userRouter.route('/logout')
-.all(uController.redirectIfNotLoggedIn)
+//.all(uController.redirectIfNotLoggedIn)
 .get(uController.logout);
 
 userRouter.route('/')

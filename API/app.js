@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const fileStore = require('session-file-store')(session);
-const fs = require('fs');
+// const fileStore = require('session-file-store')(session);
+const fs = require('fs'); 
 
 const upload = require('./middlewares/upload');
 const auth = require('./middlewares/auth');
@@ -21,9 +21,8 @@ const adminRouter = require('./routes/Admin');
 const trackRouter = require('./routes/Track');
 const resetpassRouter = require('./routes/ResetPassword');
 
-const url = process.env.DB_URL;
 
-const connect = mongoose.connect(url, {useNewUrlParser: true, useFindAndModify: false});
+const connect = mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useFindAndModify: false});
 
 connect.then((db)=>{
     console.log("connected succefully to the db");
@@ -33,7 +32,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/uploads', express.static(__dirname+'/public'));
+//app.use('/uploads', express.static(__dirname+'/public'));
 app.use(morgan('common', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}));
 app.use(cookieParser());
 app.use(session({
@@ -41,16 +40,16 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: new fileStore({})
+    // store: new fileStore({})
 }));
 app.use(auth.initialize);
 app.use(auth.session);
 app.use(auth.setUser);
-
+/* 
 app.post('/test', upload.single('name'), (req, res, next)=>{
     res.redirect('/'+req.file.filename);
 });
-
+ */
 app.get('/', (req, res, next)=>{
     res.json({a: req.session, b: req.user, c: res.locals})
 });

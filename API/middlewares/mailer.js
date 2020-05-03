@@ -12,7 +12,7 @@ const transporter = mailer.createTransport({
 });
 
 module.exports = {
-    sendEmailConfirmation : (req, res, user, log=true)=>{
+    sendEmailConfirmation : (req, res, user)=>{
         jwt.sign({userId: user._id}, process.env.CONFIRMATION_SECRET, {expiresIn: '24h'}, (err, Token)=>{
             const url = `http://localhost:3000/confirmation/${Token}`;
             const mailOptions = {
@@ -22,11 +22,8 @@ module.exports = {
                 html: `Hello ${user.username}, confirm your acocunt <a href="${url}">Here.</a> `
                 };
             transporter.sendMail(mailOptions, (err, info)=>{
-                console.log(err);
-                if(log) req.login(user, (err)=>{
-                     res.redirect('/');})
-                else res.json(user);
-
+                const msg = (!err) ? 'email sent' : 'mailer err';
+                res.status(200).json({succes:true, data: user, message: msg, mailerErr: err});
             });
         });
     },
@@ -40,8 +37,8 @@ module.exports = {
                 html: `Hello ${user.username}, reset your password <a href="${url}">Here.</a> `
                 };
             transporter.sendMail(mailOptions, (err, info)=>{
-                if(err) console.log(err);
-                res.redirect('/user/login');
+                const msg = (!err) ? 'email sent' : 'mailer err';
+                res.status(200).json({succes: true, data: user, message: msg, mailerErr: err});
             });
         });
     }

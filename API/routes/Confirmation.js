@@ -6,7 +6,7 @@ const uController = require('../controllers/User');
 
 const confirmationRouter = express.Router();
 
-confirmationRouter.use(uController.redirectIfLoggedIn);
+//confirmationRouter.use(uController.redirectIfLoggedIn);
 
 confirmationRouter.use(bodyParser.json());
 

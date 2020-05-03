@@ -6,7 +6,7 @@ const uController = require('../controllers/User');
 
 const resetpassRouter = express.Router();
 
-resetpassRouter.use(uController.redirectIfLoggedIn);
+//resetpassRouter.use(uController.redirectIfLoggedIn);
 
 resetpassRouter.route('/')
 .get((req, res, next)=>{

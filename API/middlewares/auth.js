@@ -49,7 +49,7 @@ module.exports = {
         return next();
     },
     logInUser: passport.authenticate('User', {
-        successRedirect: '/',
-        failureRedirect: '/user/login'
+        successRedirect: '/jsonResp',
+        failureRedirect: '/jsonResp'
     })
 };

@@ -11,7 +11,7 @@ module.exports = {
     resetPassEmail : (req, res, next)=>{
         User.findOne({email: req.body.email})
         .then((user)=>{
-            if(!user) return res.json({message: 'there is no account registred with this email'})
+            if(!user) return res.status(404).json({succes: false, data: {}, message: 'there is no account registred with this email'})
             mailer.sendEmailResetPassword(req, res, user);
         })
         .catch(next);
@@ -27,13 +27,13 @@ module.exports = {
                     bcrypt.hash(req.body.password, salt, (err, hash)=>{
                         user.password = hash;
                         user.save();
-                        res.redirect('/');
+                        res.status(200).json({succes: true, data: user, message: 'Password has been reset'});
                     });
                 });
             })
             .catch(next);
         })
         else
-        res.redirect('/');     
+        res.status(404).json({sucess: false, data: {}, message: 'params missing'});     
     }
 };

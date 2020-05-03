@@ -9,8 +9,8 @@ agencyRouter.use(bodyParser.json());
 
 agencyRouter.route('/')
 .get(aController.getAgency);
-
-agencyRouter.route('/:agencyName')
+/* 
+agencyRouter.route('/:agencyId')
 .get(aController.getAgency);
-
+ */
 module.exports = agencyRouter;

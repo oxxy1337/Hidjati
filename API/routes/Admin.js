@@ -10,13 +10,16 @@ const validator = require('../middlewares/validation');
 const adminRouter = express.Router();
 
 adminRouter.route('/login')
-.get((req, res, next)=>{
-    if(req.user) return res.redirect('/')
-    res.status(200).json({message: 'log in!'});
-})
-.post(uController.redirectIfLoggedIn ,validator.loginValidation ,aController.connectAdmin);
 
-adminRouter.use(aController.isAdmin);
+/* .get((req, res, next)=>{
+    if(req.user) return res.status(200).json({succes: true, data: {}, message: 'already logged in'})
+    res.status(200).json({sucess: true, data: {}, message: 'logged in'});
+})
+ */
+
+.post(/* uController.redirectIfLoggedIn , */validator.loginValidation ,aController.connectAdmin);
+
+//adminRouter.use(aController.isAdmin);
 
 adminRouter.route('/operations')
 .get(aController.getAdmin)
@@ -49,9 +52,9 @@ adminRouter.route('/places/:placeId')
 adminRouter.route('/agency')
 .get(agController.getAgency)
 .post(agController.createAgency)
-.delete(agController.deleteAgency)
+.delete(agController.deleteAgency);
 
-adminRouter.route('/agency/agencyId')
+adminRouter.route('/agency/:agencyId')
 .get(agController.getAgency)
 .patch(agController.updateAgency)
 .delete(agController.deleteAgency);
