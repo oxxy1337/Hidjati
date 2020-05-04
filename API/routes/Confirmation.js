@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 
 const confirmation = require('../middlewares/Confirmation');
 const uController = require('../controllers/User');

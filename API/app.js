@@ -20,7 +20,7 @@ const placeRouter = require('./routes/Place');
 const adminRouter = require('./routes/Admin');
 const trackRouter = require('./routes/Track');
 const resetpassRouter = require('./routes/ResetPassword');
-
+const feedbackRouter = require('./routes/Feedback');
 
 const connect = mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useFindAndModify: false});
 
@@ -59,6 +59,7 @@ app.use('/confirmation', confirmationRouter);
 app.use('/user', userRouter);
 app.use('/agency', agencyRouter);
 app.use('/place', placeRouter);
+app.use('/feedbacks', feedbackRouter);
 app.use('/admin', adminRouter);
 app.use('/resetpassword', resetpassRouter);
 

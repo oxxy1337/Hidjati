@@ -4,6 +4,7 @@ const aController = require('../controllers/Admin');
 const uController = require('../controllers/User');
 const pController = require('../controllers/Place');
 const agController = require('../controllers/Agency');
+const fbController = require('../controllers/Feedback');
 
 const validator = require('../middlewares/validation');
 
@@ -58,6 +59,15 @@ adminRouter.route('/agency/:agencyId')
 .get(agController.getAgency)
 .patch(agController.updateAgency)
 .delete(agController.deleteAgency);
+
+adminRouter.route('/feedbacks')
+.get(fbController.getFeedback)
+.post(fbController.createFeedback)
+.delete(fbController.deleteFeedback);
+
+adminRouter.route('/feedbacks/:feedbackId')
+.get(fbController.getFeedback)
+.delete(fbController.deleteFeedback);
 
 adminRouter.route('/logout')
 .get(aController.logout);

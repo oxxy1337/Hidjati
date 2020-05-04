@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 
 const uController = require('../controllers/User');
 
@@ -9,8 +8,6 @@ const auth = require('../middlewares/auth');
 const validator = require('../middlewares/validation');
 
 const userRouter = express.Router();
-
-userRouter.use(bodyParser.json());
 
 userRouter.route('/register')
 //.all(uController.redirectIfLoggedIn)
