@@ -37,7 +37,7 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" style="position: relative;left:800px;">
-          <a class="nav-link" href="#">تسجيل الدخول</a>
+          <a class="nav-link" href="/SignUp">تسجيل الدخول</a>
         </li>
         <li class="nav-item" style="position: relative;left: 850px;">
           <button type="button" class="btn btn-dark" class="open-button" onclick="openForm()"
@@ -73,28 +73,13 @@
             <h1 style="text-align: center;position:relative; top: 30px; animation: bounce; animation-duration: 5s;">حجتي</h1>
             <h2 style="text-align: center; position:relative; top: 30px;animation: bounce; animation-duration: 5s;">دليلك الشامل لإتمام ذلك</h2>
             <h4 style="text-align: center;position:relative; top: 70px;">...للمزيد</h4>
-            <button type="button" class="btn btn-dark" class="open-button" onclick="openForm()"
+            <a href="/SignUp"><button type="button" class="btn btn-dark" class="open-button" onclick="openForm()"
             style="position: relative;left: 130px; top: 90px;   ">
             اشتراك
-           </button>
-           <!--FORM CODE-------------------------------------------------------------------------->
-           <div class="form-popup" id="myForm">
-             <form action="/action_page.php" class="form-container">
-               <h1>Login</h1>
+           </button></a>
            
-               <label for="email"><b>Email</b></label>
-               <input type="text" placeholder="Enter Email" name="email" required>
-           
-               <label for="psw"><b>Password</b></label>
-               <input type="password" placeholder="Enter Password" name="psw" required>
-           
-               <button type="submit" class="btn">Login</button>
-               <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-             </form>
-           </div>
-           <!------------------------------------------------------------------------------------->
-           <h6 style="position: relative;bottom: 620px; left: 400px;">حمل الآن مجانا تطبيق حجتي</h6>
-
+              <h6 style="position: relative;top: 150px;left: 300px;">حمل تطبيق حجتي مجانا</h6>
+              <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 105px;left: 120px;"></a>
            </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
@@ -111,11 +96,13 @@
     <section >
       <div class="section-2">
         <h2 class="revealOnScroll" data-animation="lightSpeedIn" style="text-align: center; bottom: 150px;">إختر وجهتك</h2>
-       <a href="#"><img src="images/kaaba01.png"
+       <a href="/Gh" ><img src="images/kaaba01.png"
          style="width: 200px;height: 200px; position: relative; left: 65%; top: 50px;"></a>
+         <!--script to redirect to another webpage-->   
+      
          <h3 style="position: relative;left:900px;top: 70px;">حج</h3>
 
-       <a href="#"><img src="images/kaaba01.png"
+       <a href="/Go"><img src="images/kaaba01.png"
          style="width: 200px;height: 200px; position: relative; left: 20% ;bottom: 200px; " ></a>
          <h3 style="position: relative;left:350px;bottom: 170px;">عمرة</h3>
 
