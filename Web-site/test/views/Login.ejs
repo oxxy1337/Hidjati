@@ -55,15 +55,15 @@
         <h4 class="card-title mt-2">الدخول</h4>
     </header>
     <article class="card-body">
-    <form>
+    <form action="/login" method="post">
         
         <div class="form-group">
             <label>البريد الالكتروني أو اسم المستخدم</label>
-            <input type="email" class="form-control" placeholder="">
+            <input type="email" class="form-control" placeholder="" name="email">
         </div> <!-- form-group end.// -->
         <div class="form-group">
             <label>ادخل كلمة السر</label>
-            <input class="form-control" type="password">
+            <input class="form-control" type="password" name="password">
         </div> <!-- form-group end.// -->  
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">  دخول </button>

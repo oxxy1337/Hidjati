@@ -18,8 +18,8 @@ const registerValidation = (data) =>{
         first_name: Joi.string()
                 .min(6)
                 .pattern(new RegExp('^[a-zA-Z]+$'))
-                .max(24)
-                .required(),
+                .max(24),
+//                .required(),
         middle_name: Joi.string()
                 .min(6)
                 .pattern(new RegExp('^[a-zA-Z]+$'))
@@ -27,8 +27,8 @@ const registerValidation = (data) =>{
         last_name: Joi.string()
                 .min(6)
                 .pattern(new RegExp('^[a-zA-Z]+$'))
-                .max(24)
-                .required(),
+                .max(24),
+                //.required(),
         gender: Joi.string()
                 .pattern(new RegExp('^[a-zA-Z]+$'))
                 .required(),

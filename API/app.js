@@ -50,6 +50,7 @@ app.post('/test', upload.single('name'), (req, res, next)=>{
     res.redirect('/'+req.file.filename);
 });
  */
+
 app.get('/', (req, res, next)=>{
     res.json({a: req.session, b: req.user, c: res.locals})
 });
