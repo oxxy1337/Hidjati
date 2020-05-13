@@ -1,0 +1,16 @@
+
+.section01{
+padding: 20px;
+  width: 100%;
+  height: 550px;}
+  .section02{
+    padding: 20px;
+    width: 100%;
+    height: 500px;
+  }
+
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 50%;
+    height: 50%;
+  }

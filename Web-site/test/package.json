@@ -1,0 +1,48 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node_modules/.bin/gulp watch"
+  },
+  "description": "Just for testing",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.2",
+    "axios": "^0.19.2",
+    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jquery": "^3.5.1",
+    "jquery.easing": "^1.4.1",
+    "mongoose": "^5.9.13",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "popper.js": "^1.16.1",
+    "session-file-store": "^1.4.0",
+    "simple-line-icons": "2.4.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malika3/Test_Node.git"
+  },
+  "keywords": [
+    "Node.js",
+    "css",
+    "sass",
+    "html",
+    "responsive",
+    "theme",
+    "template"
+  ],
+  "author": "Malika Dermi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malika3/Test_Node/issues"
+  },
+  "homepage": "https://github.com/Malika3/Test_Node#readme"
+}
