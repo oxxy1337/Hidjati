@@ -19,7 +19,7 @@ module.exports = {
                         })
                     });
                 });
-            else res.json({succes:false, data: {}, message: "User exist"});
+            else res.status(400).json({succes:false, data: {}, message: "User exist"});
         })
         .catch(next);
     },

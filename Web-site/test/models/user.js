@@ -29,7 +29,7 @@ const flightSchema = new Schema({
     }
 },{_id: false});
 
-const pelerinSchema = new Schema({
+const userSchema = new Schema({
     username: {
         type: String,
         required: true,
@@ -93,6 +93,6 @@ const pelerinSchema = new Schema({
     }
 },{timestamps: true});
 
-const Pelerin = mongoose.model('Pelerin', pelerinSchema);
+const User = mongoose.model('Pelerin', userSchema);
 
-module.exports = Pelerin;
+module.exports = User;

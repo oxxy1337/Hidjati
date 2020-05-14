@@ -9,16 +9,21 @@ const validator = require('../middlewares/validation');
 
 const userRouter = express.Router();
 
+userRouter.use((req, res, next)=>{ //forgot the password + next()
+    if(!req.body && req.data) {
+        req.body.username = req.data.username;
+        req.body.password = req.data.password;
+        req.body.email = req.data.email;
+        req.body.gender = req.data.gender;
+    };
+    next();
+})
+
+//the api did respond to the axios request with the created user
+
 userRouter.route('/register')
 //.all(uController.redirectIfLoggedIn)
-.post(validator.registerValidation, uController.createUser);
-
-userRouter.route('/login')
-//.all(uController.redirectIfLoggedIn)
-.post(validator.loginValidation, auth.logInUser)
-.get((req, res, next)=>{
-    res.status(200).json({message: 'log in!'});
-});
+.post(/* validator.registerValidation, */ uController.createUser);
 
 userRouter.route('/logout')
 //.all(uController.redirectIfNotLoggedIn)
@@ -34,5 +39,7 @@ userRouter.route('/')
 
 userRouter.route('/delete/userId')
 .delete(uController.deleteUser);
+
+userRouter.post('/mobilelogin', auth.loginMobile);
 
 module.exports = userRouter;

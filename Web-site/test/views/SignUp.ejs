@@ -54,33 +54,33 @@
         <h4 class="card-title mt-2">الاشتراك</h4>
     </header>
     <article class="card-body">
-    <form>
+    <form action="/register" method="post">
         <div class="form-row">
             <div class="col form-group">
                 <label>الاسم </label>   
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" class="form-control" placeholder="" name="first_name">
             </div> <!-- form-group end.// -->
             <div class="col form-group">
                 <label>اللقب</label>
-                  <input type="text" class="form-control" placeholder=" ">
+                  <input type="text" class="form-control" placeholder="" name="last_name">
             </div>
             <div class="col form-group">
                 <label style="position: relative;bottom: 20px;">اسم المستخدم</label>
-                  <input type="text" style="position: relative;bottom: 20px;"class="form-control" placeholder=" ">
+                  <input type="text" style="position: relative;bottom: 20px;"class="form-control" placeholder="" name="username">
             </div> <!-- form-group end.// -->
         </div> <!-- form-row end.// -->
         <div class="form-group">
             <label>البريد الالكتروني</label>
-            <input type="email" class="form-control" placeholder="">
+            <input type="email" class="form-control" placeholder="" name="email">
             <small class="form-text text-muted">نتعهد بالخصوصية التامة</small>
         </div> <!-- form-group end.// -->
         <div class="form-group">
                 <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" value="option1">
+              <input class="form-check-input" type="radio" name="genderM" value="male">
               <span class="form-check-label"> ذكر </span>
             </label>
             <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" value="option2">
+              <input class="form-check-input" type="radio" name="genderF" value="female">
               <span class="form-check-label"> انثى</span>
             </label>
         </div> <!-- form-group end.// -->
@@ -99,7 +99,7 @@
         </div> <!-- form-row.// -->
         <div class="form-group">
             <label>املا كلمة السر</label>
-            <input class="form-control" type="password">
+            <input class="form-control" type="password" name="password">
         </div> <!-- form-group end.// -->  
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block"> اشتراك  </button>
