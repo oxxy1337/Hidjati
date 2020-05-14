@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "885831611601",
+    "firebase_url": "https://hidjati-caa78.firebaseio.com",
+    "project_id": "hidjati-caa78",
+    "storage_bucket": "hidjati-caa78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885831611601:android:c5f75fea2e31af4885c1f0",
+        "android_client_info": {
+          "package_name": "com.hidjati.school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885831611601-ue9cesual1paotj8min558s1e3kia29v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAHVvLITJu-zzLhSZJYSDxp2_h76Rn_To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885831611601-ue9cesual1paotj8min558s1e3kia29v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

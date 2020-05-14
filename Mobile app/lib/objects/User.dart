@@ -13,20 +13,20 @@ class User {
       this.age});
 }
 
-class loginUser {
+class LoginUser {
   String email, password;
 
-  loginUser({this.email, this.password});
+  LoginUser({this.email, this.password});
 
   Map<String, dynamic> toJson() {
     return {'email': email, 'password': password};
   }
 }
 
-class registerUser {
+class RegisterUser {
   String username, email, password, gender;
 
-  registerUser({this.username, this.password, this.email, this.gender});
+  RegisterUser({this.username, this.password, this.email, this.gender});
 
   Map<String, dynamic> toJson() {
     return {

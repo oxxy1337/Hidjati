@@ -1,13 +1,3 @@
-# Logs
-*.log
-
-#environment variables
-#.env
-
-# Dependency directorienode_modules
-node_modules
-
-=======
 # Miscellaneous
 *.class
 *.log
@@ -38,11 +28,10 @@ node_modules
 .packages
 .pub-cache/
 .pub/
-build/
+/build/
 
 # Web related
 lib/generated_plugin_registrant.dart
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
->>>>>>> a1f2bd8d06940e788738cfb4ed78b96e5b7e1ed3
