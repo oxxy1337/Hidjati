@@ -56,11 +56,11 @@ app.route('/profile')
 .get((_, res) => res.render('Profile'));
 
 app.route('/Go')
-.all(userController.redirectIfNotLoggedIn)
+//.all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('GuideOmra'));
 
 app.route('/Gh')
-.all(userController.redirectIfNotLoggedIn)
+//.all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('GuideHadj'));
 
 app.route('/login')
