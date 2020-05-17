@@ -1,27 +1,12 @@
-import 'dart:convert';
-import 'package:school/Models/api_response.dart';
-
-import '../Services/User.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../Models/User.dart';
+import 'package:school/Screens/home.dart';
+import 'package:school/objects/ApiResponce.dart';
 import 'signIn.dart';
-import './Succes.dart';
-import 'package:http/http.dart' as http;
+import 'package:school/Services/User.dart';
 
-/*void signup() {
-  runApp(MaterialApp(
-    home: Sroute(),
-  ));
-}*/
-/*class Sroute extends StatelessWidget{
-   @override
-  Widget build(BuildContext context) {
-    return new Sup();
-  }}
-*/
 class Sup extends StatefulWidget {
-  static final id = 'SignupRoute';
   final Function toggleView;
   Sup({this.toggleView});
   @override
@@ -29,23 +14,11 @@ class Sup extends StatefulWidget {
 }
 
 class SupState extends State<Sup> {
-  /* DateTime selectedDate = DateTime.now();
-   Future<Null> _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: selectedDate,
-        firstDate: DateTime(2015, 8),
-        lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate)
-      setState(() {
-        selectedDate = picked;
-      });
-  }*/
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
-  TextEditingController datebirthController = TextEditingController();
+
   TextEditingController genderController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
@@ -53,7 +26,6 @@ class SupState extends State<Sup> {
   String password;
   String name;
   String sexe;
-  String api = 'http://9d9d2110.ngrok.io';
 
   var gender = ['ذكر', 'انثى', 'الجنس'];
   var gselected = 'الجنس';
@@ -74,7 +46,7 @@ class SupState extends State<Sup> {
                 child: ListView(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(20, 115, 20, 0),
+                      padding: EdgeInsets.fromLTRB(20, 140, 20, 0),
                       child: TextFormField(
                         autofocus: false,
                         controller: nameController,
@@ -175,7 +147,7 @@ class SupState extends State<Sup> {
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(18.0)),
                           textColor: Color(0xff4e7a79),
-                          color: Color(0xffe3865a),
+                          color: Color(0xff7fe0cd),
                           child: Text(
                             'تسجيل ',
                             style: TextStyle(
@@ -185,39 +157,39 @@ class SupState extends State<Sup> {
                             ),
                           ),
                           onPressed: () async {
-                            print('start');
-
-                            api_response resp = await UserServices.RegisterUser(
+                            ApiResponce resp = await UserServices.registerUser(
                                 nameController,
                                 emailController,
-                                passwordController,
-                                'male');
+                                genderController,
+                                passwordController);
                             if (!resp.error) {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          succes(resp.data.toString())));
-                            } else //need to show error message
+                                      builder: (context) => Home(resp.data)));
+                            } else
                               print(resp.error_msg);
+                            /*if (_formKey.currentState.validate()) print(email);
+                            print(password);*/
                           },
                         )),
                     Container(
-                        padding: EdgeInsets.fromLTRB(10, 5, 10, 0),
+                        padding: EdgeInsets.fromLTRB(10, 260, 10, 0),
                         child: Row(
                           children: <Widget>[
                             FlatButton(
-                              textColor: Color(0xfff2b364),
+                              textColor: Color(0xff00765e),
                               child: Text(
                                 'دخول',
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(
+                                    fontSize: 20, fontFamily: 'AeCortoba'),
                               ),
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, Signinform.id);
+                                widget.toggleView();
                               },
                             ),
-                            Text(' لديك حساب؟'),
+                            Text(' لديك حساب؟',
+                                style: TextStyle(fontFamily: 'AeCortoba')),
                           ],
                           mainAxisAlignment: MainAxisAlignment.center,
                         ))

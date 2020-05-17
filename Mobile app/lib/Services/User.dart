@@ -1,14 +1,13 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../Models/User.dart';
-import '../Models/api_response.dart';
 import 'package:http/http.dart' as http;
+import 'package:school/objects/ApiResponce.dart';
+import 'package:school/objects/User.dart';
 
 class UserServices {
-  static final api = 'http://a44e9ef8.ngrok.io';
+  static const api = '';
 
-  static Future<api_response<User>> getUser(String userId) {
+  static Future<ApiResponce<User>> getUser(String userId) {
     return http.get(api + "/admin/users/" + userId).then((data) {
       if (data.statusCode == 200) {
         final jsonData = json.decode(data.body);
@@ -21,20 +20,18 @@ class UserServices {
             last_name: jsonData['data']['last_name'],
             gender: jsonData['data']['gender'],
             age: jsonData['data']['age']);
-        return api_response<User>(data: user);
+        return ApiResponce<User>(data: user);
       } else
-        return api_response<User>(
+        return ApiResponce<User>(
             error: true, error_msg: 'can\' t get the user');
     }).catchError((_) =>
-        api_response<User>(error: true, error_msg: 'something went wrong'));
+        ApiResponce<User>(error: true, error_msg: 'something went wrong'));
   }
 
-  static Future<api_response<User>> LoginUser(
+  static Future<ApiResponce<User>> loginUser(
       TextEditingController mail, TextEditingController pass) {
-    loginUser user = loginUser(email: mail.text, password: pass.text);
-    return http
-        .post(api + '/user/mobilelogin', body: user.toJson())
-        .then((data) {
+    final user = LoginUser(email: mail.text, password: pass.text);
+    return http.post(api + "/user/login", body: user.toJson()).then((data) {
       if (data.statusCode == 200) {
         final jsonData = json.decode(data.body);
         final user = User(
@@ -46,21 +43,24 @@ class UserServices {
             last_name: jsonData['data']['last_name'],
             gender: jsonData['data']['gender'],
             age: jsonData['data']['age']);
-        return api_response<User>(data: user);
+        return ApiResponce<User>(data: user);
       } else
-        return api_response<User>(error: true, error_msg: 'can\' t login');
+        return ApiResponce<User>(error: true, error_msg: 'can\'t login');
     }).catchError((_) =>
-            api_response<User>(error: true, error_msg: 'something went wrong'));
+        ApiResponce<User>(error: true, error_msg: "something went wrong"));
   }
 
-  static Future<api_response<User>> RegisterUser(TextEditingController uname,
-      TextEditingController mail, TextEditingController pass, String gend) {
-    registerUser user = registerUser(
-        email: mail.text,
+  static Future<ApiResponce<User>> registerUser(
+      TextEditingController uname,
+      TextEditingController mail,
+      TextEditingController gend,
+      TextEditingController pass) {
+    final user = RegisterUser(
         username: uname.text,
-        password: pass.text,
-        gender: gend);
-    return http.post(api + '/user/register', body: user.toJson()).then((data) {
+        email: mail.text,
+        gender: gend.text,
+        password: pass.text);
+    return http.post(api + '/user/register', body: user).then((data) {
       if (data.statusCode == 200) {
         final jsonData = json.decode(data.body);
         final user = User(
@@ -72,11 +72,10 @@ class UserServices {
             last_name: jsonData['data']['last_name'],
             gender: jsonData['data']['gender'],
             age: jsonData['data']['age']);
-        return api_response<User>(data: user);
+        return ApiResponce<User>(data: user);
       } else
-        return api_response<User>(
-            error: true, error_msg: 'can\' register the user');
+        return ApiResponce<User>(error: true, error_msg: 'can\' t register');
     }).catchError((_) =>
-        api_response<User>(error: true, error_msg: 'something went wrong'));
+        ApiResponce<User>(error: true, error_msg: 'something went wrong'));
   }
 }

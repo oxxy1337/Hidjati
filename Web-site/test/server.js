@@ -5,7 +5,6 @@ const userController = require('./controllers/user');
 
 const express = require('express');
 const mongoose = require('mongoose');
-const axios = require('axios');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -28,6 +27,9 @@ app.use(cookieParser());
 app.use(session({
     name: 'session-id',
     secret: 'here we put the secret key',
+    cookie: {
+        maxAge: 60*10000
+      },
     resave: false,
     saveUninitialized: false,
     store: new fileStore()
@@ -45,19 +47,33 @@ app.set('views','./views');
 app.set('view engine','ejs');
 
 
-app.get('/', (_, res) => {res.render('index')});
+app.route('/')
+.all(userController.redirectIfLoggedIn)
+.get((_, res) => {res.render('index')});
 
-app.get('/Go',(_, res) => res.render('GuideOmra'));
+app.route('/profile')
+.all(userController.redirectIfNotLoggedIn)
+.get((_, res) => res.render('Profile'));
 
-app.get('/Gh',(_, res) => res.render('GuideHadj'));
+app.route('/Go')
+.all(userController.redirectIfNotLoggedIn)
+.get((_, res) => res.render('GuideOmra'));
+
+app.route('/Gh')
+.all(userController.redirectIfNotLoggedIn)
+.get((_, res) => res.render('GuideHadj'));
 
 app.route('/login')
+.all(userController.redirectIfLoggedIn)
 .get((_, res)=> res.render('Login'))
 .post(auth.logInUser);
 
-app.get('/logout', userController.logout);
+app.route('/logout')
+.all(userController.redirectIfNotLoggedIn)
+.get(userController.logout);
 
 app.route('/register')
+.all(userController.redirectIfLoggedIn)
 .get((_, res) => res.render('SignUp'))
 .post(userController.create);
 

@@ -1,35 +1,10 @@
-import 'dart:convert';
-import 'package:school/Models/api_response.dart';
-
-import '../Services/User.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:school/Screens/Succes.dart';
-import './signUp.dart';
-import 'package:http/http.dart' as http;
-import '../Models/User.dart';
-import './User/profile.dart';
-
-import 'signUp.dart';
-
-/*void main() {
-  runApp(MaterialApp(
-    home: Froute(),
-
-
-  ));
-}*/
-
-/*class Froute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Signinform();
-  }
-}*/
+import 'package:school/Screens/home.dart';
+import 'package:school/Services/User.dart';
+import 'package:school/objects/ApiResponce.dart';
 
 class Signinform extends StatefulWidget {
-  static final id = 'SigninRoute';
-
   final Function toggleView;
   Signinform({this.toggleView});
   @override
@@ -37,7 +12,6 @@ class Signinform extends StatefulWidget {
 }
 
 class SigninformState extends State<Signinform> {
-////////////DECLARATIONS//////////////////////////
   bool _obscureText = true;
   String _password;
   void _toggle() {
@@ -49,7 +23,6 @@ class SigninformState extends State<Signinform> {
   final _formKey = GlobalKey<FormState>();
   String password;
   String name;
-  String api = 'http://9d9d2110.ngrok.io';
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 //////////////////////////////////////////////////////////
@@ -68,7 +41,7 @@ class SigninformState extends State<Signinform> {
                 child: ListView(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(10, 200, 10, 0),
+                      padding: EdgeInsets.fromLTRB(10, 150, 10, 0),
                       child: TextFormField(
                         autofocus: false,
                         controller: nameController,
@@ -90,7 +63,7 @@ class SigninformState extends State<Signinform> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(10, 100, 10, 0),
+                      padding: EdgeInsets.fromLTRB(10, 50, 10, 0),
                       child: TextFormField(
                           autofocus: false,
                           //obscureText: true,
@@ -121,19 +94,19 @@ class SigninformState extends State<Signinform> {
                       onPressed: () {
                         //forgot password screen
                       },
-                      textColor: Color(0xfff2b364),
+                      textColor: Color(0xff7fe0cd),
                       child: Text(
                         'نسيت كلمة السر؟',
                         style: TextStyle(fontFamily: 'AeCortoba'),
                       ),
                     ),
                     Container(
-                        padding: EdgeInsets.fromLTRB(50, 50, 50, 0),
+                        padding: EdgeInsets.fromLTRB(50, 80, 50, 0),
                         child: RaisedButton(
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(18.0)),
                           textColor: Color(0xff4e7a79),
-                          color: Color(0xffe3865a),
+                          color: Color(0xff7fe0cd),
                           child: Text(
                             'تسجيل الدخول',
                             style: TextStyle(
@@ -143,35 +116,39 @@ class SigninformState extends State<Signinform> {
                             ),
                           ),
                           onPressed: () async {
-                            api_response resp = await UserServices.LoginUser(
+                            ApiResponce resp = await UserServices.loginUser(
                                 nameController, passwordController);
-                            if (!resp.error) {
+                            if (!resp.error)
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          succes(resp.data.toString())));
-                            } else //need to show error msg
+                                      builder: (context) => Home(resp.data)));
+                            else
                               print(resp.error_msg);
                           },
                         )),
                     Container(
-                        padding: EdgeInsets.fromLTRB(10, 80, 10, 0),
-                        child: Row(
-                          children: <Widget>[
-                            FlatButton(
-                                textColor: Color(0xfff2b364),
-                                child: Text(
-                                  'اشتراك',
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                                onPressed: () {
-                                  Navigator.pushReplacementNamed(
-                                      context, Sup.id);
-                                }),
-                            Text('ليس لديك حساب؟'),
-                          ],
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        padding: EdgeInsets.fromLTRB(10, 200, 10, 0),
+                        child: Center(
+                          child: Row(
+                            children: <Widget>[
+                              FlatButton(
+                                  textColor: Color(0xff00765e),
+                                  child: Text(
+                                    'اشتراك',
+                                    style: TextStyle(
+                                        fontSize: 20, fontFamily: 'AeCortoba'),
+                                  ),
+                                  onPressed: () {
+                                    widget.toggleView();
+                                  }),
+                              Text(
+                                'ليس لديك حساب؟',
+                                style: TextStyle(fontFamily: 'AeCortoba'),
+                              )
+                            ],
+                            mainAxisAlignment: MainAxisAlignment.center,
+                          ),
                         ))
                   ],
                 ))));
