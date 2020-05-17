@@ -10,25 +10,29 @@ class ColorChoice {
 class ColorChoices {
   static List<ColorChoice> choices = [
     ColorChoice(
-      primary: Color(0xFFF77B67),
+      primary: Color(0xFF9d5364),
       gradient: [
-        Color.fromRGBO(245, 68, 113, 1.0),
-        Color.fromRGBO(245, 161, 81, 1.0),
+        Color.fromRGBO(157, 83, 100, 1.0),
+        Color.fromRGBO(168, 89, 110, 1.0),
+      ],
+    ),
+
+    ColorChoice(
+      primary: Color(0xFFAF5F5F),
+      gradient: [
+        Color.fromRGBO(153, 102, 102, 1.0),
+        Color.fromRGBO(158, 83, 80, 1.0),
+
       ],
     ),
     ColorChoice(
-      primary: Color(0xFF5A89E6),
+      primary: Color(0xFb76550),
       gradient: [
-        Color.fromRGBO(77, 85, 225, 1.0),
-        Color.fromRGBO(93, 167, 231, 1.0),
+        Color.fromRGBO(183, 101, 80, 1.0),
+        Color.fromRGBO(193, 108, 87, 1.0),
+
       ],
     ),
-    ColorChoice(
-      primary: Color(0xFF4EC5AC),
-      gradient: [
-        Color.fromRGBO(61, 188, 156, 1.0),
-        Color.fromRGBO(61, 212, 132, 1.0),
-      ],
-    ),
+
   ];
 }
