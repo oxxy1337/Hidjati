@@ -1,7 +1,6 @@
 <!DOCTYPE html>
  <html lang="en"> 
  <head>
-
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,13 +8,10 @@
     <!-- Title -->
     <title>HIDJATI</title>
 
-    <!--Animate.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <!-- Templates core CSS -->
-    <link href="/stylesheets/Hadj.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/stylesheets/hadj.css"  type="text/css">
     <!-- Boostrap libraries -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -24,26 +20,105 @@
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<style>
+  @charset "UTF-8";
 
+
+.card-container {
+  display: block;
+  float: left;
+  position: relative;
+  left: 150px;
+  width: 500px;
+}
+
+.card-container .card {
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.card-container .card .card-count-container {
+  display: block;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  padding: 20px 0px;
+}
+.card-container .card .card-count {
+  font-weight: bold;
+  font-size: 100px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: auto;
+  margin-right: -50px;
+  padding-right: 25px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+.card-container .card .card-content {
+  padding: 20px;
+  padding-top: 0px;
+}
+.card-container .card .card-content > h2 {
+  margin-top: 0px;
+  text-align: center;
+}
+.card-container .card .card-footer {
+  padding: 20px;
+  height: 60px;
+  color: #fff;
+}
+.card-container .card:nth-child(1) .card-count, .card-container .card:nth-child(1) .card-footer {
+  background-image: linear-gradient(90deg, #f6671f, #c01b1c);
+}
+.card-container .card:nth-child(2) .card-count, .card-container .card:nth-child(2) .card-footer {
+  background-image: linear-gradient(90deg, #fec22f, #af5f61);
+}
+.card-container .card:nth-child(3) .card-count, .card-container .card:nth-child(3) .card-footer {
+  background-image: linear-gradient(90deg, #6fc6a9, #058ba9);
+}
+.card-container .card:hover .card-count {
+  width: 160px;
+  height: 160px;
+}
+
+.content {
+display: none;
+}
+
+@media (max-width: 767px) {
+  .card-container {
+    flex-wrap: wrap;
+ }
+}
+</style>
   </head>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
+    <a class="navbar-brand" href="#" style="position: relative;left:150px">حجتي</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        
+        <li class="nav-item" style="position: relative;left:800px;">
+          <a style="text-decoration: none;" class="nav-link" href="/Login" >   <button type="button" style="background-color: #af5f61;" class="btn btn-default"> 
+              <h6 style="color: white;"> تسجيل الدخول  </h6>
+          </button></a>
         </li>
         <li class="nav-item" style="position: relative;left:800px;">
-          <a class="nav-link" href="#">تسجيل الدخول</a>
-        </li>
-        <li class="nav-item" style="position: relative;left: 850px;">
-          <button type="button" class="btn btn-dark" class="open-button" onclick="openForm()"
-          style="position: relative;left: 20px; top: 7px;   ">
-          اشتراك
-         </button>        </li>
+          <a style="text-decoration: none;" class="nav-link" href="/register" >   <button type="button" style="background-color: #af5f61;" class="btn btn-default"> 
+          <h6  style="color: white;">اشتراك</h6>
+          </button></a>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown link
@@ -57,13 +132,260 @@
       </ul>
     </div>
   </nav>
-  <body >
-     <section class="section01" >
-            
-     </section>
-     <hr style="position: relative;bottom: 10px; background-color: black;" />
-     <section class="section02">
+  <body style="overflow-x: hidden;">
+<!--SECTION 1 ---------------------------------------------------------------------------------->
+<section style="width: 90%;height: 500px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 20px;">
+    <h2 style="color: #af5f61	; text-align: center;">انواع الحج</h2>
+ <div  style="text-align: center;position: relative;top: 100px;display: block;"> <button onclick="shfct();" style="background-color:#af5f61 ; width: 200px;height: 50px;border-radius: 20px; ">
+  <h4 style="color:white;">الإفراد</h4></button>
+ <section class="card" id="card1" style="width: 400px;height: 100px;border-radius: 20px; position: absolute;left: 850px;bottom: 5px;display: none;z-index: 9;">
+   <h3>هي نية الحج وحده, ثم الإعتمار بعد الفراغ من مناسك الحج</h3>
+ </section>
+  <script>
+    function shfct(){
+      document.getElementById("card1").style.display="block";
+    }
+  </script>
+</div> 
+<!--//////////////////////////////////////////--> 
+ <div style="text-align: center;position: relative;top: 150px;display: block;"> <button onclick="shfct1()"  style="background-color:#af5f61 ; width: 200px;height: 50px;border-radius: 20px; ">
+  <h4 style="color:white;">التمتع</h4></button>
+<section class="card" id="card2"style="width: 400px;height: 80px;border-radius: 20px; position: absolute;left:100px;bottom:5px;display: none;z-index: 9;">
+<h3 style="text-align: center;">نية العمرة وحدها ثم الحج</h3>
+</section>
+<script>
+  function shfct1(){
+    document.getElementById("card2").style.display="inline-block";
+  }
+</script>
+</div>  
+<!---///////////////////////////////////////////////-->
+ <div style="text-align: center;position: relative;top: 200px;display: block;"> <button onclick="shfct2()" style="background-color:#af5f61 ; width: 200px;height: 50px;border-radius: 20px;">
+  <h4 style="color:white;">القران</h4></button> 
+  <section class="card" id="card3" style="width: 400px;height: 80px; position: absolute;left: 800px;top:10px;display: none;z-index: 9;border-radius: 20px;">
+    <h3 style="text-align: center;">نية الحج و العمرة معا بعد يوم التروية</h3>
+  </section>
+  <script>
+    function shfct2(){
+      document.getElementById("card3").style.display="inline-block";
+    }
+  </script>
+  </div> 
+</section>
+<!----------------------------------------------SECTION 2------------------------------------------------------->
+<section style="width: 90%;height: 3000px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 50px;">
 
-     </section>
-    </body>
- </html>
+    <h1 style="text-align: center;font-weight:bold;color: #af5f61;">مراحل الحج</h1>
+
+<div class="card-container">
+
+<div class="card" style="height: 500px;">
+ <div class="card-count-container">
+   <div class="card-count">1</div>
+ </div>
+ <img src="/images/2.png" style="position: relative;right: 10px; width:70%;height: 50%;bottom: 200px;"> 
+
+ <div class="card-content" style="position: relative;bottom: 150px;">
+   <h2>الاحرام</h2>
+<p style="text-align: center;">  .و يعني النية في دخول النسك و ذلك في أشهر الحج
+   و هي :شوال، ذو القعدة، و العشر الأوائل من ذي الحجة</p>
+  </div>
+ 
+ <div class="card-footer" style="position: relative;bottom: 100px;">
+   <a onclick="funct();" href="#" ><h2 style="text-align: center; position: relative;bottom: 20px;color: white;">توجيهات الاحرام</h2></a>
+  </div>
+    
+</div>
+<section class="card" id="tawjih" style="display: none; width: 600px; height: 500px;background-color: #f8f4f0;box-shadow: 5px 10px rosybrown;position: absolute;left: 500px;bottom: 2080px;" >
+  <h2>Malika</h2>
+  <h3 style="position: relative;top: 400px;text-align: center;">للمزيد :<a href="/register">اشتراك</a></h3>
+  </section>
+  <script>
+    function funct(){
+      document.getElementById("tawjih").style.display="block"
+    }
+  </script>
+
+
+
+<div class="card" style="height: 500px;">
+ <div class="card-count-container">
+   <div class="card-count" style="background-color: #fec22f;">2</div>
+ </div>
+ <img src="/images/3.png" style="position: relative;right: 10px; width:70%;height: 40%;bottom: 200px;"> 
+ <div class="card-content" style="position: relative;bottom: 150px;">
+  <h2>الوقوف بعرفة</h2>
+<p style="text-align: center;">ركن الحج الأعظم وأبرز خطوات الحج وبدونه لا يصحّ الحج، ويبدأ الحجاج بالدفع نحو جبل عرفة من بعد طلوع شمس التاسع من ذي الحجة، وينتهي بغروب شمس ذلك اليوم</p>
+</div>
+<div class="card-footer" style="position: relative;bottom: 100px;background-color: #fec22f;">
+  <a href="#" onclick="funct2();"><h2 style="text-align: center; position: relative;bottom: 20px;color: white;">توجيهات الوقوف بعرفة</h2></a>
+</div>
+</div>
+<section class="card" id="tawjih2" style="display: none; width: 600px; height: 500px;background-color: #f8f4f0;box-shadow: 5px 10px rosybrown;position: absolute;left: 500px;bottom: 1560px;" >
+  <h2>Malika</h2>
+  <h3 style="position: relative;top: 400px;text-align: center;">للمزيد :<a href="/register">اشتراك</a></h3>
+  </section>
+  <script>
+    function funct2(){
+      document.getElementById("tawjih2").style.display="block"
+    }
+  </script>
+
+
+
+
+
+<div class="card" style="height:500px;">
+ <div class="card-count-container">
+   <div class="card-count" style="background-color: aqua;">3</div>
+ </div>
+ <img src="/images/4.png" style="position: relative;right: 10px; width:70%;height: 40%;bottom: 200px;"> 
+ <div class="card-content" style="position: relative;bottom: 150px;">
+   <h2>طواف الافاضة</h2>
+   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste vel accusamus sequi laboriosam voluptatibus placeat omnis magni, at ducimus nesciunt? Tempora inventore tempore iure suscipit molestiae. Cum, ab labore?
+ </div>
+ <div class="card-footer" style="position: relative;bottom: 100px;background-color: aqua;">
+  <a href="#" onclick="funct3();" ><h2 style="text-align: center; position: relative;bottom: 20px;color: white;">توجيهات طواف الافاضة</h2></a>
+</div>
+</div>
+<section class="card" id="tawjih3" style="display: none; width: 600px; height: 500px;background-color: #f8f4f0;box-shadow: 5px 10px rosybrown;position: absolute;left: 500px;bottom: 1040px;" >
+  <h2>Malika</h2>
+  <h3 style="position: relative;top: 400px;text-align: center;">للمزيد :<a href="/register">اشتراك</a></h3>
+  </section>
+  <script>
+    function funct3(){
+      document.getElementById("tawjih3").style.display="block"
+    }
+  </script>
+
+
+
+
+<div class="card" style="height:500px;">
+  <div class="card-count-container">
+    <div class="card-count" style="background-color: aqua;">4</div>
+  </div>
+  <img src="/images/4.png" style="position: relative;right: 10px; width:70%;height: 40%;bottom: 200px;"> 
+  <div class="card-content" style="position: relative;bottom: 150px;">
+    <h2>طواف الافاضة</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste vel accusamus sequi laboriosam voluptatibus placeat omnis magni, at ducimus nesciunt? Tempora inventore tempore iure suscipit molestiae. Cum, ab labore?
+  </div>
+  <div class="card-footer" style="position: relative;bottom: 100px;background-color: aqua;">
+   <a href="#" onclick="funct3();" ><h2 style="text-align: center; position: relative;bottom: 20px;color: white;">توجيهات طواف الافاضة</h2></a>
+ </div>
+ </div>
+
+
+
+
+
+ <div class="card" style="height:500px;">
+  <div class="card-count-container">
+    <div class="card-count" style="background-color: aqua;">5</div>
+  </div>
+  <img src="/images/4.png" style="position: relative;right: 10px; width:70%;height: 40%;bottom: 200px;"> 
+  <div class="card-content" style="position: relative;bottom: 150px;">
+    <h2>طواف الافاضة</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste vel accusamus sequi laboriosam voluptatibus placeat omnis magni, at ducimus nesciunt? Tempora inventore tempore iure suscipit molestiae. Cum, ab labore?
+  </div>
+  <div class="card-footer" style="position: relative;bottom: 100px;background-color: aqua;">
+   <a href="#" onclick="funct3();" ><h2 style="text-align: center; position: relative;bottom: 20px;color: white;">توجيهات طواف الافاضة</h2></a>
+ </div>
+ </div>
+</div>
+</section>
+ 
+<!-- Footer ------------------------------------------------------------------------------->
+<footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 500px;" >
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+       <h5 style="text-align:center; position: relative;top: 30px;">حمل تطبيق حجتي مجانا على</h5>
+       <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 300px;"></a>
+
+        <!-- Content -->
+        <h5 style="text-align:justify;position: relative;bottom: 45px;left: 30px;">اشترك للمزيد</h5>
+        <a style="text-decoration: none;position: relative;bottom: 35px;left: 30px;" class="nav-link" href="/SignUp"  >
+          <button type="button" class="btn btn-default" style="width: 100px;background-color: white;"> 
+          اشتراك
+          </button></a>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+
+
+</body>
+</html>
