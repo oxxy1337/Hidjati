@@ -5,7 +5,7 @@ import 'package:school/objects/ApiResponce.dart';
 import 'package:school/objects/User.dart';
 
 class UserServices {
-  static const api = '';
+  static const api = 'http://da97ab72.ngrok.io';
 
   static Future<ApiResponce<User>> getUser(String userId) {
     return http.get(api + "/admin/users/" + userId).then((data) {
@@ -50,17 +50,14 @@ class UserServices {
         ApiResponce<User>(error: true, error_msg: "something went wrong"));
   }
 
-  static Future<ApiResponce<User>> registerUser(
-      TextEditingController uname,
-      TextEditingController mail,
-      TextEditingController gend,
-      TextEditingController pass) {
+  static Future<ApiResponce<User>> registerUser(TextEditingController uname,
+      TextEditingController mail, String gend, TextEditingController pass) {
     final user = RegisterUser(
         username: uname.text,
         email: mail.text,
-        gender: gend.text,
+        gender: gend,
         password: pass.text);
-    return http.post(api + '/user/register', body: user).then((data) {
+    return http.post(api + '/user/register', body: user.toJson()).then((data) {
       if (data.statusCode == 200) {
         final jsonData = json.decode(data.body);
         final user = User(

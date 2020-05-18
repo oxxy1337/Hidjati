@@ -17,14 +17,14 @@ module.exports = {
         })
         .then((resp)=>{
             req.login(resp.data, (err)=>{
-                if(!err) res.status(200).render('/profile', {data: resp.data});
-                else console.log(err); 
+                if(!err) return res.status(200).redirect('/');
+                console.log(err); 
             });
         })
         .catch(next);
     },
     redirectIfLoggedIn: (req, res, next)=>{
-        if(req.user) return res.render('/profile', {data: req.user});
+        if(req.user) return res.redirect('/');
         next();
     },
     redirectIfNotLoggedIn: (req, res, next)=>{
