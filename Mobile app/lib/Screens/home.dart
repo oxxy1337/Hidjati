@@ -28,15 +28,19 @@ class Home_main extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       home: new Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Color(0xfff5ebec),
+          color: Color(0xffaf5f63),
           items: <Widget>[
-            Icon(Icons.add, size: 30),
-            Icon(Icons.list, size: 30),
-            Icon(Icons.compare_arrows, size: 30),
-            Icon(Icons.kitchen, size: 30),
+
+            Icon(Icons.home, size: 30),
+            Icon(Icons.local_library, size: 30),
+            Icon(Icons.map, size: 30),
+            Icon(Icons.person, size: 30),
+            Icon(Icons.notifications_active, size: 30),
+
           ],
           onTap: (index) {
             //Handle button tap
@@ -56,7 +60,7 @@ class Home_main extends State<Home> {
                 Expanded(
                   child: new IconButton(
                     icon: Image.asset('assets/images/omra.png'),
-                    iconSize: 100,
+                    iconSize: 150,
                     onPressed: () {
                       Navigator.of(context).push(
                         new MaterialPageRoute(
@@ -71,7 +75,7 @@ class Home_main extends State<Home> {
                 Expanded(
                   child: new IconButton(
                     icon: Image.asset('assets/images/hadj.png'),
-                    iconSize: 100,
+                    iconSize: 150,
                     onPressed: () {
                       Navigator.of(context).push(
                         new MaterialPageRoute(
