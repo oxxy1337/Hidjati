@@ -64,7 +64,7 @@ app.route('/Go')
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
 
-/* app.route('/home')
+ /*app.route('/home')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res)=> res.render('home')); */
 
