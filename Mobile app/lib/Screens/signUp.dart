@@ -72,7 +72,7 @@ class SupState extends State<Sup> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(20,20,20,0),
+                      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                       child: TextFormField(
                         autofocus: false,
                         controller: emailController,
@@ -122,7 +122,7 @@ class SupState extends State<Sup> {
                       ),
                     ),
                     Container(
-                        padding:EdgeInsets.fromLTRB(20, 10, 20, 0),
+                        padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
                         margin: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 5),
                         decoration: ShapeDecoration(
                           color: Colors.white,
@@ -144,6 +144,7 @@ class SupState extends State<Sup> {
                           onChanged: (String thegender) {
                             setState(() {
                               gselected = thegender;
+                              sexe = thegender == 'ذكر' ? 'male' : 'female';
                             });
                           },
                           value: gselected,
@@ -169,7 +170,7 @@ class SupState extends State<Sup> {
                             ApiResponce resp = await UserServices.registerUser(
                                 nameController,
                                 emailController,
-                                genderController,
+                                sexe,
                                 passwordController);
                             if (!resp.error) {
                               Navigator.pushReplacement(

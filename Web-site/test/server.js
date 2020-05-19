@@ -48,22 +48,25 @@ app.set('view engine','ejs');
 
 
 app.route('/')
-.all(userController.redirectIfLoggedIn)
-.get((_, res) => {res.render('index')});
+//.all(userController.redirectIfLoggedIn)
+.get((req, res) => {
+    if(!req.user) return res.render('index');
+    return res.render('home', {data: req.user});
+});
 
 app.route('/profile')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('Profile'));
 
 app.route('/Go')
-//.all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('GuideOmra'));
 
 app.route('/Gh')
-//.all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('GuideHadj'));
-app.route('/home')
-.get((_,res)=>res.render('home'))
+
+/* app.route('/home')
+.all(userController.redirectIfNotLoggedIn)
+.get((_, res)=> res.render('home')); */
 
 app.route('/login')
 .all(userController.redirectIfLoggedIn)
