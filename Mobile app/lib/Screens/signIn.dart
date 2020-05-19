@@ -47,6 +47,9 @@ class SigninformState extends State<Signinform> {
                         controller: nameController,
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.person),
+                          filled: true,
+                          fillColor: Colors.white,
+
                           border: OutlineInputBorder(
                             borderRadius: const BorderRadius.all(
                                 const Radius.circular(50.0)),
@@ -71,6 +74,9 @@ class SigninformState extends State<Signinform> {
                           controller: passwordController,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock),
+                            filled: true,
+                            fillColor: Colors.white,
+
                             border: OutlineInputBorder(
                               borderRadius: const BorderRadius.all(
                                   const Radius.circular(50.0)),
@@ -101,12 +107,14 @@ class SigninformState extends State<Signinform> {
                       ),
                     ),
                     Container(
+                        height: 150,
+                        width: 150,
                         padding: EdgeInsets.fromLTRB(50, 80, 50, 0),
                         child: RaisedButton(
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(18.0)),
-                          textColor: Color(0xff4e7a79),
-                          color: Color(0xff7fe0cd),
+                          textColor: Color(0xfff5ebec),
+                          color: Color(0xffaf5f63),
                           child: Text(
                             'تسجيل الدخول',
                             style: TextStyle(
@@ -133,7 +141,7 @@ class SigninformState extends State<Signinform> {
                           child: Row(
                             children: <Widget>[
                               FlatButton(
-                                  textColor: Color(0xff00765e),
+                                  textColor: Color(0xffaf5f63),
                                   child: Text(
                                     'اشتراك',
                                     style: TextStyle(

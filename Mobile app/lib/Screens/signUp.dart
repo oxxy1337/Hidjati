@@ -52,6 +52,8 @@ class SupState extends State<Sup> {
                         controller: nameController,
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.person),
+                          filled: true,
+                          fillColor: Colors.white,
                           border: OutlineInputBorder(
                             borderRadius: const BorderRadius.all(
                                 const Radius.circular(50.0)),
@@ -70,12 +72,14 @@ class SupState extends State<Sup> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
+                      padding: EdgeInsets.fromLTRB(20,20,20,0),
                       child: TextFormField(
                         autofocus: false,
                         controller: emailController,
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.email),
+                          filled: true,
+                          fillColor: Colors.white,
                           border: OutlineInputBorder(
                             borderRadius: const BorderRadius.all(
                                 const Radius.circular(50.0)),
@@ -90,7 +94,7 @@ class SupState extends State<Sup> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
+                      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                       child: TextFormField(
                         autofocus: false,
                         //obscureText: true,
@@ -98,6 +102,8 @@ class SupState extends State<Sup> {
                         controller: passwordController,
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.lock),
+                          filled: true,
+                          fillColor: Colors.white,
                           border: OutlineInputBorder(
                             borderRadius: const BorderRadius.all(
                                 const Radius.circular(50.0)),
@@ -116,9 +122,10 @@ class SupState extends State<Sup> {
                       ),
                     ),
                     Container(
-                        padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
-                        margin: EdgeInsetsDirectional.fromSTEB(20, 5, 20, 5),
+                        padding:EdgeInsets.fromLTRB(20, 10, 20, 0),
+                        margin: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 5),
                         decoration: ShapeDecoration(
+                          color: Colors.white,
                           shape: RoundedRectangleBorder(
                             side: BorderSide(
                                 style: BorderStyle.solid, width: 0.5),
@@ -142,12 +149,14 @@ class SupState extends State<Sup> {
                           value: gselected,
                         )),
                     Container(
+                        height: 90,
+                        width: 90,
                         padding: EdgeInsets.fromLTRB(50, 20, 50, 0),
                         child: RaisedButton(
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(18.0)),
-                          textColor: Color(0xff4e7a79),
-                          color: Color(0xff7fe0cd),
+                          textColor: Color(0xfff5ebec),
+                          color: Color(0xffaf5f63),
                           child: Text(
                             'تسجيل ',
                             style: TextStyle(
@@ -178,7 +187,7 @@ class SupState extends State<Sup> {
                         child: Row(
                           children: <Widget>[
                             FlatButton(
-                              textColor: Color(0xff00765e),
+                              textColor: Color(0xffaf5f63),
                               child: Text(
                                 'دخول',
                                 style: TextStyle(
