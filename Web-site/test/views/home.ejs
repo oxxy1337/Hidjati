@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>حجتي|Home</title>
+    <title>حجتي | Home</title>
 
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -128,14 +128,33 @@
       </div>
     </section>
     <!--SECTION4--------------------------------------------------------------------------------------------- -->
-    <section style="width: 90%;height: 400px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 130px;">
+    <section style="width: 90%;height: 550px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 130px;">
     <div class="container">
     <form >
-      <h4 style="text-align: center;color: #af5f61;">اترك لنا تعليق</h4>
-      <textarea id="subject" name="subject" placeholder=".........................................................................................................................................................كتابة....................................................................................................................................................." 
-      style="height:200px;position: relative;top:30px;"></textarea>
+      <h4 style="position: relative;left: 220px;;color: #af5f61;">اترك لنا تعليق </h4>
+      <h4 style="position: relative;left:840px;bottom:30px;color: #af5f61;">كيف تقيم حجتي</h4>
+      <div class="padding">
+        <div class="col-md-6">
+            <div class="box box-orange box-example-1to10">
+                <div class="box-header">التقييم من 1 الى 5</div>
+                <div class="box-body"> <select id="example-1to10" name="rating" autocomplete="off">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        </select>
+                        </div>
+                  </div>
+                 </div>
+              </div> 
+      <h6 style="position: relative;left: 250px;bottom: 150px;">الموضوع</h6>
+      <textarea name="subject" placeholder="ادخل الموضوع" style="height: 50px;position: relative;bottom: 150px;"></textarea>
+      <h6 style="position: relative; bottom: 150px;left:250px;">المحتوى</h6>
+      <textarea id="subject" name="content" placeholder="...........................................................................كتابة..................................................................." 
+      style="height:200px;position: relative;bottom: 150px;"></textarea>
   
-      <input type="submit" value="ارسال" style="position: relative;top:40px">
+      <input type="submit" value="ارسال" style="position: relative;bottom:100px;right:300px;">
   
     </form>
     </div>
@@ -229,8 +248,22 @@
     </footer>
     <!-- Footer -->
      <script>
-      $('.carousel').carousel()
+      $('.carousel').carousel();
+      $(function() {
+function ratingEnable() {
+$('#example-1to10').barrating('show', {
+theme: 'bars-1to10'
+});
+
+
+}
+
+ratingEnable();
+});
     </script>
    <!---Boostrap libraries-->
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
+
     </body>
     </html>
