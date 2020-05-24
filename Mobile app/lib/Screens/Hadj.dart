@@ -7,362 +7,165 @@ import 'package:school/objects/TodoObject.dart';
 import 'package:school/pages/Details.dart';
 
 
-class Hadj extends StatefulWidget {
 
 
+
+class Homehadj extends StatefulWidget {
   @override
-  _SecondPageState createState() => new _SecondPageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _SecondPageState extends State<Hadj> with TickerProviderStateMixin {
-  ScrollController scrollController;
-  Color backgroundColor;
-  LinearGradient backgroundGradient;
-  Tween<Color> colorTween;
-  int currentPage = 0;
-  Color constBackColor;
+class _HomePageState extends State<Homehadj> {
+  List<SpecialityModel> specialities;
 
-  @override
-  void initState() {
-    super.initState();
-    colorTween = ColorTween(begin: todos[0].color, end: todos[0].color);
-    backgroundColor = todos[0].color;
-    backgroundGradient = todos[0].gradient;
-    scrollController = ScrollController();
-    scrollController.addListener(() {
-      ScrollPosition position = scrollController.position;
-//      ScrollDirection direction = position.userScrollDirection;
-      int page = position.pixels ~/ (position.maxScrollExtent / (todos.length.toDouble() - 1));
-      double pageDo = (position.pixels / (position.maxScrollExtent / (todos.length.toDouble() - 1)));
-      double percent = pageDo - page;
-      if (todos.length - 1 < page + 1) {
-        return;
-      }
-      colorTween.begin = todos[page].color;
-      colorTween.end = todos[page + 1].color;
-      setState(() {
-        backgroundColor = colorTween.transform(percent);
-        backgroundGradient = todos[page].gradient.lerpTo(todos[page + 1].gradient, percent);
-      });
-    });
-  }
 
-  @override
-  void dispose() {
-    super.dispose();
-    scrollController.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
-    final double _width = MediaQuery.of(context).size.width;
+    return   Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/Rectangle.png"),
+                  fit: BoxFit.cover,)
+            ),
 
-    return Container(
-      decoration: BoxDecoration(gradient: backgroundGradient),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          title: Text("حج"),
-          centerTitle: true,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
 
-          actions: <Widget>[
-
-          ],
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Spacer(),
-            Padding(
-              padding: EdgeInsets.only(left: 50.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  boxShadow: [BoxShadow(color: Colors.black38, offset: Offset(5.0, 5.0), blurRadius: 15.0)],
-                  shape: BoxShape.circle,
-                ),
-
-              ),
-            ),
-            Spacer(
-              flex: 2,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 50.0),
-              child: Text(
-                "نتمنى لك حج مبرور وسعي مشكور",
-                style: TextStyle(color: Colors.white, fontSize: 20.0,fontFamily: 'AeCortoba'),
-              ),
-            ),
-            Spacer(),
-            Padding(
-              padding: EdgeInsets.only(left: 50.0),
-              child: Text(
-                "نتمنى لك حج مبرور",
-                style: TextStyle(color: Colors.white70,fontFamily: 'AeCortoba'),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 50.0),
-              child: Text(
-                "لا تنسى الالتزام و قراءة الاحاديث",
-                style: TextStyle(color: Colors.white70),
-              ),
-            ),
-            Spacer(
-              flex: 2,
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 50.0,
-              ),
-              child: RichText(
-                text: TextSpan(
-                  children: [
-
-                    TextSpan(
-                      text: DateFormat.yMMMMd().format(DateTime.now()),
-                      style: TextStyle(
-                        color: Colors.white,
+                    child: FittedBox(
+                      child: Center(
+                        child: Text(
+                          "انواع الحج",
+                          style: TextStyle(
+                              color: Color(0xffaf5f63),fontFamily: 'AeCortoba',
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.italic,
+                              fontSize: 300),
+                        ),
                       ),
                     ),
-                    TextSpan(
-                      text: " :  اليوم ",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/تمتع');
+                    },
+                    child: Container(
+                      //height: size.height * 0.2,
+                      // width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.all(
+                          Radius.circular(30.0),
+                        ),
+                        color: Color(0xffddc2be),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Spacer(),
-            Expanded(
-              flex: 20,
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  TodoObject todoObject = todos[index];
-                  double percentComplete = todoObject.percentComplete();
-
-                  return Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 30.0),
-
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          PageRouteBuilder(
-                            pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) => DetailPage(todoObject: todoObject),
-                            transitionDuration: Duration(milliseconds: 1000),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0),
-                            boxShadow: [BoxShadow(color: Colors.black.withAlpha(70),
-                                offset: Offset(3.0, 10.0),
-                                blurRadius: 15.0)
-                            ]),
-                        height: 250.0,
-                        child: Stack(
+                      padding: EdgeInsets.all(20.0),
+                      child: FittedBox(
+                        child: Column(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Hero(
-                              tag: todoObject.uuid + "_background",
-                              child: Center(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10.0),
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/images/everything.png"),
-                                        fit: BoxFit.cover,
-                                      )
-                                  ),
-                                ),
-                              ),
+                            Text(
+                              "حج الافراد",
+                              style: TextStyle(
+                                  color: Color(0xfff1e4d4),fontFamily: 'AeCortoba',
+                                  fontWeight: FontWeight.w900,
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 40),
                             ),
-                            Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Expanded(
-                                    flex: 10,
-                                    child: Row(
 
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Stack(
-                                          children: <Widget>[
-
-                                            Hero(
-                                              tag: todoObject.uuid + "_backIcon",
-                                              child: Material(
-                                                type: MaterialType.transparency,
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius: BorderRadius.circular(10.0),
-                                                      image: DecorationImage(
-                                                        image: AssetImage("assets/images/be.png"),
-                                                        fit: BoxFit.cover,
-                                                      )
-                                                  ),
-                                                  height: 0,
-                                                  width: 0,
-                                                  child: IconButton(
-                                                    icon: Icon(Icons.arrow_back),
-                                                    onPressed: null,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                          ],
-                                        ),
-                                        Spacer(),
-
-                                      ],
-                                    ),
-                                  ),
-                                  Hero(
-                                    tag: todoObject.uuid + "_number_of_tasks",
-                                    child: Material(
-                                        color: Colors.transparent,
-                                        child: Text(
-                                          todoObject.taskAmount().toString() + " توجيهات",
-                                          style: TextStyle(),
-                                          softWrap: false,
-                                        )),
-                                  ),
-                                  Spacer(),
-                                  Hero(
-                                    tag: todoObject.uuid + "_title",
-                                    child: Material(
-                                      color: Colors.transparent,
-                                      child: Text(
-                                        todoObject.title,
-                                        style: TextStyle(fontSize: 30.0),
-                                        softWrap: false,
-                                      ),
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Hero(
-                                    tag: todoObject.uuid + "_progress_bar",
-                                    child: Material(
-                                      color: Colors.transparent,
-                                      child: Row(
-                                        children: <Widget>[
-                                          Expanded(
-                                            child: LinearProgressIndicator(
-                                              value: percentComplete,
-                                              backgroundColor: Colors.grey.withAlpha(50),
-                                              valueColor: AlwaysStoppedAnimation<Color>(todoObject.color),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.only(left: 5.0),
-                                            child: Text((percentComplete * 100).round().toString() + "%"),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
                           ],
                         ),
                       ),
                     ),
-                  );
-                },
-                padding: EdgeInsets.only(left: 40.0, right: 40.0),
-                scrollDirection: Axis.horizontal,
-                physics: _CustomScrollPhysics(),
-                controller: scrollController,
-                itemExtent: _width - 80,
-                itemCount: todos.length,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/Medium');
+                    },
+                    child: Container(
+                      // height: size.height * 0.2,
+                      // width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.all(
+                          Radius.circular(30.0),
+                        ),
+                        color: Color(0xffddc2be),
+                      ),
+                      padding: EdgeInsets.all(30.0),
+                      child: FittedBox(
+                        child: Column(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Text(
+                              "حج القران",
+                              style: TextStyle(
+                                  color: Color(0xfff1e4d4),fontFamily: 'AeCortoba',
+                                  fontWeight: FontWeight.w900,
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 40),
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/Hard');
+                    },
+                    child: Container(
+                      //height: size.height * 0.2,
+                      //width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.all(
+                          Radius.circular(30.0),
+                        ),
+                        color: Color(0xffddc2be),
+                      ),
+                      padding: EdgeInsets.all(20.0),
+                      child: FittedBox(
+                        child: Column(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Text(
+                              "حج التمتع",
+                              style: TextStyle(
+                                  color: Color(0xfff1e4d4),fontFamily: 'AeCortoba',
+                                  fontWeight: FontWeight.w900,
+                                  fontStyle: FontStyle.italic,
+                                  fontSize: 40),
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Spacer(
-              flex: 2,
+          ),
+          Positioned(
+            top: 10,
+            left: 10,
+            child: IconButton(
+              icon: new Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () => Navigator.of(context).pop(),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
-  }
-}
 
-class _CustomScrollPhysics extends ScrollPhysics {
-  _CustomScrollPhysics({
-    ScrollPhysics parent,
-  }) : super(parent: parent);
-
-  @override
-  _CustomScrollPhysics applyTo(ScrollPhysics ancestor) {
-    return _CustomScrollPhysics(parent: buildParent(ancestor));
-  }
-
-  double _getPage(ScrollPosition position) {
-    return position.pixels / (position.maxScrollExtent / (todos.length.toDouble() - 1));
-    // return position.pixels / position.viewportDimension;
-  }
-
-  double _getPixels(ScrollPosition position, double page) {
-    // return page * position.viewportDimension;
-    return page * (position.maxScrollExtent / (todos.length.toDouble() - 1));
-  }
-
-  double _getTargetPixels(ScrollPosition position, Tolerance tolerance, double velocity) {
-    double page = _getPage(position);
-    if (velocity < -tolerance.velocity)
-      page -= 0.5;
-    else if (velocity > tolerance.velocity) page += 0.5;
-    return _getPixels(position, page.roundToDouble());
-  }
-
-  @override
-  Simulation createBallisticSimulation(ScrollMetrics position, double velocity) {
-    if ((velocity <= 0.0 && position.pixels <= position.minScrollExtent) || (velocity >= 0.0 && position.pixels >= position.maxScrollExtent)) return super.createBallisticSimulation(position, velocity);
-    final Tolerance tolerance = this.tolerance;
-    final double target = _getTargetPixels(position, tolerance, velocity);
-    if (target != position.pixels) return ScrollSpringSimulation(spring, position.pixels, target, velocity, tolerance: tolerance);
-    return null;
   }
 }
