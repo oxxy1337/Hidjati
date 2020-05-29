@@ -3,21 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:school/Screens/Hadj.dart';
 import 'package:school/Screens/omra.dart';
 import 'package:school/Screens/CurvedNavigationBar.dart';
+import 'package:school/Screens/signIn.dart';
+import 'package:school/Screens/signUp.dart';
 import 'package:school/objects/User.dart';
 
-class Home extends StatefulWidget {
-  User user;
+class Homevisitor extends StatefulWidget {
 
-  Home(this.user);
 
   @override
-  Home_main createState() => new Home_main(user);
+  Home_visitor createState() => new Home_visitor();
 }
 
-class Home_main extends State<Home> {
-  User user;
+class Home_visitor extends State<Homevisitor> {
 
-  Home_main(this.user);
 
   int count = 0;
   bool isMultiSelectStarted = false;
@@ -36,14 +34,30 @@ class Home_main extends State<Home> {
           items: <Widget>[
 
             Icon(Icons.home, size: 30),
-            Icon(Icons.local_library, size: 30),
-            Icon(Icons.map, size: 30),
-            Icon(Icons.person, size: 30),
-            Icon(Icons.notifications_active, size: 30),
+            Icon(Icons.account_box, size: 30),
+            Icon(Icons.create, size: 30),
+
 
           ],
           onTap: (index) {
-            //Handle button tap
+            if (index==1){  Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return new Signinform();
+                },
+              ),
+
+            );}
+
+            if (index==2){ Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return new Sup();
+                },
+              ),
+
+            );}
+//Handle button tap
           },
         ),
         //body: Container(color: Colors.blueAccent),
@@ -51,9 +65,9 @@ class Home_main extends State<Home> {
         body: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: AssetImage("assets/images/Rectangle.png"),
-            fit: BoxFit.cover,
-          )),
+                image: AssetImage("assets/images/Rectangle.png"),
+                fit: BoxFit.cover,
+              )),
           child: new Center(
             child: Row(
               children: <Widget>[
