@@ -4,9 +4,19 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+@font-face {
+  font-family: "arab";
+  src: url(/fonts/ae_cortoba.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 100;
+}
+*{
+ font-family: "arab";
+}
 
 body {
   margin: 0;
+  
 }
 .zoom {
   transition: transform .2s; /* Animation */

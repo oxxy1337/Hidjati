@@ -20,11 +20,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+   <style>
+     @font-face {
+   font-family: "arab";
+   src: url(/fonts/ae_cortoba.ttf) format("truetype");
+   font-style: normal;
+   font-weight: 100;
+}
+*{
+  font-family: "arab";
+}
+   </style>
   </head>
   <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
     <a class="navbar-brand" href="#" style="position: relative;left:150px">حجتي</a>
@@ -69,11 +75,11 @@
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div class="nav2">
             <h2 style="text-align: center;position:relative;left:130px;color: white; top: 30px; animation: bounce; animation-duration: 5s;">هل ستحج أو تعتمر؟</h2> 
-            <h1 style="text-align: center;position:relative;left:130px;color: white; top: 30px; animation: bounce; animation-duration: 5s;">حجتي</h1>
+            <h1 style="text-align: center;position:relative;left:130px;color: white; top: 30px;font-family:arab; animation: bounce; animation-duration: 5s;">حجتي</h1>
             <h2 style="text-align: center; position:relative;left:130px;color: white; top: 30px;animation: bounce; animation-duration: 5s;">دليلك الشامل لإتمام ذلك</h2>
-            <h4 style="text-align: center;position:relative;left:130px;color: white; top: 70px;">...للمزيد</h4>
-            <a style="text-decoration: none;position: relative;top: 80px;left:230px;" class="nav-link" href="/register"  >
-              <button type="button" class="btn btn-default" style="width: 100px;background-color: white;"> 
+            <h4 style="text-align: center;position:relative;left:130px;color: white; top: 70px;font-family: arab;">...للمزيد</h4>
+            <a style="text-decoration: none;position: relative;top: 80px;left:250px;" class="nav-link" href="/register"  >
+              <button type="button" class="btn btn-default" style="width: 100px;background-color: white;font-family: arab;"> 
               اشتراك
               </button></a>
            
@@ -91,7 +97,7 @@
   </section>
    <!--SECTION 2------------------------------------------------------------------------------->
     <section style="width: 90%;height: 500px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 20px;">
-      <h2 style="color: #af5f61	; text-align: center;">ما هي وجهتك؟</h2>
+      <h2 class="customfont" style="color: #af5f61	; text-align: center;">ما هي وجهتك؟</h2>
       <a href="/Go"><img class="zoom" style="width: 410px;height: 400px; float: left;position: relative;left: 200px;bottom: 25px;" src="/images/4.png"></a>
 
      <h2 style="position: relative;left: 500px;top: 390px;color: #af5f61;">حج </h2>
@@ -149,7 +155,7 @@
           <!-- Grid column -->
           <div class="col-md-6 mt-md-0 mt-3">
            <h5 style="text-align:center; position: relative;top: 30px;">حمل تطبيق حجتي مجانا على</h5>
-           <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 300px;"></a>
+           <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
 
             <!-- Content -->
             <h5 style="text-align:justify;position: relative;bottom: 45px;left: 30px;">اشترك للمزيد</h5>
