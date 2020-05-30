@@ -9,6 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/aos/dist/aos.css">
     <link href="/stylesheets/application.css" rel="stylesheet">
+    <link href="/stylesheets/ifrad.css" rel="stylesheet">
 
     <!-- Boostrap libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -22,77 +23,7 @@
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-<style>
-    .box {
-  width: 40%;
-  height: 200px;
-  background: orange;
-  border-radius: 2px;
-  padding: 10px;
-  color: white;
-  text-align: center;
-  position: relative;
-  top: 30px;
-  left: 50px;
-}
 
-.arrows {
-	 position: relative;
-	/**/
-	 position: absolute;
-	 top: 50%;
-	 left: 50%;
-	 width: 80px;
-	/**/
-	 height: 80px;
-	 transform: translate(-50%, -50%);
-}
- .arrows:before {
-	 content: '';
-     position: absolute;
-     top:200px;
-	 width: 100%;
-	 height: 100%;
-	 border-left: 26.6666666667px solid rgba(0, 0, 0, 0.7);
-	 border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0.7);
-	 transform: translate(26.6666666667px, 106.6666666667px) rotate(-45deg);
-	 animation: arrows 3s linear infinite;
-}
-.arrows:after {
-	 content: '';
-     position: absolute;
-     top: 200px;
-	 width: 100%;
-	 height: 100%;
-	 border-left: 26.6666666667px solid rgba(0, 0, 0, 0.7);
-	 border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0.7);
-	 transform: translate(53.3333333333px, 0px) rotate(-45deg);
-	 animation: arrows 3s linear infinite -1.5s;
-}
- @keyframes arrows {
-	 0% {
-		 border-left: 26.6666666667px solid rgba(0, 0, 0, 0);
-		 border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0);
-		 transform: translate(-13.3333333333px, -53.3333333333px) rotate(-45deg);
-	}
-	 10%, 90% {
-		 border-left: 26.6666666667px solid rgba(0, 0, 0, 0);
-		 border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0);
-	}
-	 50% {
-		 border-left: 26.6666666667px solid rgba(0, 0, 0, 0.7);
-		 border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0.7);
-		 transform: translate(-13.3333333333px, 0px) rotate(-45deg);
-	}
-	 100% {
-		 border-left: 26.6666666667px solid rgba(0, 0, 0, 0);
-		 border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0);
-		 transform: translate(-13.3333333333px, 53.3333333333px) rotate(-45deg);
-	}
-}
- 
-
-</style>
 
 </head>
 <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
@@ -136,17 +67,54 @@
     </header>
     <!--SECTION 1------------------------------------------------------------------------------>
   <section style="height: 600px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">
-    <h1 style="text-align: center;color:white; position: relative;top: 150px;">المخطط المنطقي للحاج المفرد </h1>
+    <h1 style="text-align: center;color:white; position: relative;top: 100px;">المخطط المنطقي للحاج المفرد </h1>
      
      <h3 style="text-align: center;color: white;position: relative;top: 350px;">بدء المراحل</h3>
+     <div style="display: inline;position: relative;top: 120px;left: 150px;">
+       <img src="/images/2.png" width="200" height="150">
+       <img src="/images/4.png" width="200" height="150" >
+       <img src="/images/3.png" width="200" height="150">
+       <img src="/images/1.png" width="200" height="150">
+       <img src="/images/5.png" width="200" height="150">
+     </div>
     <div class="arrows"></div>
 </section>  
     
     
-    <section  style="height: 800px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px;position: relative;left: 75px;top:40px;background-color: rosybrown;" >
-        <div class="box b" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-        <h2>Animated using <code>zoom-in</code>.</h2>
+    <section  style="height: 1500px;width: 90%; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top:40px;" >
+        <h2 data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic" style="color: #af5f61;position: relative;top: 150px;left: 800px;">قبل الثامن من ذي الحجة </h2>
+       
+        <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
+            <div class="inputGroup" style="display: block;width: 250px;">
+              <input id="option1" name="option1" type="checkbox"/>
+              <label for="option1">أتممت هذه المرحلة</label>
+            </div>
+        </form>
+        <div class="box" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
+        <h2>الإحرام من الميقات بنية الحج فقط و التلبية بعد ذلك</h2>
+        <h3>&#8595;</h3>
+        <h2>طواف القدوم
+            ركعتا الطواف
+            الملتزم - زمزم</h2>
+        <h3>&#8595;</h3>
+        <h2>يبقى محرماً في مكة حتى الثامن من ذي الحجة </h2>
         </div>
+          <!------------------------------------------------------------------->
+      <h2 data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic" style="color: #af5f61;position: relative;top:300px;left: 150px;">الثامن من ذي الحجة </h2>
+      <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
+        <div class="inputGroup2" style="display: block;width: 250px;">
+          <input id="option2" name="option1" type="checkbox"/>
+          <label for="option2">أتممت هذه المرحلة</label>
+        </div>
+    </form>
+      <div class="boxx" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
+        <h1 style="position: relative;top: 80px;">ينطلق إلى منى بعد صلاة الفجر يصلي بها ( الظهر – العصر – المغرب – العشاء – وفجر اليوم التاسع) </h1 style="position: relative;top: 80px;">
+    </div>
+
+
+
+
+
      </section>
 
 
