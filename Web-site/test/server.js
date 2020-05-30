@@ -66,6 +66,8 @@ app.route('/Gh')
 
 app.route('/init')
 .get((_, res) => res.render('init'));
+app.route('/ifrad')
+.get((_, res) => res.render('./UserHadj/Ifrad'));
 
  app.route('/agencies')
 .all(userController.redirectIfNotLoggedIn)
