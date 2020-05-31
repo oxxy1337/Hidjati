@@ -63,12 +63,17 @@ app.route('/Go')
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
-
+/////////////////////////////////////////////
 app.route('/init')
 .get((_, res) => res.render('init'));
 app.route('/ifrad')
 .get((_, res) => res.render('./UserHadj/Ifrad'));
+app.route('/ikran')
+.get((_, res) => res.render('./UserHadj/I9ran'));
+app.route('/tama')
+.get((_, res) => res.render('./UserHadj/Tamato3'));
 
+/////////////////////////////////////////////////
  app.route('/agencies')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res)=> res.render('Agencies')); 
