@@ -72,6 +72,8 @@ app.route('/ikran')
 .get((_, res) => res.render('./UserHadj/I9ran'));
 app.route('/tama')
 .get((_, res) => res.render('./UserHadj/Tamato3'));
+app.route('/omra')
+.get((_, res) => res.render('UserOmra'));
 
 /////////////////////////////////////////////////
  app.route('/agencies')
