@@ -20,7 +20,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="../public/css/slider.css" />
+    <script src="../public/js/slider.js"></script>
+    
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -45,7 +47,8 @@
           </button></a>
         </li>
         <li class="nav-item" style="position: relative;left:1000px;">
-          <a style="text-decoration: none;" class="nav-link" href="#" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
+          <a style="text-decoration: none;" class="nav-link" href="#" >  
+         <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
           <h6 style="color: white;">نصائح و توجيهات</h6>
           </button></a>
         </li>
@@ -71,16 +74,19 @@
     <header>
     </header>
    <!--SECTION 1------------------------------------------------------------------------------->
-    <section style="width: 90%;height: 1500px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;">
-      <a style="text-decoration: none;" class="nav-link" href="#" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 50px; width: 200px; position: relative;left:900px;top: 400px;" class="btn btn-default"> 
-        <h4
-         style="color: white;">التوجه الى المراحل</h4
-          >
+    <section style="width: 90%;height: 1300px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;">
+      
+     <a href="#"><img src="/images/way.jpg" style="width: 400px;height: 400px;position: relative;top: 50px;left: 850px;    box-shadow: 20px 20px 40px 20px #af5f61;
+      "></a> 
+      
+      <a style="text-decoration: none;" class="nav-link" href="#" >
+       <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 50px; width: 200px; position: relative;left:930px;top: 50px;" class="btn btn-default"> 
+        <h4 style="color: white;">التوجه الى المراحل</h4>
         </button></a>
 
-            <hr style="border:none;border-left:1px solid hsla(200, 10%, 50%,100); height: 500px;position: relative;left:700px ;bottom: 50px;">
-            <h3 style="position: relative;left: 160px;top: 140px;color: #af5f61;">اخر اخبار الحج و العمرة</h3> 
-          <div style="background-color: white; width:400px;height: 400px;position: relative;left: 100px;top:150px; border-radius:10px;box-shadow:5px 10px rosybrown;">
+            <hr style="border:none;border-left:1px solid hsla(200, 10%, 50%,100); height: 500px;position: relative;left:700px ;bottom: 450px;">
+            <h3 style="position: relative;left: 160px;bottom: 250px;color: #af5f61;">اخر اخبار الحج و العمرة</h3> 
+          <div style="background-color: white; width:400px;height: 400px;position: relative;left: 100px;bottom: 240px; border-radius:10px;box-shadow:5px 10px rosybrown;">
             <marquee behavior="scroll" direction="up">
               <p style="bottom: 50px;">111111Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Et debitis repudiandae earum corrupti. Mollitia iste facere
@@ -96,8 +102,15 @@
               </marquee>
                <a href="#">   <button class="btn btn-primary" style="position: relative;top: 60px;left: 260px;background-color: #af5f61;" >تصفح المزيد</button></a>
           </div>
-
-
+         <!-------------------------------->
+         <h3 style="position: relative;left: 880px;bottom: 680px;color: #af5f61;">أسئلة شائعة</h3> 
+          <div style="background-color: white; width:700px;height: 400px;position: relative;left: 600px;bottom: 680px; border-radius:10px;box-shadow:5px 10px rosybrown;">
+            <marquee behavior="scroll" direction="left">
+             <h1 style="padding-top: 100px;"> QUESTION 1 </h1>
+              </marquee>
+               <a href="#">   <button class="btn btn-primary" style="position: relative;top: 190px;left: 560px;background-color: #af5f61;" >تصفح الاجوبة</button></a>
+          </div>
+          <!------------------------------>
       <div style="background-color: white;width: 400px;height: 400px;position: absolute;left: 150px;top: 50px;box-shadow: 5px 10px rosybrown;border-radius: 20px;">
          <h5 style="text-align: center;"><%= data.username %>مكان احرام</h5>
          <h4 style="text-align: right;padding-right: 40px;padding-top: 20px;">:البلد</h4>
@@ -266,21 +279,20 @@
 
     </footer>
     <!-- Footer -->
-     <script>
+  <script>
       $('.carousel').carousel();
       $(function() {
-function ratingEnable() {
-$('#example-1to10').barrating('show', {
-theme: 'bars-1to10'
+      function ratingEnable() {
+        $('#example-1to10').barrating('show', {
+      theme: 'bars-1to10'
 
-});
+          });}
+           ratingEnable();
+          });
 
+     
 
-}
-
-ratingEnable();
-});
-    </script>
+  </script>
    <!---Boostrap libraries-->
    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
