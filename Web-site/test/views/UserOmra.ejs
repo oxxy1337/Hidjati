@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حجتي |المعتمر</title>
+    <title>حجتي | المعتمر</title>
 
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,10 +15,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="bower_components/aos/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 <!-- Google Fonts -->
@@ -70,7 +70,7 @@
     <h1 style="text-align: center;color:white; position: relative;top: 100px;">المخطط المنطقي للمعتمر</h1>
      
      <h3 style="text-align: center;color: white;position: relative;top: 350px;">بدء المراحل</h3>
-     <div style="display: inline;position: relative;top: 120px;left: 150px;">
+     <div style="display: inline;position: relative;top: 120px;left: 400px;">
        <img src="/images/2.png" width="200" height="150">
        <img src="/images/4.png" width="200" height="150" >
        <img src="/images/5.png" width="200" height="150">
@@ -79,79 +79,69 @@
 </section>  
     <!--SECTION2-------------------------------------------------------------------------------------------------->
     
-    <section  style="height: 2700px;width: 90%; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top:40px;" >
-       
-        <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-            <div class="inputGroup" style="display: block;width: 250px;">
+    <section  style="height: 600px;width: 90%; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top:40px;" >
+      <button id="prev" disabled="disabled"  class="btn btn-primary" style="position:relative;top: 400px;left:500px" >المرحلة السابقة</button>
+      <button id="next"  class="btn btn-primary" style="position:relative;top: 400px;left:600px">المرحلة التالية</button>
+          <div class="main">
+            <div class="inputGroup current" style="display: block;width: 450px; height: 300px;">
               <input id="option1" name="option1" type="checkbox"/>
               <label for="option1">أتممت هذه المرحلة</label>
-            </div>
-        </form>
-        <div class="box" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic" >
-        <h1>يحرم للعمرة من الميقات بالنية و التلبية</h1>
-        </div>
-          <!------------------------------------------------------------------->
-      <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-        <div class="inputGroup2" style="display: block;width: 250px;">
-          <input id="option2" name="option1" type="checkbox"/>
-          <label for="option2">أتممت هذه المرحلة</label>
-        </div>
-    </form>
-      <div class="boxx" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-          <h1 style="position:relative;top:40px">يطوف طواف العمرة</h1>
-    </div>
+              <h1 style="text-align: center;">يحرم للعمرة من الميقات بالنية و التلبية</h1>
+              <h2 style="position: relative;bottom: 150px;left: 200px;">(1)</h2>
 
-    <!------------------------------------------------------------------------------>
-    <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-        <div class="inputGroup3" style="display: block;width: 250px;">
-          <input id="option3" name="option1" type="checkbox"/>
-          <label for="option3">أتممت هذه المرحلة</label>
+            </div>
+        
+          <!------------------------------------------------------------------->
+        <div class="inputGroup2" style="display: none;width: 450px;height: 300px;">
+          <input id="option2" name="option2" type="checkbox"/>
+          <label for="option2">أتممت هذه المرحلة</label>
+          <h1 style="text-align:center;">يطوف طواف العمرة</h1>
+          <h2 style="position: relative;bottom: 100px;left: 200px;">(2)</h2>
+
         </div>
-    </form>
-      <div class="boxxx" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-       <h1 style="position: relative;top: 40px;">يصلي ركعتي الطواف</h1>
-    </div>   
-    <!---------------------------------------------------------------------------------------->
-    <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-        <div class="inputGroup4" style="display: block;width: 250px;">
+
+          <!------------------------------------------------------------------->
+          <div class="inputGroup3" style="display: none;width: 450px;height: 300px;">
+            <input id="option3" name="option3" type="checkbox"/>
+            <label for="option3">أتممت هذه المرحلة</label>
+            <h1 style="text-align:center;">يصلي ركعتي الطواف</h1>
+            <h2 style="position: relative;bottom: 100px;left: 200px;">(3)</h2>
+
+          </div>
+            <!------------------------------------------------------------------->
+        <div class="inputGroup4" style="display: none;width: 450px;height: 300px;">
           <input id="option4" name="option4" type="checkbox"/>
           <label for="option4">أتممت هذه المرحلة</label>
+          <h1 style="text-align:center;">الملتزم - زمزم</h1>
+          <h2 style="position: relative;bottom: 100px;left: 200px;">(4)</h2>
+
         </div>
-    </form>
-      <div class="boxxxx" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic" >
-        <h1 style="position: relative;top: 40px;">الملتزم - زمزم</h1>
-      </div>
-    <!------------------------------------------------------------------------------------------->
+            <!------------------------------------------------------------------->
+            <div class="inputGroup5" style="display: none;width: 450px;height: 300px;">
+              <input id="option5" name="option5" type="checkbox"/>
+              <label for="option5">أتممت هذه المرحلة</label>
+              <h1 style="text-align:center;">يسعى سعي العمرة</h1>
+              <h2 style="position: relative;bottom: 100px;left: 200px;">(5)</h2>
 
-    <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-        <div class="inputGroup5" style="display: block;width: 250px;">
-          <input id="option5" name="option1" type="checkbox"/>
-          <label for="option5">أتممت هذه المرحلة</label>
-        </div>
-    </form>
-      <div class="boxxxxx" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-        <h1 style="position: relative;top: 40px;">يسعى سعي العمرة</h1>
-      </div>
-  <!---------------------------------------------------------------------------------------------->
-  <form class="form" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-    <div class="inputGroup6" style="display: block;width: 250px;">
-      <input id="option6" name="option4" type="checkbox"/>
-      <label for="option6">أتممت هذه المرحلة</label>
-    </div>
-</form>
-  <div class="bpref" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic" >
-    <h1 style="position: relative;top: 40px;">الملتزم - زمزم</h1>
-  </div>
-  <!---------------------------------------------------------------------------------------------->
-  <div class="bfinal" data-aos="zoom-in" data-aos-duration="3000" data-aos-easing="ease-in-out-cubic">
-   <h3 style="position: relative; top: 20px;">فائدة: إذا كان المعتمر في مكة ويريد أن يؤدي عمرة أخرى فيحرم من مسجد
-        السيدة عائشة رضي الله عنها (التنعيم) ثم يعود إلى مكة للطواف والسعي.</h3>
-</div>
+            </div>
+             <!------------------------------------------------------------------->
+             <div class="inputGroup6" style="display: none;width: 450px;height: 300px;">
+              <input id="option6" name="option6" type="checkbox"/>
+              <label for="option6">أتممت هذه المرحلة</label>
+              <h1 style="text-align:center;">الحلق أو التقصير</h1>
+              <h2 style="position: relative;bottom: 100px;left: 200px;">(6)</h2>
 
+            </div>
+             <!------------------------------------------------------------------->
+             <div class="inputGroup7" style="display: none;width: 450px;height: 300px;">
+              <input id="option7" name="option7" type="checkbox"/>
+              <label for="option7" style="text-align:center;">أتممت العمرة</label>
+               <h4 style="text-align: center;" > إذا كان المعتمر في مكة ويريد أن يؤدي عمرة أخرى فيحرم من مسجد
+                السيدة عائشة رضي الله عنها (التنعيم) ثم يعود إلى مكة للطواف والسعي</h4>
+                <h2 style="position: relative;bottom: 180px;left: 200px;">فائدة</h2>
 
-
-
-     </div>
+               </div>
+          </div>
 
      </section>
   <!-- Footer ------------------------------------------------------------------------------->
@@ -241,9 +231,29 @@
 
 
 
-  <script>
-      AOS.init();
+              <script>
+                  AOS.init();
+                
+                $('#next').click(function() {
+              $('.current').removeClass('current').hide()
+                  .next().show().addClass('current');
+              if ($('.current').hasClass('inputGroup7')) {
+                  $('#next').attr('disabled', true);
+              }
+              $('#prev').attr('disabled', null);
+          });
 
-  </script> 
+          $('#prev').click(function() {
+              $('.current').removeClass('current').hide()
+                  .prev().show().addClass('current');
+              if ($('.current').hasClass('inputGroup')) {
+                  $('#prev').attr('disabled', true);
+              }
+              $('#next').attr('disabled', null);
+          });
+
+
+                                    
+                  </script>
 </body>
 </html>

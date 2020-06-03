@@ -1,78 +1,10 @@
 
-
-.box {
-    width: 40%;
-    height: 150px;
-    background: rosybrown;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    bottom: 30px;
-    left: 70px;
-  }
-  
-  .boxx {
-    width: 40%;
-    height: 150px;
-    background: rosybrown;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    top: 50px;
-    left: 700px;
-  }
-  .boxxx {
-    width: 40%;
-    height: 150px;
-    background: rosybrown;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    top:130px ; 
-    left: 120px;
-  }
-  .boxxxx {
-    width: 40%;
-    height: 150px;
-    background: rosybrown;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    top:180px;
-    left: 700px;
-  }
-  .boxxxxx {
-    width: 40%;
-    height: 150px;
-    background: rosybrown;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    top:300px;
-    left: 100px;
+#div2,#div3{
+    display: none;
 }
-.bpref {
-    width: 40%;
-    height: 150px;
-    background: rosybrown;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    top:400px;
-    left: 700px;
-  }
+
+  
+ 
   .bfinal {
     width: 40%;
     height: 200px;
@@ -85,9 +17,6 @@
     top:600px;
     left: 400px;
 }
-
-
-
 
   .arrows {
        position: relative;
@@ -148,14 +77,18 @@
        background-color: rosybrown;
        display: block;
        position: relative;
-       left: 300px;
-       top: 150px;
+       left: 450px;
+       top: 40px;
        width: 200px;
        border-radius: 20px 10px;
   }
    .inputGroup label {
        padding: 12px 30px;
-       width: 100%;
+       width: 60%;
+       border: 1px solid wheat;
+       position: relative;
+       top: 200px;
+       left:100px;
        display: block;
        text-align: left;
        color: #3c454c;
@@ -242,18 +175,23 @@
        padding: 0 8px;
   }
   /*---------------------------------------------------------------------------------*/
+  
   .inputGroup2 {
     background-color: rosybrown;
     display: block;
     position: relative;
-    right: 380px;
-    top: 200px;
+    left: 450px;
+    top: 40px;
     width: 200px;
     border-radius: 20px 10px;
 }
 .inputGroup2 label {
     padding: 12px 30px;
-    width: 100%;
+    width: 60%;
+    border: 1px solid wheat;
+    position: relative;
+    top: 200px;
+    left:100px;
     display: block;
     text-align: left;
     color: #3c454c;
@@ -339,20 +277,23 @@ code {
     background-color: #9aa3ac;
     padding: 0 8px;
 }
-
-/*------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
 .inputGroup3 {
     background-color: rosybrown;
     display: block;
     position: relative;
-    left: 300px;
-    top: 300px;
+    left: 450px;
+    top: 40px;
     width: 200px;
     border-radius: 20px 10px;
 }
 .inputGroup3 label {
     padding: 12px 30px;
-    width: 100%;
+    width: 60%;
+    border: 1px solid wheat;
+    position: relative;
+    top: 200px;
+    left:100px;
     display: block;
     text-align: left;
     color: #3c454c;
@@ -438,19 +379,23 @@ code {
     background-color: #9aa3ac;
     padding: 0 8px;
 }
-/*--------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------*/
 .inputGroup4 {
     background-color: rosybrown;
     display: block;
     position: relative;
-    right: 400px;
-    top: 300px;
+    left: 450px;
+    top: 40px;
     width: 200px;
     border-radius: 20px 10px;
 }
 .inputGroup4 label {
     padding: 12px 30px;
-    width: 100%;
+    width: 60%;
+    border: 1px solid wheat;
+    position: relative;
+    top: 200px;
+    left:100px;
     display: block;
     text-align: left;
     color: #3c454c;
@@ -536,19 +481,23 @@ code {
     background-color: #9aa3ac;
     padding: 0 8px;
 }
-/*----------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------*/
 .inputGroup5 {
     background-color: rosybrown;
     display: block;
     position: relative;
-    left:200px;
-    top: 450px;
+    left: 450px;
+    top: 40px;
     width: 200px;
     border-radius: 20px 10px;
 }
 .inputGroup5 label {
     padding: 12px 30px;
-    width: 100%;
+    width: 60%;
+    border: 1px solid wheat;
+    position: relative;
+    top: 200px;
+    left:100px;
     display: block;
     text-align: left;
     color: #3c454c;
@@ -634,19 +583,23 @@ code {
     background-color: #9aa3ac;
     padding: 0 8px;
 }
-/*------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------*/
 .inputGroup6 {
     background-color: rosybrown;
     display: block;
     position: relative;
-    right: 300px;
-    top: 550px;
+    left: 450px;
+    top: 40px;
     width: 200px;
     border-radius: 20px 10px;
 }
 .inputGroup6 label {
     padding: 12px 30px;
-    width: 100%;
+    width: 60%;
+    border: 1px solid wheat;
+    position: relative;
+    top: 200px;
+    left:100px;
     display: block;
     text-align: left;
     color: #3c454c;
@@ -703,6 +656,108 @@ code {
     
 }
 .inputGroup6 input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+}
+.form {
+    padding: 0 16px;
+    max-width: 220px;
+    border-radius: 5px 10px;
+    margin: 50px auto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+code {
+    background-color: #9aa3ac;
+    padding: 0 8px;
+}
+/*---------------------------------------------------------------------------------*/
+.inputGroup7 {
+    background-color: rosybrown;
+    display: block;
+    position: relative;
+    left: 450px;
+    top: 40px;
+    width: 200px;
+    border-radius: 20px 10px;
+}
+.inputGroup7 label {
+    padding: 12px 30px;
+    width: 60%;
+    border: 1px solid wheat;
+    position: relative;
+    top: 200px;
+    left:100px;
+    display: block;
+    text-align: left;
+    color: #3c454c;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+}
+.inputGroup7 label:before {
+    width: 20px;
+    height: 10px;
+    border-radius: 50%;
+    content: '';
+    background-color: #a8e6e6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    z-index: -1;
+}
+.inputGroup7 label:after {
+    width: 32px;
+    height: 32px;
+    content: '';
+    border: 2px solid #af5f61;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: 2px 3px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    left: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+.inputGroup7 input:checked ~ label {
+    color: #016151;
+    border-radius: 20px 10px;
+}
+.inputGroup7 input:checked ~ label:before {
+    transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    opacity: 1;
+   
+}
+.inputGroup7 input:checked ~ label:after {
+    background-color: #098a72;
+    border-color: #016151;
+    
+}
+.inputGroup7 input {
     width: 32px;
     height: 32px;
     order: 1;
