@@ -4,6 +4,7 @@ import 'package:school/Screens/Hadj.dart';
 import 'package:school/Screens/omra.dart';
 import 'package:school/Screens/CurvedNavigationBar.dart';
 import 'package:school/objects/User.dart';
+import 'package:school/pages/quran_page.dart';
 
 class Home extends StatefulWidget {
   User user;
@@ -43,10 +44,17 @@ class Home_main extends State<Home> {
 
           ],
           onTap: (index) {
-            //Handle button tap
+            if (index==1){  Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return new QuranPage();
+                },
+              ),
+
+            );}
+
           },
         ),
-        //body: Container(color: Colors.blueAccent),
 
         body: Container(
           decoration: BoxDecoration(

@@ -5,167 +5,211 @@ import 'package:school/Screens/DummyDataHadj.dart';
 import 'package:school/Screens/CustomIcons.dart';
 import 'package:school/objects/TodoObject.dart';
 import 'package:school/pages/Details.dart';
-
-
-
-
+import 'package:school/Screens/omra.dart';
+import 'package:school/slime/slimy_card.dart';
 
 class Homehadj extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomehadjState createState() => _HomehadjState();
 }
 
-class _HomePageState extends State<Homehadj> {
-  List<SpecialityModel> specialities;
-
-
-
+class _HomehadjState extends State<Homehadj> {
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Stack(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/Rectangle.png"),
-                  fit: BoxFit.cover,)
-            ),
+    return Scaffold(
+      body:new Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/back.png"),
+              fit: BoxFit.cover,)
+        ),
 
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Container(
 
-                    child: FittedBox(
-                      child: Center(
-                        child: Text(
-                          "انواع الحج",
-                          style: TextStyle(
-                              color: Color(0xffaf5f63),fontFamily: 'AeCortoba',
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.italic,
-                              fontSize: 300),
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushNamed('/تمتع');
-                    },
-                    child: Container(
-                      //height: size.height * 0.2,
-                      // width: size.width * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: new BorderRadius.all(
-                          Radius.circular(30.0),
-                        ),
-                        color: Color(0xffddc2be),
-                      ),
-                      padding: EdgeInsets.all(20.0),
-                      child: FittedBox(
-                        child: Column(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "حج الافراد",
-                              style: TextStyle(
-                                  color: Color(0xfff1e4d4),fontFamily: 'AeCortoba',
-                                  fontWeight: FontWeight.w900,
-                                  fontStyle: FontStyle.italic,
-                                  fontSize: 40),
-                            ),
+        child: StreamBuilder(
+          initialData: false,
+          stream: slimyCard.stream, //Stream of SlimyCard
+          builder: ((BuildContext context, AsyncSnapshot snapshot) {
+            return ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                SizedBox(height: 100),
 
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushNamed('/Medium');
-                    },
-                    child: Container(
-                      // height: size.height * 0.2,
-                      // width: size.width * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: new BorderRadius.all(
-                          Radius.circular(30.0),
-                        ),
-                        color: Color(0xffddc2be),
-                      ),
-                      padding: EdgeInsets.all(30.0),
-                      child: FittedBox(
-                        child: Column(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "حج القران",
-                              style: TextStyle(
-                                  color: Color(0xfff1e4d4),fontFamily: 'AeCortoba',
-                                  fontWeight: FontWeight.w900,
-                                  fontStyle: FontStyle.italic,
-                                  fontSize: 40),
-                            ),
+                // SlimyCard is being called here.
+                SlimyCard(
+                  // In topCardWidget below, imagePath changes according to the
+                  // status of the SlimyCard(snapshot.data).
+                  topCardWidget: firsttopCardWidget((snapshot.data)
+                      ? ''
+                      : ''),
+                  bottomCardWidget: firstCardWidget(),
+                ),
+                SizedBox(height: 100),
 
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushNamed('/Hard');
-                    },
-                    child: Container(
-                      //height: size.height * 0.2,
-                      //width: size.width * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: new BorderRadius.all(
-                          Radius.circular(30.0),
-                        ),
-                        color: Color(0xffddc2be),
-                      ),
-                      padding: EdgeInsets.all(20.0),
-                      child: FittedBox(
-                        child: Column(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "حج التمتع",
-                              style: TextStyle(
-                                  color: Color(0xfff1e4d4),fontFamily: 'AeCortoba',
-                                  fontWeight: FontWeight.w900,
-                                  fontStyle: FontStyle.italic,
-                                  fontSize: 40),
-                            ),
+                // SlimyCard is being called here.
+                SlimyCard(
+                  // In topCardWidget below, imagePath changes according to the
+                  // status of the SlimyCard(snapshot.data).
+                  topCardWidget: secondtopCardWidget((snapshot.data)
+                      ? ''
+                      : ''),
+                  bottomCardWidget: secondCardWidget(),
+                ),
+                SizedBox(height: 100),
 
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            top: 10,
-            left: 10,
-            child: IconButton(
-              icon: new Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () => Navigator.of(context).pop(),
-            ),
-          ),
-        ],
+                // SlimyCard is being called here.
+                SlimyCard(
+                  // In topCardWidget below, imagePath changes according to the
+                  // status of the SlimyCard(snapshot.data).
+                  topCardWidget: thirdtopCardWidget((snapshot.data)
+                      ? ''
+                      : ''),
+                  bottomCardWidget: thirdCardWidget(),
+                ),
+              ],
+            );
+          }),
+        ),
       ),
     );
+  }
 
+  // This widget will be passed as Top Card's Widget.
+  Widget firsttopCardWidget(String imagePath) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          height: 50,
+          width: 70,
+
+        ),
+        SizedBox(height: 1),
+        FlatButton(
+          onPressed: (){
+            Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return new Omra();
+                },
+              ),
+            );
+          },
+          textColor: Color(0xff2d3142),
+          child: Text('حج الافراد',style: TextStyle(fontFamily: 'AeCortoba',fontSize: 30),
+
+          ),
+
+        ),
+        SizedBox(height: 15),
+
+        SizedBox(height: 10),
+      ],
+    );
+  }
+
+  Widget secondtopCardWidget(String imagePath) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          height: 50,
+          width: 70,
+
+        ),
+        SizedBox(height: 1),
+        FlatButton(
+          onPressed: (){
+            Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return new Omra();
+                },
+              ),
+            );
+          },
+          textColor: Color(0xff2d3142),
+          child: Text('حج التمتع',style: TextStyle(fontFamily: 'AeCortoba',fontSize: 30)
+
+          ),
+
+        ),
+        SizedBox(height: 15),
+
+        SizedBox(height: 10),
+      ],
+    );
+  }
+  Widget thirdtopCardWidget(String imagePath) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          height: 50,
+          width: 70,
+
+        ),
+        SizedBox(height: 1),
+        FlatButton(
+          onPressed: (){
+            Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return new Omra();
+                },
+              ),
+            );
+          },
+          textColor: Color(0xff2d3142),
+          child: Text('حج القران',
+              style: TextStyle(fontFamily: 'AeCortoba',fontSize: 30)
+          ),
+
+
+        ),
+        SizedBox(height: 15),
+
+        SizedBox(height: 10),
+      ],
+    );
+  }
+
+  // This widget will be passed as Bottom Card's Widget.
+  Widget firstCardWidget() {
+    return Text(
+      '  نية الحج وحده,ثم الاعتمار بعد الفراغ من المناسك',
+      style: TextStyle(
+        fontFamily: 'AeCortoba',
+        fontSize: 20,
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+  Widget secondCardWidget() {
+    return Text(
+      'نية العمرة وحدها ثم الحج',
+      style: TextStyle(
+        fontFamily: 'AeCortoba',
+        fontSize: 20,
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+  Widget thirdCardWidget() {
+    return Text(
+      'نية الحج و العمرة معا بعد التروية',
+      style: TextStyle(
+        fontFamily: 'AeCortoba',
+        fontSize: 20,
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
+      ),
+      textAlign: TextAlign.center,
+    );
   }
 }
+
+
