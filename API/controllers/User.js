@@ -25,10 +25,10 @@ module.exports = {
     },
     getUser: (req, res, next)=>{
         if(req.params.userId || req.query.id) User.findById(req.params.userId || req.query.id).then((user)=>{res.status(200).json({succes:true, data: user, message: "user found"})}).catch(next)
-        else if(req.user.isAdmin){ 
+        /* else if(req.user.isAdmin){ it was working now it is not xD
             if(req.query.username) User.findOne({username: req.query.username}).then((user)=>{res.status(200).json({succes:true, data: user, message: "user found"})}).catch(next)
-            else if(req.query.email) User.findOne({username: req.query.email}).then((user)=>{res.status(200).json({succes:true, data: user, message: "user found"})}).catch(next)
-        }else 
+            else if(req.query.email) User.findOne({email: req.query.email}).then((user)=>{res.status(200).json({succes:true, data: user, message: "user found"})}).catch(next)
+        } */else 
             User.find({})
             .then((users)=>{
                 res.status(200).json({succes:true, data: users, message: "all users"});

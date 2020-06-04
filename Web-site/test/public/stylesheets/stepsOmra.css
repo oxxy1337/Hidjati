@@ -73,7 +73,7 @@
       }
   }
   
-  .inputGroup {
+  .inputGroup1 {
        background-color: rosybrown;
        display: block;
        width: 900px;
@@ -83,7 +83,7 @@
        bottom:20px;
        border-radius: 20px 10px;
   }
-   .inputGroup label {
+   .inputGroup1 label {
        padding: 12px 30px;
        width: 40%;
        border: 1px solid wheat;
@@ -99,7 +99,7 @@
        transition: color 200ms ease-in;
        overflow: hidden;
   }
-   .inputGroup label:before {
+   .inputGroup1 label:before {
        width: 20px;
        height: 10px;
        border-radius: 50%;
@@ -113,7 +113,7 @@
        opacity: 0;
        z-index: -1;
   }
-   .inputGroup label:after {
+   .inputGroup1 label:after {
        width: 32px;
        height: 32px;
        content: '';
@@ -131,21 +131,21 @@
        cursor: pointer;
        transition: all 200ms ease-in;
   }
-   .inputGroup input:checked ~ label {
+   .inputGroup1 input:checked ~ label {
        color: #016151;
        border-radius: 20px 10px;
   }
-   .inputGroup input:checked ~ label:before {
+   .inputGroup1 input:checked ~ label:before {
        transform: translate(-50%, -50%) scale3d(56, 56, 1);
        opacity: 1;
       
   }
-   .inputGroup input:checked ~ label:after {
+   .inputGroup1 input:checked ~ label:after {
        background-color: #098a72;
        border-color: #016151;
        
   }
-   .inputGroup input {
+   .inputGroup1 input {
        width: 32px;
        height: 32px;
        order: 1;

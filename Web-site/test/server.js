@@ -48,7 +48,6 @@ app.set('view engine','ejs');
 
 
 app.route('/')
-//.all(userController.redirectIfLoggedIn)
 .get((req, res) => {
     if(!req.user) return res.render('index');
     return res.render('home', {data: req.user});
@@ -63,24 +62,41 @@ app.route('/Go')
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
-/////////////////////////////////////////////
-app.route('/init')
-.get((_, res) => res.render('init'));
-app.route('/ifrad')
-.get((_, res) => res.render('./UserHadj/Ifrad'));
-app.route('/ikran')
-.get((_, res) => res.render('./UserHadj/I9ran'));
-app.route('/tama')
-.get((_, res) => res.render('./UserHadj/Tamato3'));
-app.route('/omra')
-.get((_, res) => res.render('UserOmra'));
 
-/////////////////////////////////////////////////
+app.route('/init')
+.all(userController.redirectIfNotLoggedIn, (req, res, next)=>{if(req.user.type) return res.redirect('/'+req.user.type);next()})
+.get((_, res) => res.render('init'));
+
+app.route('/initDone')
+.all((req, res, next)=>{
+    user = req.user;
+    user = req.body.user;
+    req.login(user, (err)=>{
+        res.locals.user = user;
+        res.json({success: true});
+    })    
+});
+
+
+app.route('/ifrad')
+.all(userController.redirectIfNotLoggedIn, userController.isInit)
+.get((_, res) => res.render('./UserHadj/Ifrad'));
+
+app.route('/ikran')
+.all(userController.redirectIfNotLoggedIn, userController.isInit)
+.get((_, res) => res.render('./UserHadj/I9ran'));
+
+app.route('/tama')
+.all(userController.redirectIfNotLoggedIn, userController.isInit)
+.get((_, res) => res.render('./UserHadj/Tamato3'));
+
+app.route('/omra')
+.all(userController.redirectIfNotLoggedIn, userController.isInit)
+.get(userController.isInit, (_, res) => res.render('UserOmra'));
+
  app.route('/agencies')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res)=> res.render('Agencies')); 
-
-
 
 app.route('/login')
 .all(userController.redirectIfLoggedIn)

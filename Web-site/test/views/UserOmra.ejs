@@ -80,13 +80,12 @@
     <!--SECTION2-------------------------------------------------------------------------------------------------->
     
     <section  style="height: 800px;width: 90%; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top:40px;" >
-      <button id="prev" disabled="disabled"  class="btn btn-primary" style="position:relative;top: 700px;left:500px" >المرحلة السابقة</button>
+      <button id="prev"  class="btn btn-primary" style="position:relative;top: 700px;left:500px" >المرحلة السابقة</button>
       <button id="next"  class="btn btn-primary" style="position:relative;top: 700px;left:600px">المرحلة التالية</button>
           <div class="main">
-            <div class="inputGroup current" style="display: block;">
-
+            <div class="inputGroup1" style="display: none;">
               <input id="option1" name="option1" type="checkbox"/>
-              <label for="option1">أتممت هذه المرحلة</label>
+              <label for="option1" class="finish">أتممت هذه المرحلة</label>
               <h1 style="text-align: center;position:relative ;bottom: 50px;">يحرم للعمرة من الميقات بالنية و التلبية (1) </h1>
                 <h5 style="position: relative;left: 190px;bottom: 50px;">:قبل الإحرام يستحب التهيؤ له بفعل أشياء يستقبل بها تلك العبادة العظيمة، وهي</h5>
                 <h5 style="color: white; position: relative;text-align:center;bottom: 50px;"> الاغتسال بجميع البدن و التنظيف كازالة شعر الشارب والإبط والعانة و التطيب بما تيسر من انواع الطيب</h5>
@@ -102,7 +101,7 @@
           <!------------------------------------------------------------------->
         <div class="inputGroup2" style="display: none;">
           <input id="option2" name="option2" type="checkbox"/>
-          <label for="option2">أتممت هذه المرحلة</label>
+          <label for="option2" class="finish">أتممت هذه المرحلة</label>
           <h1 style="text-align:center;position: relative;bottom: 50px;">يطوف طواف العمرة  (2) </h1>
           <h5 style="color: white;position: relative;text-align: center;bottom: 40px;">إذا وصل المعتمر مكة، يدخل المسجد الحرام بالقدم اليمنى، ويبدأ 7 أشواط طواف حول الكعبة المشرفة بداية من الحجر الأسود، قائلا "بسم الله والله أكبر" وكلما مر عليه في كل شوط، وينتهي إليه، ويستلم الحجر بيده اليمنى ويقبله إذا تيسر ذلك، ولا يزاحم عليه، أو يشير إليه من بعيد، ويذكر الله ويدعوه بما يشاء</h5>
           <h3 style="text-align: center;position: relative;bottom: 50px;">&#8595;</h3">
@@ -121,7 +120,7 @@
           
             <div class="inputGroup3" style="display: none;">
               <input id="option3" name="option3" type="checkbox"/>
-              <label for="option3">أتممت هذه المرحلة</label>
+              <label for="option3" class="finish">أتممت هذه المرحلة</label>
               <h1 style="text-align:center;position: relative;bottom: 50px;"> سعي العمرة (3) </h1>
               <h4 style="color: white;text-align: center;position: relative;bottom: 20px;"> يخرج المعتمر للسعي من باب الصفا ويصعد عليه مستقبلا الكعبة، ويقرأ "إن الصفا والمروة من شعائر الله..." إلى آخر الآية، ويرفع يديه بالدعاء ويحمد الله ويكبره، ويقول "لا إله إلا الله وحده، أنجز وعده، ونصر عبده، وهزم الأحزاب وحده"، ويكررها ثلاث مرات، ولا حرج إن اقتصرت على أقل من ذلك</h4>
               <h3 style="text-align: center;position: relative;bottom: 20px;">&#8595;</h3">
@@ -131,7 +130,7 @@
              <!------------------------------------------------------------------->
              <div class="inputGroup4" style="display: none;">
               <input id="option4" name="option6" type="checkbox"/>
-              <label for="option4">أتممت هذه المرحلة</label>
+              <label for="option4" class="finish">أتممت هذه المرحلة</label>
               <h1 style="text-align:center;position: relative;bottom: 50px;">الحلق أو التقصير (4) </h1>
               <h4 style="color: white;position: relative;bottom:10px;text-align: center;">إذا أتم سعيه يحلق الرجل رأسه أو يقصر، وإن كانت إمرأة تقصر من أطراف شعرها قدر أنملة في جميع جهات الرأس</h4>
               <h3 style="text-align: center;position: relative;bottom: 10px;">&#8595;</h3">
@@ -237,29 +236,71 @@
 
 
 
-              <script>
-                  AOS.init();
-                
-                $('#next').click(function() {
-              $('.current').removeClass('current').hide()
-                  .next().show().addClass('current');
-              if ($('.current').hasClass('inputGroup7')) {
-                  $('#next').attr('disabled', true);
-              }
-              $('#prev').attr('disabled', null);
-          });
+  <script>
+      AOS.init();
+    $(document).ready(function(){
+      $('.inputGroup<%=user.step%>')
+      .addClass('current')
+      .attr('style', 'display: block');
+      if('<%=user.step%>' == 1) $('#prev').attr('disabled', true);
+      if('<%=user.step%>' == 5) $('#next').attr('disabled', true);
+    });
 
-          $('#prev').click(function() {
-              $('.current').removeClass('current').hide()
-                  .prev().show().addClass('current');
-              if ($('.current').hasClass('inputGroup')) {
-                  $('#prev').attr('disabled', true);
-              }
-              $('#next').attr('disabled', null);
-          });
+    $('#next').click(function() {
+      $('.current').
+      removeClass('current')
+      .hide()
+      .next()
+      .show()
+      .addClass('current');
+      if ($('.current').hasClass('inputGroup7')) {
+        $('#next').attr('disabled', true);
+      }
+      $('#prev').attr('disabled', null);
+    });
 
+    $('#prev').click(function() {
+    $('.current')
+    .removeClass('current')
+    .hide()
+    .prev()
+    .show()
+    .addClass('current');
+    if ($('.current').hasClass('inputGroup1')) {
+      $('#prev').attr('disabled', true);
+    }
+    $('#next').attr('disabled', null);
+    });
 
-                                    
-                  </script>
+    $('.finish').click(function() {
+      $.ajax({
+        url: 'http://localhost:3000/init/update',
+        type: 'POST',
+        cach: false,
+        data: {id: '<%=user._id%>'},
+        success: function(data){
+          $.ajax({
+            url: 'http://localhost:4000/initDone',
+            type: 'POST',
+            cache: false,
+            data: {user: data.user},
+            success: function(){
+              setTimeout(function(){
+              $('.current')
+              .removeClass('current')
+              .hide()
+              .next()
+              .show()
+              .addClass('current');
+              },500);
+            }
+          })
+        },
+        err: function(){
+          alert('something went wrong');
+        }
+      })
+    })
+  </script>
 </body>
 </html>
