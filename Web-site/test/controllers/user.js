@@ -16,8 +16,9 @@ module.exports = {
             }
         })
         .then((resp)=>{
-            req.login(resp.data, (err)=>{
-                if(!err) return res.status(200).redirect('/');
+            req.login(resp.data.data, (err)=>{
+                res.locals.user = resp.data.data; // need to render the home page with the user object
+                if(!err) return res.status(200).render('init', {user: resp.data.data});
                 console.log(err); 
             });
         })
@@ -34,5 +35,10 @@ module.exports = {
     logout: (req, res, next)=>{
         req.logOut();
         res.status(200).json({succes: true, data:{}, message: 'logged out!'});
+    },
+    isInit: (req, res, next)=>{
+        if(!req.user.type) return res.redirect('/init');
+        if(req.route.path != ('/'+req.user.type)) return res.redirect('/'+req.user.type);
+        next();
     }
 }

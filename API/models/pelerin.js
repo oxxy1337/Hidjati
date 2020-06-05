@@ -77,6 +77,13 @@ const pelerinSchema = new Schema({
         type: Boolean,
         default: false
     },
+    type: {
+        type: String
+    },
+    step: {
+        type: Number,
+        default: 1
+    },
     flight: {
         type: flightSchema
     },

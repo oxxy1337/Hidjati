@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 // const fileStore = require('session-file-store')(session);
 const fs = require('fs'); 
+const cors = require('cors');
 
 const upload = require('./middlewares/upload');
 const auth = require('./middlewares/auth');
@@ -21,6 +22,7 @@ const adminRouter = require('./routes/Admin');
 const trackRouter = require('./routes/Track');
 const resetpassRouter = require('./routes/ResetPassword');
 const feedbackRouter = require('./routes/Feedback');
+const initRouter = require('./routes/InitUpdate');
 
 const connect = mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useFindAndModify: false});
 
@@ -51,8 +53,20 @@ app.post('/test', upload.single('name'), (req, res, next)=>{
 });
  */
 
-app.get('/', (req, res, next)=>{
-    res.json({a: req.session, b: req.user, c: res.locals})
+
+// Add headers
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
+app.all('/',bodyParser.json(),(req, res, next)=>{
+    //res.json({a: req.session, b: req.user, c: res.locals})
+    console.log(req.body);
+    res.json({succes: true});
 });
 
 app.use('/track', trackRouter);
@@ -63,6 +77,7 @@ app.use('/place', placeRouter);
 app.use('/feedbacks', feedbackRouter);
 app.use('/admin', adminRouter);
 app.use('/resetpassword', resetpassRouter);
+app.use('/init', initRouter);
 
 app.use(handler.notFound,handler.err);
 
