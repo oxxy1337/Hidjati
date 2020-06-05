@@ -181,6 +181,7 @@ button {
             cache: false,
             data: {user: data.user},
             success: function(data){
+              alert('it work');
               window.location = '/'+type; //this is not working idk why but the initRouter is doing the job xD
             }
             , error: function(){
@@ -190,7 +191,7 @@ button {
             });
           }
           , error: function(){
-            alert('something went wrong ? Refresh the page');
+            alert('no resp from the api');
             window.location = '/init'
             }
           });

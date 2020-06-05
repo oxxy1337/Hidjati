@@ -18,7 +18,7 @@ module.exports = {
         .then((resp)=>{
             req.login(resp.data.data, (err)=>{
                 res.locals.user = resp.data.data; // need to render the home page with the user object
-                if(!err) return res.status(200).redirect('/');
+                if(!err) return res.status(200).render('init', {user: resp.data.data});
                 console.log(err); 
             });
         })
