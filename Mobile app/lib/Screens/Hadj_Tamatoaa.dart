@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
-import 'package:school/Screens/DummyData.dart';
-import 'package:school/Screens/CustomIcons.dart';
+import 'package:school/Screens/DataTamatoaa.dart';
 import 'package:school/objects/TodoObject.dart';
 import 'package:school/pages/Details.dart';
 
 
-class Omra extends StatefulWidget {
+class Hadj_Tamtoaa extends StatefulWidget {
 
 
   @override
-  _SecondPageState createState() => new _SecondPageState();
+  _HadjTamtoaa createState() => new _HadjTamtoaa();
 }
 
-class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
+class _HadjTamtoaa extends State<Hadj_Tamtoaa> with TickerProviderStateMixin {
   ScrollController scrollController;
   Color backgroundColor;
   LinearGradient backgroundGradient;
@@ -64,7 +63,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: Text("عمرة"),
+          title: Text("حج التمتع",style: TextStyle(fontFamily:'AeCortoba'),),
           centerTitle: true,
 
           actions: <Widget>[
@@ -91,7 +90,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
             Padding(
               padding: EdgeInsets.only(left: 50.0),
               child: Text(
-                "نتمنى لك عمرة مباركة",
+                "نتمنى لك حج مبرور و سعي مشكور",
                 style: TextStyle(color: Colors.white, fontSize: 20.0,fontFamily: 'AeCortoba'),
               ),
             ),
@@ -99,7 +98,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
             Padding(
               padding: EdgeInsets.only(left: 50.0),
               child: Text(
-                "نتمنى لك عمرة مباركة",
+                "نتمنى لك حجة مباركة",
                 style: TextStyle(color: Colors.white70,fontFamily: 'AeCortoba'),
               ),
             ),
@@ -153,9 +152,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.of(context).push(
                           PageRouteBuilder(
-                            pageBuilder: (BuildContext context,
-                                Animation<double> animation,
-                                Animation<double> secondaryAnimation) => DetailPage(todoObject: todoObject),
+                            pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) => DetailPage(todoObject: todoObject),
                             transitionDuration: Duration(milliseconds: 1000),
                           ),
                         );
@@ -176,10 +173,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10.0),
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/images/everything.png"),
-                                        fit: BoxFit.cover,
-                                      )
+
                                   ),
                                 ),
                               ),
@@ -206,12 +200,12 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
                                                 type: MaterialType.transparency,
                                                 child: Container(
                                                   decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius: BorderRadius.circular(10.0),
-                                                      image: DecorationImage(
-                                                        image: AssetImage("assets/images/be.png"),
-                                                        fit: BoxFit.cover,
-                                                      )
+                                                    color: Color(0xfff5ebec),
+                                                    borderRadius: BorderRadius.circular(10.0),
+                                                    //   image: DecorationImage(
+                                                    //    image: AssetImage("assets/images/be.png"),
+                                                    //    fit: BoxFit.cover,
+                                                    //   )
                                                   ),
                                                   height: 0,
                                                   width: 0,
@@ -277,7 +271,10 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
                                       color: Colors.transparent,
                                       child: Text(
                                         todoObject.title,
-                                        style: TextStyle(fontSize: 30.0),
+                                        style: TextStyle(fontSize: 25.0,
+                                          fontFamily: 'AeCortoba',
+
+                                        ),
                                         softWrap: false,
                                       ),
                                     ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
@@ -153,7 +154,7 @@ class CustomListTile extends StatelessWidget {
     if (leading != null) {
       children.add(IconTheme.merge(
         data: iconThemeData,
-        child: Container(margin: EdgeInsetsDirectional.only(end: 16.0), width: 30.0, alignment: AlignmentDirectional.centerStart, child: leading),
+        child: Container(margin: EdgeInsetsDirectional.only(end: 16.0), width: 30.0, alignment: AlignmentDirectional.centerStart, child: leading,),
       ));
     }
 
@@ -181,6 +182,7 @@ class CustomListTile extends StatelessWidget {
       children.add(IconTheme.merge(
         data: iconThemeData,
         child: Container(
+
           margin: EdgeInsetsDirectional.only(start: 16.0),
           alignment: AlignmentDirectional.centerEnd,
           child: trailing,
@@ -201,11 +203,22 @@ class CustomListTile extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 0.0),
               child: UnconstrainedBox(
+
                 constrainedAxis: Axis.horizontal,
-                child: SafeArea(
-                  top: false,
-                  bottom: false,
-                  child: Row(children: children),
+                child: Container(
+
+                  decoration: BoxDecoration(
+                    border: Border(
+                      
+                      bottom: BorderSide(width: 3.0, color: Color(0xffaf5f63)),
+                    ),
+
+
+                  ),
+
+
+
+                  child: Row(children: children,),
                 ),
               ),
             )),
