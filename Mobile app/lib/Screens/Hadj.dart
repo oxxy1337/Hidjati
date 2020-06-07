@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:intl/intl.dart';
-import 'package:school/Screens/DummyDataHadj.dart';
-import 'package:school/Screens/CustomIcons.dart';
-import 'package:school/objects/TodoObject.dart';
-import 'package:school/pages/Details.dart';
-import 'package:school/Screens/omra.dart';
+import 'package:school/Screens/Hadj_Ifrad.dart';
+import 'package:school/Screens/Hadj_Qiraan.dart';
+import 'package:school/Screens/Hadj_Tamatoaa.dart';
 import 'package:school/slime/slimy_card.dart';
 
-class Homehadj extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomehadjState createState() => _HomehadjState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomehadjState extends State<Homehadj> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,51 +22,51 @@ class _HomehadjState extends State<Homehadj> {
         ),
 
 
-        child: StreamBuilder(
-          initialData: false,
-          stream: slimyCard.stream, //Stream of SlimyCard
-          builder: ((BuildContext context, AsyncSnapshot snapshot) {
-            return ListView(
-              padding: EdgeInsets.zero,
-              children: <Widget>[
-                SizedBox(height: 100),
+         child: StreamBuilder(
+        initialData: false,
+        stream: slimyCard.stream, //Stream of SlimyCard
+        builder: ((BuildContext context, AsyncSnapshot snapshot) {
+          return ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              SizedBox(height: 100),
 
-                // SlimyCard is being called here.
-                SlimyCard(
-                  // In topCardWidget below, imagePath changes according to the
-                  // status of the SlimyCard(snapshot.data).
-                  topCardWidget: firsttopCardWidget((snapshot.data)
-                      ? ''
-                      : ''),
-                  bottomCardWidget: firstCardWidget(),
-                ),
-                SizedBox(height: 100),
+              // SlimyCard is being called here.
+              SlimyCard(
+                // In topCardWidget below, imagePath changes according to the
+                // status of the SlimyCard(snapshot.data).
+                topCardWidget: firsttopCardWidget((snapshot.data)
+                    ? ''
+                    : ''),
+                bottomCardWidget: firstCardWidget(),
+              ),
+              SizedBox(height: 100),
 
-                // SlimyCard is being called here.
-                SlimyCard(
-                  // In topCardWidget below, imagePath changes according to the
-                  // status of the SlimyCard(snapshot.data).
-                  topCardWidget: secondtopCardWidget((snapshot.data)
-                      ? ''
-                      : ''),
-                  bottomCardWidget: secondCardWidget(),
-                ),
-                SizedBox(height: 100),
+              // SlimyCard is being called here.
+              SlimyCard(
+                // In topCardWidget below, imagePath changes according to the
+                // status of the SlimyCard(snapshot.data).
+                topCardWidget: secondtopCardWidget((snapshot.data)
+                    ? ''
+                    : ''),
+                bottomCardWidget: secondCardWidget(),
+              ),
+              SizedBox(height: 100),
 
-                // SlimyCard is being called here.
-                SlimyCard(
-                  // In topCardWidget below, imagePath changes according to the
-                  // status of the SlimyCard(snapshot.data).
-                  topCardWidget: thirdtopCardWidget((snapshot.data)
-                      ? ''
-                      : ''),
-                  bottomCardWidget: thirdCardWidget(),
-                ),
-              ],
-            );
-          }),
-        ),
+              // SlimyCard is being called here.
+              SlimyCard(
+                // In topCardWidget below, imagePath changes according to the
+                // status of the SlimyCard(snapshot.data).
+                topCardWidget: thirdtopCardWidget((snapshot.data)
+                    ? ''
+                    : ''),
+                bottomCardWidget: thirdCardWidget(),
+              ),
+            ],
+          );
+        }),
       ),
+    ),
     );
   }
 
@@ -89,7 +86,7 @@ class _HomehadjState extends State<Homehadj> {
             Navigator.of(context).push(
               new MaterialPageRoute(
                 builder: (context) {
-                  return new Omra();
+                  return new Hadj_Ifrad();
                 },
               ),
             );
@@ -122,7 +119,7 @@ class _HomehadjState extends State<Homehadj> {
             Navigator.of(context).push(
               new MaterialPageRoute(
                 builder: (context) {
-                  return new Omra();
+                  return new Hadj_Tamtoaa();
                 },
               ),
             );
@@ -154,7 +151,7 @@ class _HomehadjState extends State<Homehadj> {
             Navigator.of(context).push(
               new MaterialPageRoute(
                 builder: (context) {
-                  return new Omra();
+                  return new Hadj_Qiraan();
                 },
               ),
             );
@@ -178,7 +175,7 @@ class _HomehadjState extends State<Homehadj> {
     return Text(
       '  نية الحج وحده,ثم الاعتمار بعد الفراغ من المناسك',
       style: TextStyle(
-        fontFamily: 'AeCortoba',
+       fontFamily: 'AeCortoba',
         fontSize: 20,
         color: Colors.black,
         fontWeight: FontWeight.w500,
