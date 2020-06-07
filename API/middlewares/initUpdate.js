@@ -6,6 +6,7 @@ module.exports = {
         .then((user)=>{
             user.type= req.body.type;
             user.save();
+            console.log(user);
             return res.json({user: user});
         });
     },

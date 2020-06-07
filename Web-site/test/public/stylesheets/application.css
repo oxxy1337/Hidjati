@@ -66,7 +66,7 @@ body {
   width: 25%;
   height: 25%;
   position: relative;
-  left: 550px;
+  left: 500px;
 }
 /* Clear floats after the columns */
 .open-button {
@@ -82,15 +82,7 @@ body {
   width: 280px;
 }
 
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 550px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
+
 
 /* Add styles to the form container */
 .form-container {
