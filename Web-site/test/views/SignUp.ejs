@@ -26,7 +26,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   </head>
-  <body>
+  <body style="background-image: url(/images/back.png);background-size: cover;">
      <a href="/"><h3>LOGO</h3></a>
       <!--SECTION 1------------------------------------------------------------------------------>
   <section id="hero" >
@@ -34,11 +34,11 @@
     <div class="container" style="float: lef;">
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
-          <div class="nav2" style=" position: relative;bottom: 100px; right: 100px;">
-            <h2 style="text-align: center;position:relative; top: 30px; animation: bounce; animation-duration: 5s;">هل ستحج أو تعتمر؟</h2> 
-            <h1 style="text-align: center;position:relative; top: 30px; animation: bounce; animation-duration: 5s;">حجتي</h1>
-            <h2 style="text-align: center; position:relative; top: 30px;animation: bounce; animation-duration: 5s;">دليلك الشامل لإتمام ذلك</h2>
-            <h4 style="text-align: center; position:relative; top: 100px;animation: bounce; animation-duration: 5s;">املا خانات المعلومات للاشتراك</h4>
+          <div class="nav2" style=" position: relative;bottom: 200px; right: 300px;">
+            <h2 style="text-align: center;position:relative; top: 30px; animation: bounce; animation-duration: 5s;color: white;">هل ستحج أو تعتمر؟</h2> 
+            <h1 style="text-align: center;position:relative; top: 30px; animation: bounce; animation-duration: 5s;color: white;">حجتي</h1>
+            <h2 style="text-align: center; position:relative; top: 30px;animation: bounce; animation-duration: 5s;color: white;">دليلك الشامل لإتمام ذلك</h2>
+            <h4 style="text-align: center; position:relative; top: 100px;animation: bounce; animation-duration: 5s;color: white;">املا خانات المعلومات للاشتراك</h4>
 
            
            <h6 style="position: relative;bottom: 620px; left: 400px;">حمل الآن مجانا تطبيق حجتي</h6>
@@ -48,20 +48,20 @@
         
 <div class="row justify-content-center">
     <div class="col-md-6">
-    <div class="card" style="position: relative;left: 650px; width: 300px;">
+    <div class="card" style="position: relative;left: 500px; width: 400px;">
     <header class="card-header">
         <a href="/Login" class="float-right btn btn-outline-primary mt-1">دخول</a>
         <h4 class="card-title mt-2">الاشتراك</h4>
     </header>
-    <article class="card-body">
+    <article class="card-body" >
     <form action="/register" method="post">
-        <div class="form-row">
+        <div class="form-column" style="position: relative;right: 20px;width: 500px;">
             <div class="col form-group">
                 <label>الاسم </label>   
                   <input type="text" class="form-control" placeholder="" name="first_name">
             </div> <!-- form-group end.// -->
             <div class="col form-group">
-                <label>اللقب</label>
+                <label;">اللقب</label>
                   <input type="text" class="form-control" placeholder="" name="last_name">
             </div>
             <div class="col form-group">
@@ -70,11 +70,11 @@
             </div> <!-- form-group end.// -->
         </div> <!-- form-row end.// -->
         <div class="form-group">
-            <label>البريد الالكتروني</label>
-            <input type="email" class="form-control" placeholder="" name="email">
-            <small class="form-text text-muted">نتعهد بالخصوصية التامة</small>
+            <label style="position: relative;bottom: 30px;">البريد الالكتروني</label>
+            <input type="email" class="form-control" placeholder="" name="email" style="position: relative;bottom: 40px;right: 5px;">
+            <small class="form-text text-muted" style="position: relative;bottom: 40px;">نتعهد بالخصوصية التامة</small>
         </div> <!-- form-group end.// -->
-        <div class="form-group">
+        <div class="form-group" style="position: relative;bottom: 45px;">
                 <label class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="genderM" value="male">
               <span class="form-check-label"> ذكر </span>
@@ -84,7 +84,7 @@
               <span class="form-check-label"> انثى</span>
             </label>
         </div> <!-- form-group end.// -->
-        <div class="form-row">
+        <div class="form-row" style="position: relative;bottom: 60px;">
 
             <div class="form-group col-md-6">
               <label>البلد</label>
@@ -97,17 +97,16 @@
               </select>
             </div> <!-- form-group end.// -->
         </div> <!-- form-row.// -->
-        <div class="form-group">
+        <div class="form-group" style="position: relative;bottom: 60px;">
             <label>املا كلمة السر</label>
             <input class="form-control" type="password" name="password">
         </div> <!-- form-group end.// -->  
-        <div class="form-group">
+        <div class="form-group" style="position: relative;bottom: 70px;">
             <button type="submit" class="btn btn-primary btn-block"> اشتراك  </button>
         </div> <!-- form-group// -->      
-       <!--- <small class="text-muted"><br> كل الحقوق محفوظة</small>  -->                                        
     </form>
     </article> <!-- card-body end .// -->
-    <div class="border-top card-body text-center">لديك حساب؟ <a href="/Login">دخول</a></div>
+    <div  style="position: relative;bottom: 100px;text-align: center;">لديك حساب؟ <a href="/Login">دخول</a></div>
     </div> <!-- card.// -->
     </div> <!-- col.//-->
     
@@ -121,88 +120,95 @@
 
 
   </section>
-   <!-- Footer ------------------------------------------------------------------------------->
-   <footer class="page-footer font-small blue pt-4">
+    <!-- Footer ------------------------------------------------------------------------------->
+    <footer class="page-footer font-small blue pt-4" style="background-color: rosybrown;" >
 
-    <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
 
-      <!-- Grid row -->
-      <div class="row">
+        <!-- Grid row -->
+        <div class="row">
 
-        <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+           <h5 style="text-align:center; position: relative;top: 30px;left:50px;">حمل تطبيق حجتي مجانا على</h5>
+           <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
 
-          <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns to organize your footer content.</p>
+            <!-- Content -->
+            <h5 style="text-align:justify;position: relative;bottom: 45px;left: 30px;">اشترك للمزيد</h5>
+            <a style="text-decoration: none;position: relative;bottom: 35px;left: 30px;" class="nav-link" href="/SignUp"  >
+              <button type="button" class="btn btn-default" style="width: 100px;background-color: white;"> 
+              اشتراك
+              </button></a>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none pb-3">
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
 
         </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none pb-3">
-
-        <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
-
-          <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
-
-          <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
+        <!-- Grid row -->
 
       </div>
-      <!-- Grid row -->
+      
+      <!-- Footer Links -->
 
-    </div>
-    <!-- Footer Links -->
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/">ESI SBA</a>
+      </div>
+      <!-- Copyright -->
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
-  </footer>
-  <!-- Footer -->
+
   </body>
   </html>
