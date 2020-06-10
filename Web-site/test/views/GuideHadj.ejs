@@ -100,6 +100,17 @@ display: none;
     flex-wrap: wrap;
  }
 }
+
+     @font-face {
+   font-family: "arab";
+   src: url(/fonts/ae_cortoba.ttf) format("truetype");
+   font-style: normal;
+   font-weight: 100;
+}
+*{
+  font-family: "arab";
+}
+
 </style>
   </head>
   <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
@@ -119,16 +130,7 @@ display: none;
           <a style="text-decoration: none;" class="nav-link" href="/register" >   <button type="button" style="background-color: #af5f61;" class="btn btn-default"> 
           <h6  style="color: white;">اشتراك</h6>
           </button></a>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+        
       </ul>
     </div>
   </nav>
@@ -138,7 +140,7 @@ display: none;
     <h2 style="color: #af5f61	; text-align: center;">انواع الحج</h2>
  <div  style="text-align: center;position: relative;top: 100px;display: block;"> <button onclick="shfct();" style="background-color:#af5f61 ; width: 200px;height: 50px;border-radius: 20px; ">
   <h4 style="color:white;">الإفراد</h4></button>
- <section class="card" id="card1" style="width: 400px;height: 100px;border-radius: 20px; position: absolute;left: 850px;bottom: 5px;display: none;z-index: 9;">
+ <section class="card" id="card1" style="width: 400px;height: 100px;border-radius: 20px; position: absolute;left: 750px;bottom: 15px;display: none;z-index: 9;">
    <h3>هي نية الحج وحده, ثم الإعتمار بعد الفراغ من مناسك الحج</h3>
  </section>
   <script>
@@ -162,7 +164,7 @@ display: none;
 <!---///////////////////////////////////////////////-->
  <div style="text-align: center;position: relative;top: 200px;display: block;"> <button onclick="shfct2()" style="background-color:#af5f61 ; width: 200px;height: 50px;border-radius: 20px;">
   <h4 style="color:white;">القران</h4></button> 
-  <section class="card" id="card3" style="width: 400px;height: 80px; position: absolute;left: 800px;top:10px;display: none;z-index: 9;border-radius: 20px;">
+  <section class="card" id="card3" style="width: 400px;height: 80px; position: absolute;left: 750px;top:10px;display: none;z-index: 9;border-radius: 20px;">
     <h3 style="text-align: center;">نية الحج و العمرة معا بعد يوم التروية</h3>
   </section>
   <script>
@@ -179,7 +181,7 @@ display: none;
 
 <div class="card-container">
 
-<div class="card" style="height: 500px;">
+<div class="card" style="height: 500px;position: relative;right: 70px;">
  <div class="card-count-container">
    <div class="card-count">1</div>
  </div>
@@ -196,21 +198,21 @@ display: none;
   </div>
     
 </div>
-<section class="card" id="tawjih" style="display: none; width: 600px; height: 500px;background-color: #f8f4f0;box-shadow: 5px 10px rosybrown;position: absolute;left: 500px;bottom: 2080px;" >
+<section class="card" id="tawjih" style="display: none; width: 600px; height: 500px;background-color: #f8f4f0;box-shadow: 5px 10px rosybrown;position: absolute;left: 400px;bottom: 2080px;" >
   <h4 style="text-align: center;">:حدد النبي صلى الله عليه و سلم 5 مواقيت للإحرام </h4>
   <h4 style="text-align: center;">ذو الحليفة، الجحفة، قرن المنازل،يلملم، ذات عرق</h4>
   <h5 style="text-align: right;">:لكن قبل الاحرام يجب فعل مايلي </h5>
   <h6 style="float: right;">  تقليم الأظافر و قص الشارب و إزالة شعر الابطين و العانة&larr;</h6>
-  <h6 style="float: right;">غسل جميع البدن إذا تيسر ، بحيث الرجل يخلع جميع الملابس المخيطة و يلبس ملابس الاحرام&larr;</h6>
+  <h6 style="float:right;">غسل جميع البدن إذا تيسر ، بحيث الرجل يخلع الملابس المخيطة و يلبس ملابس الاحرام</h6>
   <h6 style="float: right;">  أما  المرأة  تخلع  البرقع  و  النقاب  و  القفازين  و ترتدي  الخمار  لتغطي  به  وجهها و  رأسها&larr; </h6>
   
   <h5 style="text-align: right; position: relative;top: 90px;left: 370px;"> :نية الحج</h5>
-  <h6 style="float: right;position: relative;top: 50px;">بعد الانتهاء مما ذكر ينوي الدخول في النسك الذي يريده فإذا نوى الدخول في النسك يكون &larr; </h6>
-  <h6 style="float: right;position: relative;top: 40px;"> بذلك قد أحرم و لو لم يتلفظ بشيء و إن جعل نية الإحرام بعد صلاة الفريضة فحسن و ان لم </h6>
-  <h6 style="float: right;position: relative;top: 30px;right: 7px;">  يكن وقت فريضة و صلى ركعتين ينوي بهما سنة الوضوء فلا بأس. و إذا كان نائبا عن غيره </h6>
-  <h6 style="float: right;position: relative;top:25px;right: 8;">.. في الحج فإنه ينوي الحج عن ذلك الغير قائلا: لبيك اللهم لبيك عن فلان </h6>
-  <h5 style="float: left;;position: relative;top: 50px;left: 500px;">:صفة التلبية</h5>
-  <h6 style="float: right;position: relative;top: 50px; color: green;">لبيك اللهم لبيك لبيك لا شريك لك لبيك إن الحمد و النعمة لك و الملك لا شريك لك.</h6>
+  <h6 style="float: right;position: relative;top: 50px;left: 30px;">بعد الانتهاء مما ذكر ينوي الدخول في النسك الذي يريده فإذا نوى الدخول في </h6>
+  <h6 style="float: right;position: relative;top: 40px;left: 20px;">النسك يكون بذلك قد أحرم و لو لم يتلفظ بشيء و إن جعل نية الإحرام بعد صلاة </h6>
+  <h6 style="float: right;position: relative;top: 30px;left:2px;">الفريضة فحسن و ان لم يكن وقت فريضة و صلى ركعتين ينوي بهما سنة الوضوء فلا    </h6>
+  <h6 style="float: right;position: relative;top:25px;right: 10px;font-size: 13px;">..بأس و إذا كان نائبا في الحج عن غيره فإنه ينوي الحج عن ذلك الغير قائلا: لبيك اللهم لبيك عن فلان </h6>
+  <h5 style="float: left;;position: relative;top: 50px;left: 500px;">:صفة لتلبية</h5>
+  <h6 style="float: right;position: relative;top: 50px; color: green;text-align: center;">لبيك اللهم لبيك لبيك لا شريك لك لبيك إن الحمد و النعمة لك و الملك لا شريك لك.</h6>
   <h5 style="float: left;;position: relative;top: 50px;left: 500px;">:وقت التلبية</h5>
   <h6 style="float: right;position: relative;top: 80px; color: green;"> من الإحرام إلى أن يشرع في رمي جمرة العقبة صباح العيد</h6>
 
@@ -225,7 +227,7 @@ display: none;
 
 
 
-<div class="card" style="height: 500px;">
+<div class="card" style="height: 500px;position: relative;right: 70px;">
  <div class="card-count-container">
    <div class="card-count" style="background-color: #fec22f;">2</div>
  </div>
@@ -264,7 +266,7 @@ display: none;
 
 
 
-<div class="card" style="height:500px;">
+<div class="card" style="height:500px;position: relative;right: 70px;">
  <div class="card-count-container">
    <div class="card-count" style="background-color: #61345b;">3</div>
  </div>
@@ -290,7 +292,7 @@ display: none;
 
 
 
-<div class="card" style="height:500px;">
+<div class="card" style="height:500px;position: relative;right: 70px;">
   <div class="card-count-container">
     <div class="card-count" style="background-color: #61345b;">4</div>
   </div>
@@ -308,7 +310,7 @@ display: none;
 
 
 
- <div class="card" style="height:500px;">
+ <div class="card" style="height:500px;position: relative;right: 70px;">
   <div class="card-count-container">
     <div class="card-count" style="background-color: #61345b;">5</div>
   </div>

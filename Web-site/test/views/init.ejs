@@ -18,10 +18,28 @@
  
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 <style>
-  
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+.main-container {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; /* height of your footer */
+}
+footer {
+ position: relative;
+ height: 300px;
+
+ bottom: 200px;
+ width: 100%;
+}  
 
 
-button {
+.HajType {
   width: 150px;
   background: transparent;
   color: #fff;
@@ -56,38 +74,111 @@ button {
   }
 }
 
+option{
+  height:50px;
+  color: #af5f61;
+}
+
 
 
 </style>
 
 
 </head>
+<nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
+  <a class="navbar-brand" href="/" style="position: relative;left:150px"><h3>حجتي</h3></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+  
+      <li class="nav-item dropdown" style="position: relative;left:1000px;">
+        <div class="chip" style="background-color: rosybrown;">
+        <img src="/images/avatar.png" alt="Person" width="96" height="96">
+        <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+      <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %> </h6> 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/logout">خروج</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 <body style="overflow-x: hidden;">
-    <section  style="width: 90%;height: 550px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 70px; background-image:url(/images/back.png);background-size: cover;">
+  <div class="main-container">
+
+    <section  style="width: 90%;height: 550px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 10px; background-image:url(/images/back.png);background-size: cover;">
 
     <h1 style="text-align: center;color: white;">للمواصلة يجب اعداد ملفك</h1>
-    <h3 style="text-align: center;color: white;position: relative;top: 30px;">اختر</h3>
-    <a><img class="zoom" style="width: 300px;height: 200px; float: left;position: relative;left: 200px;top:40px;" src="/images/4.png" onclick="choose('omra')"></a>
-    <h2 style="position: relative;left: 700px;top: 10px;color: white;">حج </h2>
-    <div class="item button-pressure" style="position: relative;left: 350px;top: 60px;"><a ><button onclick="choose('ifrad')">الإفراد<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>من مناسك الحج </span><span> نية الحج وحده ثم الإعتمار بعد الفراغ  </span><span></span></marquee></button></a> 
+    <h3 style="color: white;position: relative;top: 10px;left:300px">اختر</h3>
+    <a><img class="zoom" style="width: 200px;height: 200px; float: left;position: relative;left: 50px;top:40px;" src="/images/4.png" onclick="choose('omra')"></a>
+    <h2 style="position: relative;left: 300px;bottom:10px;color: white;">حج </h2>
+    <div class="item button-pressure" style="position: relative;left:50px;top: 20px;"><a ><button class="HajType "onclick="choose('ifrad')">الإفراد<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>من مناسك الحج </span><span> نية الحج وحده ثم الإعتمار بعد الفراغ  </span><span></span></marquee></button></a> 
     
     </div>
     
-    <div class="item button-pressure" style="position: relative;left: 550px;top:2px;"><a ><button onclick="choose('ikran')">التمتع<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>العمرة وحدها ثم نية الحج</span></marquee></button></a>
+    <div class="item button-pressure" style="position: relative;left: 200px;bottom: 40px;"><a ><button  class="HajType "  onclick="choose('ikran')">التمتع<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>العمرة وحدها ثم نية الحج</span></marquee></button></a>
     </div>
   
-    <div class="item button-pressure" style="position: relative;left: 770px;bottom: 60px;"><a><button onclick="choose('tama')">القران<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>نية الحج و العمرة معا بعد يوم التروية</span></marquee></button></a>
+    <div class="item button-pressure" style="position: relative;left: 350px;bottom: 100px;"><a><button class="HajType " onclick="choose('tama')">القران<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>نية الحج و العمرة معا بعد يوم التروية</span></marquee></button></a>
     </div>
- <a href="/Gh"> <img class=" zoom"style="width: 300px;height: 200px;float: right;position: relative;right: 250px;bottom:180px
- ;" src="/images/3.png"></a>
- <h1 style="position: relative;left: 750px;top: 20px;color: white;">&#8601;</h1>
- <h1 style="position: relative;left: 920px;bottom: 30px;color: white;">&#8595;</h1>
- <h1 style="position: relative;left: 1100px;bottom: 80px;color: white;">&#8600;</h1>
- <h2 style="position: relative;left:280px;bottom: 400px;color: white;">عمرة</h2></a>
-    
-    </section>
+ <a href="#"> <img class=" zoom"style="width: 200px;height: 200px;float: right;position: relative;right: 600px;bottom:200px;" src="/images/3.png"></a>
+ <h1 style="position: relative;left: 400px;bottom: 20px;color: white;">&#8601;</h1>
+ <h1 style="position: relative;left: 480px;bottom: 70px;color: white;">&#8595;</h1>
+ <h1 style="position: relative;left: 550px;bottom: 130px;color: white;">&#8600;</h1>
+ <h2 style="position: relative;left:80px;bottom: 400px;color: white;">عمرة</h2></a>
+ <hr style="border:none;border-left:1px solid white; height: 480px;position: relative;left:720px ;bottom: 480px;">
+
+
+ <h4 style="color: white;position: relative;left: 740px; bottom: 950px;">لتحديد الميقات يرجى تحديد هذه المعلومات</h4>
+<button class="btn btn-success" style="position: relative;bottom: 650px;left: 950px;">تاكيد</button>
+
+<div class="airport">
+
+  <h5 style="position: relative;bottom: 980px;left: 900px;color: white;">مطار الانطلاق</h5>
+<select  size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+  <option>مطارName</option>
+</select>
+<div>
+<div class="air">
+  <h5 style="position: relative;bottom: 980px;left: 900px;color: white;">مطار الوصول</h5>
+  <select  size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+    <option>مطارName</option>
+  
+
+</select>
+
+</div>
+
+</section>
+
  <!-- Footer ------------------------------------------------------------------------------->
- <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;" >
+ <footer style="background-color: #af5f61;">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
@@ -98,7 +189,8 @@ button {
       <!-- Grid column -->
       <div class="col-md-6 mt-md-0 mt-3">
        <h5 style="text-align:center; position: relative;top: 30px;">حمل تطبيق حجتي مجانا على</h5>
-       <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+       
+       <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 230px;"></a>
       </div>
       <!-- Grid column -->
 
@@ -165,8 +257,7 @@ button {
 
 </footer>
 <!-- Footer -->
-
->
+</div>
   <script>
     function choose(type){  
     $.ajax({ 
@@ -198,4 +289,5 @@ button {
     };
   </script>
 </body>
+
 </html>
