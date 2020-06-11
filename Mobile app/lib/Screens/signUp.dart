@@ -7,8 +7,7 @@ import 'signIn.dart';
 import 'package:school/Services/User.dart';
 
 class Sup extends StatefulWidget {
-  final Function toggleView;
-  Sup({this.toggleView});
+
   @override
   createState() => SupState();
 }
@@ -195,7 +194,13 @@ class SupState extends State<Sup> {
                                     fontSize: 20, fontFamily: 'AeCortoba'),
                               ),
                               onPressed: () {
-                                widget.toggleView();
+                                Navigator.of(context).push(
+                                  new MaterialPageRoute(
+                                    builder: (context) {
+                                      return new Signinform();
+                                    },
+                                  ),
+                                );
                               },
                             ),
                             Text(' لديك حساب؟',

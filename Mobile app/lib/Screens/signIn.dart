@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:school/Screens/home.dart';
+import 'package:school/Screens/signUp.dart';
 import 'package:school/Services/User.dart';
 import 'package:school/objects/ApiResponce.dart';
 
 class Signinform extends StatefulWidget {
-  final Function toggleView;
-  Signinform({this.toggleView});
+
   @override
   createState() => SigninformState();
 }
@@ -100,7 +100,7 @@ class SigninformState extends State<Signinform> {
                       onPressed: () {
                         //forgot password screen
                       },
-                      textColor: Color(0xff7fe0cd),
+                      textColor: Color(0xffaf5f63),
                       child: Text(
                         'نسيت كلمة السر؟',
                         style: TextStyle(fontFamily: 'AeCortoba'),
@@ -148,7 +148,13 @@ class SigninformState extends State<Signinform> {
                                         fontSize: 20, fontFamily: 'AeCortoba'),
                                   ),
                                   onPressed: () {
-                                    widget.toggleView();
+                                    Navigator.of(context).push(
+                                      new MaterialPageRoute(
+                                        builder: (context) {
+                                          return new Sup();
+                                        },
+                                      ),
+                                    );
                                   }),
                               Text(
                                 'ليس لديك حساب؟',

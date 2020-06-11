@@ -1,23 +1,27 @@
 
 import 'package:flutter/material.dart';
-import 'package:school/Screens/Homevisitor.dart';
-import 'package:school/Screens/authenticate.dart';
-import 'package:school/Screens/wrapper.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:school/Screens/signUp.dart';
 
 void main() {
   runApp(MyApp());
   
 }
-class MyApp extends StatelessWidget{
+class MyApp extends StatefulWidget{
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
      return MaterialApp(
-       home: Homevisitor(),
+       home: Sup(),
 
 
      );
-}            
-}     
+}
+}
            
         
         

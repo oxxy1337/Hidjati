@@ -7,7 +7,7 @@ import 'package:school/objects/User.dart';
 import 'package:school/pages/quran_page.dart';
 
 class Home extends StatefulWidget {
-  User user;
+   User user;
 
   Home(this.user);
 
@@ -88,7 +88,7 @@ class Home_main extends State<Home> {
                       Navigator.of(context).push(
                         new MaterialPageRoute(
                           builder: (context) {
-                            return new Homehadj();
+                            return new Home(user);
                           },
                         ),
                       );

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:school/Screens/Hadj.dart';
+import 'package:school/Screens/home.dart';
 import 'package:school/Screens/omra.dart';
 import 'package:school/Screens/CurvedNavigationBar.dart';
 import 'package:school/Screens/signIn.dart';
@@ -94,7 +95,7 @@ class Home_visitor extends State<Homevisitor> {
                       Navigator.of(context).push(
                         new MaterialPageRoute(
                           builder: (context) {
-                            return new Homehadj();
+                            return new HomePage();
                           },
                         ),
                       );
