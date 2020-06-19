@@ -57,8 +57,12 @@ app.route('/profile')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('Profile'));
 
+app.route('/loc')
+.get((_, res) => res.render('localisation'));
+
 app.route('/Go')
 .get((_, res) => res.render('GuideOmra'));
+
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
