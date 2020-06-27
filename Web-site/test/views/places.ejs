@@ -180,7 +180,7 @@
       }
 
       .mapboxgl-popup-content h3 {
-        background: #0984e3;
+        background: rosybrown ;
         color: #fff;
         margin: 0;
         display: block;
@@ -261,7 +261,15 @@
           }
 
       
-
+          @font-face {
+          font-family: "arab";
+          src: url(/fonts/ae_cortoba.ttf) format("truetype");
+          font-style: normal;
+          font-weight: 100;
+                    }
+            *{
+            font-family: "arab";
+            }
     </style>
   </head>
 
@@ -274,6 +282,7 @@
          left: 66%;
          top:10;
            }
+
    </style>
 
 
@@ -281,7 +290,9 @@
     <div class='sidebar'>
 
       <div class='heading' style="height: 80px;">
-        <img src="/images/logo.png" style="width: 200px;height: 150px; position: relative;bottom: 20px;left: 230px;">    
+        <h1 style="position: relative;top: 10px;left: 10px;color:white">مواقع و اماكن ممكن ان تهمك</h1>   
+
+        <img src="/images/logo.png" style="width: 200px;height: 150px; position: relative;bottom:70px;left: 290px;"> 
       </div>
 
     <div id='listings' class='listings'></div>
@@ -377,7 +388,7 @@
     // style URL
     style: 'mapbox://styles/mapbox/streets-v11',
     // initial position in [long, lat] format
-    center: [-1.316699, 34.881789 ],
+    center: [39.8240835, 21.4224779 ],
     // initial zoom
     zoom: 13
   });
@@ -414,15 +425,14 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-            -1.3187992572784424,38.883097040065955
-          ]
+          39.8240835, 21.4224779         ]
         },
         properties: {
-          phoneFormatted: '(213) 699338684 ',
-          address: 'bab mok',
-          city: 'Tlemcen',
-          name: 'le cinq',
-          url: 'http://www.esi-sba.dz'
+          phoneFormatted: '',
+          address: 'Al Haram, Mecca 24231',
+          city: ' Arabie saoudite',
+          name: '  Kaaba-الكعبة',
+          url: '',
         }
       },
       {
@@ -430,16 +440,16 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-              -1.324625,
-             34.874964
+          39.8240835,
+          21.4224779
           ]
         },
         properties: {
-          phoneFormatted: '(202) 507-8357',
-          address: 'Moussa kazi, Boulevard Aïn Sbaa Ali',
-          city: 'Tlemcen',
-          name: 'l`equinoxe',
-          url: 'http://www.esi-sba.dz',
+          phoneFormatted: '',
+          address: 'Masjid al-Haram',
+          city: 'Arabie saoudite',
+          name: 'مسجد الحرم',
+          url: '',
         }
       },
       {
@@ -447,16 +457,16 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-             -1.333766,
-            34.880703
+          39.608937,
+          24.4672105
           ]
         },
         properties: {
-          phoneFormatted: '(202) 555555555',
-          address: 'L`échappatoire, Boulevard Imama, 13000 Mansourah,',
-          city: 'Tlemcen',
-          url: 'http://www.esi-sba.dz',
-          name:'lechapatoire',
+          phoneFormatted: ' ',
+          address: 'Al Haram, Medina 42311',
+          city: 'Arabie saoudite',
+          url: '',
+          name:'المسجد النبوي',
          }
       },
       {
@@ -464,16 +474,16 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-            -1.342928,
-            34.879277
+          39.6143779,
+          24.4671208
           ]
         },
         properties: {
-          phoneFormatted: '(202) 337-9338',
-          address: ' Cafe SLIMANI, Boulevard Imama, 13000 Mansourah,',
-          city: 'Tlemcen',
-          url: 'http://www.esi-sba.dz',
-          name:'Restaurant Marocain',
+          phoneFormatted: '',
+          address: ' Cimetière Baqi Algharqad,ممر مشاة، Al Haram, Medina 42311',
+          city: ' Arabie saoudite',
+          url: 'https://ar.wikipedia.org/wiki/البقيع',
+          name:' بقيع الغرقد',
         }
       },
       {
@@ -481,16 +491,16 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-            -1.322141,
-            34.886022
+          49.5333842,
+          27.146586
           ]
         },
         properties: {
           phoneFormatted: '(202) 547-9338',
-          address: ' Le Gourmet, Rue Mohamed Abdellaoui, 13000 Tlemcen',
-          city: 'Tlemcen',
-          name:'Le Gourmet',
-          url: 'http://www.esi-sba.dz',
+          address: ' ممشى كورنيش الفناتير، الفناتير، الجبيل 35811',
+          city: 'Arabie saoudite',
+          name:'Al Fanateer Beach',
+          url: '',
          }
       },
       {

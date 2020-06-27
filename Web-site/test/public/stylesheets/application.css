@@ -82,7 +82,15 @@ body {
   width: 280px;
 }
 
-
+@font-face {
+  font-family: "arab";
+  src: url(/fonts/ae_cortoba.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 100;
+}
+*{
+ font-family: "arab";
+}
 
 /* Add styles to the form container */
 .form-container {
