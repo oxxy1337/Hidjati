@@ -6,9 +6,17 @@ module.exports = {
         .then((user)=>{
             user.type= req.body.type;
             user.save();
-            console.log(user);
             return res.json({user: user});
         });
+    },
+    initAiro: (req, res, next)=>{
+        User.findById(req.body.id)
+        .then((user)=>{
+            user.flight.departureAirport = req.body.air1;
+            user.flight.arrivalAirport = req.body.air2;
+            user.save();
+            return res.json({user: user});
+        })
     },
     updateStep: (req, res ,next)=>{
         User.findById(req.body.id)

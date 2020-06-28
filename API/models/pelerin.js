@@ -5,27 +5,21 @@ const Schema = mongoose.Schema;
 const flightSchema = new Schema({
     departureAirport: {
         type: String,
-        required: true
     },
     d_departureTime: {
         type: Date,
-        required: true
     },
     d_arrivalTime: {
         type: Date,
-        required: true
     },
     arrivalAirport: {
         type: String,
-        required: true
     },
     a_departureTime: {
         type: Date,
-        required: true
     },
     a_arrivalTime: {
         type: Date,
-        required: true
     }
 },{_id: false});
 
@@ -85,7 +79,8 @@ const pelerinSchema = new Schema({
         default: 1
     },
     flight: {
-        type: flightSchema
+        type: flightSchema,
+        default:{}
     },
     iconUrl: {
         type: String,

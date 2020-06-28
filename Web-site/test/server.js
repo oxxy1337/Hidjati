@@ -58,7 +58,18 @@ app.route('/profile')
 .get((_, res) => res.render('Profile'));
 
 app.route('/places')
-.get((_, res) => res.render('places'));
+.get((req, res, next)=>{
+    axios({
+        method: 'get',
+        url: 'http://localhost:3000/place'
+    })
+    .then((resp)=>{
+        res.render('places', {data: resp.data})
+    })
+    .catch(()=>{
+        res.render('Agencies', {data: null});
+    });
+});
 
 app.route('/Go')
 .get((_, res) => res.render('GuideOmra'));
@@ -98,9 +109,19 @@ app.route('/omra')
 .all(userController.redirectIfNotLoggedIn, userController.isInit)
 .get(userController.isInit, (_, res) => res.render('UserOmra'));
 
- app.route('/agencies')
-.all(userController.redirectIfNotLoggedIn)
-.get((_, res)=> res.render('Agencies')); 
+app.route('/agencies')
+.get((req, res, next)=>{
+    axios({
+        method: 'get',
+        url: 'http://localhost:3000/agency'
+    })
+    .then((resp)=>{
+        res.render('Agencies', {data: resp.data});
+    })
+    .catch(()=>{
+        res.render('Agencies', {data: null});
+    });
+}); 
 
 app.route('/login')
 .all(userController.redirectIfLoggedIn)
