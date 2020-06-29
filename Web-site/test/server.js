@@ -73,7 +73,8 @@ app.route('/places')
 
 app.route('/Go')
 .get((_, res) => res.render('GuideOmra'));
-
+app.route('/loc')
+.get((_, res) => res.render('places'));
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
