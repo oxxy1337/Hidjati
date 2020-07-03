@@ -176,10 +176,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10.0),
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/images/everything.png"),
-                                        fit: BoxFit.cover,
-                                      )
+                                      
                                   ),
                                 ),
                               ),

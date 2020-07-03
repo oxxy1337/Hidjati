@@ -183,7 +183,7 @@ class SupState extends State<Sup> {
                           },
                         )),
                     Container(
-                        padding: EdgeInsets.fromLTRB(10, 260, 10, 0),
+                        padding: EdgeInsets.fromLTRB(10, 100, 10, 0),
                         child: Row(
                           children: <Widget>[
                             FlatButton(
