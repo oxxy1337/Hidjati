@@ -52,6 +52,15 @@ class Home_main extends State<Home> {
               ),
 
             );}
+            if (index==2){  Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return  Places();
+                },
+              ),
+
+            );
+            }
 
           },
         ),
@@ -88,7 +97,7 @@ class Home_main extends State<Home> {
                       Navigator.of(context).push(
                         new MaterialPageRoute(
                           builder: (context) {
-                            return new Home(user);
+                            return new Hadj();
                           },
                         ),
                       );

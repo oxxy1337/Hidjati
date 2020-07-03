@@ -5,12 +5,12 @@ import 'package:school/Screens/Hadj_Qiraan.dart';
 import 'package:school/Screens/Hadj_Tamatoaa.dart';
 import 'package:school/slime/slimy_card.dart';
 
-class HomePage extends StatefulWidget {
+class Hadj extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HadjPage createState() => _HadjPage();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HadjPage extends State<Hadj> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,10 +53,9 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 100),
 
-              // SlimyCard is being called here.
+
               SlimyCard(
-                // In topCardWidget below, imagePath changes according to the
-                // status of the SlimyCard(snapshot.data).
+
                 topCardWidget: thirdtopCardWidget((snapshot.data)
                     ? ''
                     : ''),
