@@ -6,5 +6,6 @@ const initRouter = express.Router();
 
 initRouter.post('/', init.initType);
 initRouter.post('/update', init.updateStep);
+initRouter.post('/Air', init.initAiro);
 
 module.exports = initRouter;

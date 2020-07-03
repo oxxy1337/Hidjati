@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>حجتي | Home</title>
+    <title>حجتي | وكالات السفر </title>
 
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -67,22 +67,29 @@
   </style>
 </head>
 <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-  <a class="navbar-brand" href="/" style="position: relative;left:150px"><h3>حجتي</h3></a>
+  <a class="navbar-brand" href="/" style="position: relative;left:150px"><img src="/images/logo.png" style="width:200px;height: 160px;position: relative;top: 20px;right: 100px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item" style="position: relative;left:1000px;">
-        <a style="text-decoration: none;" class="nav-link" href="#" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-        <h6 style="color: white;"> عرض المصحف الكريم  </h6>
+        <a style="text-decoration: none;" class="nav-link" href="/places" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
+        <h6 style="color: white;">مواقع سياحية</h6>
         </button></a>
       </li>
-      <li class="nav-item dropdown" style="position: relative;left:800px;">
+      <li class="nav-item" style="position: relative;left:1000px;">
+        <a style="text-decoration: none;" class="nav-link" href="#" >  
+       <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
+        <h6 style="color: white;">نصائح و توجيهات</h6>
+        </button></a>
+      </li>
+      
+      <li class="nav-item dropdown" style="position: relative;left:650px;">
           <div class="chip" style="background-color: rosybrown;">
           <img src="/images/avatar.png" alt="Person" width="96" height="96">
           <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-        <h6 style="color: white; position: relative;top: 5px;right: 9px;"> Username</h6> 
+        <h6 style="color: white; position: relative;top: 5px;right: 9px;"></h6> 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">اكمال مراحلي</a>
@@ -97,38 +104,26 @@
 </nav>
 <body class="index" id="to-top" style="overflow-x: hidden;">
   <section id="hero" style="height: 700px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">
-    <h3 style="text-align: center;color: white;position: relative;top:50px;">جمعنا لك روابط احسن الوكالات السياحية </h3>
-      
-   <div class="flip-box" style="position: relative;left: 150px;top: 100px;">
-  <div class="flip-box-inner">
-    <div class="flip-box-front"> 
-      <h2>Image and name of the agency</h2>
-    </div>
-    <div class="flip-box-back">
-      <h2>agencie's infos</h2>
-    </div>
-  </div>
-</div>
-<div class="flip-box" style="position: relative;bottom: 200px;left: 530px;">
-  <div class="flip-box-inner">
-    <div class="flip-box-front">
-      <h2>Image and name of the agency</h2>
-    </div>
-    <div class="flip-box-back">
-      <h2>agencie's infos</h2>
-    </div>
-  </div>
-</div>
-<div class="flip-box" style="position: relative;bottom: 500px;left: 900px;">
-  <div class="flip-box-inner">
-    <div class="flip-box-front">
-      <h2>Image and name of the agency</h2>
-    </div>
-    <div class="flip-box-back">
-      <h2>agencie's infos</h2>
-    </div>
-  </div>
-</div>
+    <%if(data){ %> 
+      <%if(!data.data.length){ %>
+        <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No agencies found in the db </h3>    
+      <%} else{%> 
+      <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">جمعنا لك روابط احسن الوكالات السياحية </h3>    
+      <% for(agency of data.data) {%>      
+      <div class="flip-box" style="display: inline-block;padding: 5px 5px 5px 5px; ">
+        <div class="flip-box-inner">
+          <div class="flip-box-front"> 
+            <h2><%= agency.name %></h2>
+          </div>
+          <div class="flip-box-back">
+            <h2><%= agency.discription%></h2>
+          </div>
+        </div>
+      </div>
+      <%}}%>
+    <%} else{%>
+      <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No API response</h3>
+  <%}%>
   </section>
  <!---Boostrap libraries-->
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>

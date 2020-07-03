@@ -2,7 +2,7 @@
 const api = 'http://cd6962d8.ngrok.io/user/login';
 const userController = require('./controllers/user');
 /////
-
+const axios = require('axios');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -58,11 +58,23 @@ app.route('/profile')
 .get((_, res) => res.render('Profile'));
 
 app.route('/places')
-.get((_, res) => res.render('places'));
+.get((req, res, next)=>{
+    axios({
+        method: 'get',
+        url: 'http://localhost:3000/place'
+    })
+    .then((resp)=>{
+        res.render('places', {data: resp.data})
+    })
+    .catch(()=>{
+        res.render('Agencies', {data: null});
+    });
+});
 
 app.route('/Go')
 .get((_, res) => res.render('GuideOmra'));
-
+app.route('/loc')
+.get((_, res) => res.render('places'));
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
@@ -98,9 +110,19 @@ app.route('/omra')
 .all(userController.redirectIfNotLoggedIn, userController.isInit)
 .get(userController.isInit, (_, res) => res.render('UserOmra'));
 
- app.route('/agencies')
-.all(userController.redirectIfNotLoggedIn)
-.get((_, res)=> res.render('Agencies')); 
+app.route('/agencies')
+.get((req, res, next)=>{
+    axios({
+        method: 'get',
+        url: 'http://localhost:3000/agency'
+    })
+    .then((resp)=>{
+        res.render('Agencies', {data: resp.data});
+    })
+    .catch(()=>{
+        res.render('Agencies', {data: null});
+    });
+}); 
 
 app.route('/login')
 .all(userController.redirectIfLoggedIn)

@@ -134,12 +134,12 @@ option{
 
 
  <h4 style="color: white;position: relative;left: 740px; bottom: 950px;">لتحديد الميقات يرجى تحديد هذه المعلومات</h4>
-<button class="btn btn-success" style="position: relative;bottom: 650px;left: 950px;" type="submit">تاكيد</button>
+<button onclick="choose0()" class="btn btn-success" style="position: relative;bottom: 650px;left: 950px;" type="submit">تاكيد</button>
 
 <div class="airport">
 
   <h5 style="position: relative;bottom: 980px;left: 900px;color: white;">مطار الانطلاق</h5>
-<select name="departureAirport"  size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
+<select id="select1" name="departureAirport"  size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
   <option value="1" >1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -156,7 +156,7 @@ option{
 <div>
 <div class="air">
   <h5 style="position: relative;bottom: 980px;left: 900px;color: white;">مطار الوصول</h5>
-  <select name="arrivalAirport" size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
+  <select id="select2" name="arrivalAirport" size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
  <option value="1" > 1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -259,7 +259,26 @@ option{
 <!-- Footer -->
 </div>
   <script>
+    a=1;
+    function choose0(){
+      if(document.getElementById('select1').value && document.getElementById('select2').value) {
+        $.ajax({
+          url: 'http://localhost:3000/init/Air',
+          type: 'POST',
+          cache: false,
+          data:{id:'<%=user._id%>', air1: document.getElementById('select1').value, air2: document.getElementById('select2').value},
+          success: function(data){
+            alert('worked');
+            a=0;
+          },
+          error: function(){
+            alert('try to submit airport again');
+          }
+        });
+      } else alert('airport required')
+    }
     function choose(type){  
+      if(!a){
     $.ajax({ 
           url: 'http://localhost:3000/init',
           type: 'POST',
@@ -286,6 +305,9 @@ option{
             window.location = '/init'
             }
           });
+        } else {
+          alert('airport required');
+        }
     };
 
 

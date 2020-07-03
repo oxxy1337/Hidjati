@@ -3,6 +3,7 @@
   <head>
     <meta charset='utf-8' />
     <title>حجتي | مواقع</title>
+    
 
       <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
       <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
@@ -17,16 +18,23 @@
       <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
        <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-  <!-- Boostrap libraries -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="{{ asset('affichageDisplay/css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{{ asset('affichageDisplay/css/mdb.min.css') }}" rel="stylesheet">
+  <!-- our custom styles (optional) ila bghitou tmodifiw -->
+  <link href="{{ asset('affichageDisplay/css/style.min.css') }}" rel="stylesheet">
 
     <style>
-
+                @font-face {
+            font-family: "arab";
+            src: url(/fonts/ae_cortoba.ttf) format("truetype");
+            font-style: normal;
+            font-weight: 100;
+          }
+          *{
+          font-family: "arab";
+          }
       body {
         color: #404040;
         font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
@@ -86,7 +94,7 @@
         min-height: 60px;
         line-height: 60px;
         padding: 0 10px;
-         background-color:rosybrown;
+         background-color: rosybrown;
         color: #fff;
       }
 
@@ -107,7 +115,7 @@
 
       .listings .item .title {
         display: block;
-        color: #0B0537;
+        color: #af5f61;
         font-weight: 300;
       }
 
@@ -180,7 +188,7 @@
       }
 
       .mapboxgl-popup-content h3 {
-        background: rosybrown ;
+        background: #af5f61;
         color: #fff;
         margin: 0;
         display: block;
@@ -256,20 +264,12 @@
     }
     @media (min-width: 800px) and (max-width: 850px) {
               .navbar:not(.top-nav-collapse) {
-                  background: #1C2331!important;
+                  background: rgb(114, 69, 69)!important;
               }
           }
 
       
-          @font-face {
-          font-family: "arab";
-          src: url(/fonts/ae_cortoba.ttf) format("truetype");
-          font-style: normal;
-          font-weight: 100;
-                    }
-            *{
-            font-family: "arab";
-            }
+
     </style>
   </head>
 
@@ -282,17 +282,15 @@
          left: 66%;
          top:10;
            }
-
    </style>
 
 
 
     <div class='sidebar'>
 
-      <div class='heading' style="height: 80px;">
-        <h1 style="position: relative;top: 10px;left: 10px;color:white">مواقع و اماكن ممكن ان تهمك</h1>   
-
-        <img src="/images/logo.png" style="width: 200px;height: 150px; position: relative;bottom:70px;left: 290px;"> 
+      <div class='heading' style="height: 80px;position: relative;bottom: 20px;">
+        <h2 style="color: white;position: relative;left:20px;top: 10px;">مواقع و اماكن ممكن ان تهمك</h2>
+        <img src="/images/logo.png" style="width: 150px;height: 150px; position: relative;left:320px;bottom: 90px;">
       </div>
 
     <div id='listings' class='listings'></div>
@@ -388,7 +386,7 @@
     // style URL
     style: 'mapbox://styles/mapbox/streets-v11',
     // initial position in [long, lat] format
-    center: [39.8240835, 21.4224779 ],
+    center: [39.8240835, 21.4224779],
     // initial zoom
     zoom: 13
   });
@@ -425,31 +423,15 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-          39.8240835, 21.4224779         ]
-        },
-        properties: {
-          phoneFormatted: '',
-          address: 'Al Haram, Mecca 24231',
-          city: ' Arabie saoudite',
-          name: '  Kaaba-الكعبة',
-          url: '',
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-          39.8240835,
-          21.4224779
-          ]
+          39.8240835,21.4224779]
         },
         properties: {
           phoneFormatted: '',
           address: 'Masjid al-Haram',
-          city: 'Arabie saoudite',
-          name: 'مسجد الحرم',
+          city: 'السعودية',
           url: '',
+          name: 'مسجد الحرم',
+
         }
       },
       {
@@ -457,50 +439,32 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-          39.608937,
-          24.4672105
+          39.608937, 24.4672105
           ]
         },
         properties: {
-          phoneFormatted: ' ',
+          phoneFormatted: '',
           address: 'Al Haram, Medina 42311',
-          city: 'Arabie saoudite',
+          city: 'السعودية',
           url: '',
-          name:'المسجد النبوي',
-         }
+          name: 'المسجد النبوي',
+
+        }
       },
       {
         type: 'Feature',
         geometry: {
           type: 'Point',
           coordinates: [
-          39.6143779,
-          24.4671208
+          39.6143779,24.4671208
           ]
         },
         properties: {
           phoneFormatted: '',
           address: ' Cimetière Baqi Algharqad,ممر مشاة، Al Haram, Medina 42311',
-          city: ' Arabie saoudite',
-          url: 'https://ar.wikipedia.org/wiki/البقيع',
-          name:' بقيع الغرقد',
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-          49.5333842,
-          27.146586
-          ]
-        },
-        properties: {
-          phoneFormatted: '(202) 547-9338',
-          address: ' ممشى كورنيش الفناتير، الفناتير، الجبيل 35811',
-          city: 'Arabie saoudite',
-          name:'Al Fanateer Beach',
+          city: 'السعودية',
           url: '',
+          name:' بقيع الغرقد',
          }
       },
       {
@@ -508,141 +472,19 @@ map.addControl(new mapboxgl.NavigationControl());
         geometry: {
           type: 'Point',
           coordinates: [
-            -1.32746,
-            34.90057
+          49.5333842,27.146586
           ]
         },
         properties: {
-          phoneFormatted: '(202) 547-9338',
-          address: ' Naftal, RN 22, 13000 Tlemcen, RADP',
-          city: 'Tlemcen',
-          name:'La marina',
-          url: 'http://www.esi-sba.dz',
-
-          
+          phoneFormatted: '',
+          address: 'ممشى كورنيش الفناتير، الفناتير، الجبيل 35811',
+          city: 'السعودية',
+          url: '',
+          name:'Al Fanateer Beach',
         }
       },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-           -1.3275,
-            34.886459
-          ]
-        },
-        properties: {
-          phoneFormatted: '(301) 654-7336',
-          
-          address: '  Boulevard Aïn Sbaa Ali, 13000 Tlemcen, RADP',
-           city: 'Tlemcen',
-          name:'Best Chiken',
-          url: 'http://www.esi-sba.dz',
-
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-             -1.339576,
-             34.887829
-          ]
-        },
-        properties: {
-          phoneFormatted: '(571) 203-0082',
-          address: 'Mairie Annexe, Boulevard du 18 Fevrier, 13000 Mansourah, RADP',
-          city: 'Tlemcen',
-          name:'Maxi FastFood',
-          url: 'http://www.esi-sba.dz',
-}
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-           -1.324153,
-            34.886776
-          ]
-        },
-        properties: {
-          phoneFormatted: '(703) 522-2016',
-          address: 'Rue Mohamed Abdellaoui, 13000 Tlemcen, RADP',
-          city: 'Tlemcen',
-          name:'Le coq13',
-          url: 'http://www.esi-sba.dz',
- }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-            -1.303725,
-            34.881926
-          ]
-        },
-        properties: {
-          phoneFormatted: '(610) 642-9400',
-          address: '  RN 2;RN 22, 130000 Tlemcen, RADP',
-          city: 'Tlemcen',
-          name:'Restaurant Agadir',
-          url: 'http://www.esi-sba.dz',
-} 
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-            -1.319121,
-           34.863944
-          ]
-        },
-        properties: {
-          phoneFormatted: '(215) 386-1365',
-          address: ' 130000 Tlemcen, RADP',
-          city: 'Tlemcen',
-          name:'Kraouti',
-          url: 'http://www.esi-sba.dz',
-} 
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-            -1.318172,
-            34.864179
-          ]
-        },
-        properties: {
-          phoneFormatted: '(202) 331-3355',
-          address: ' 130000 Tlemcen, RADP',
-          city: 'Tlemcen',
-          name:'Bekhchi',
-          url: 'http://www.esi-sba.dz',
-        }
-      },
-         {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [
-            -1.32030,
-           34.88890
-          ]
-        },
-        properties: {
-          phoneFormatted: '(215) 2222222',
-          address: ' test test',
-          city: 'Tlemcen',
-          name:'test',
-          url: 'http://www.esi-sba.dz',
-} 
-      }
+      
+      
       ]
   };
   // This adds the data to the map
@@ -857,7 +699,14 @@ createPopUp(stores.features[0]);
     }
   }
     </script>
-     
+        <!-- JQuery -->
+  <script type="text/javascript" src="{{ asset('affichageDisplay/js/jquery-3.3.1.min.js') }}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{ asset('affichageDisplay/js/popper.min.js') }}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{ asset('affichageDisplay/js/bootstrap.min.js') }}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
