@@ -8,6 +8,8 @@ import 'package:school/Screens/signIn.dart';
 import 'package:school/Screens/signUp.dart';
 import 'package:school/objects/User.dart';
 
+import 'Hadj.dart';
+
 class Homevisitor extends StatefulWidget {
 
 
@@ -95,7 +97,7 @@ class Home_visitor extends State<Homevisitor> {
                       Navigator.of(context).push(
                         new MaterialPageRoute(
                           builder: (context) {
-                            return new HomePage();
+                            return new Hadj();
                           },
                         ),
                       );

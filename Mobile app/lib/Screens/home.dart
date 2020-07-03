@@ -5,6 +5,7 @@ import 'package:school/Screens/omra.dart';
 import 'package:school/Screens/CurvedNavigationBar.dart';
 import 'package:school/objects/User.dart';
 import 'package:school/pages/quran_page.dart';
+import 'package:school/Screens/Places.dart';
 
 class Home extends StatefulWidget {
    User user;
