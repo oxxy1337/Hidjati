@@ -21,6 +21,7 @@ class _HadjQiraan extends State<Hadj_Qiraan> with TickerProviderStateMixin {
   int currentPage = 0;
   Color constBackColor;
 
+
   @override
   void initState() {
     super.initState();

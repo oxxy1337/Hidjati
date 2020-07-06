@@ -114,9 +114,9 @@ class SupState extends State<Sup> {
 
                         validator: (val) =>
                             val.length < 6 ? 'على الاقل 6 حروف' : null,
-
+                        obscureText: true,
                         onChanged: (val) {
-                          setState(() => password = val);
+                          setState(() => password = val,);
                         },
                       ),
                     ),

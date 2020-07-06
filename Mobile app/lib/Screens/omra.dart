@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 import 'package:school/Screens/DummyData.dart';
-import 'package:school/Screens/CustomIcons.dart';
 import 'package:school/objects/TodoObject.dart';
 import 'package:school/pages/Details.dart';
 
@@ -22,6 +21,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
   int currentPage = 0;
   Color constBackColor;
 
+
   @override
   void initState() {
     super.initState();
@@ -31,7 +31,6 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
     scrollController = ScrollController();
     scrollController.addListener(() {
       ScrollPosition position = scrollController.position;
-//      ScrollDirection direction = position.userScrollDirection;
       int page = position.pixels ~/ (position.maxScrollExtent / (todos.length.toDouble() - 1));
       double pageDo = (position.pixels / (position.maxScrollExtent / (todos.length.toDouble() - 1)));
       double percent = pageDo - page;
@@ -176,7 +175,7 @@ class _SecondPageState extends State<Omra> with TickerProviderStateMixin {
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10.0),
-                                      
+
                                   ),
                                 ),
                               ),

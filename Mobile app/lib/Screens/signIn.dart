@@ -87,6 +87,7 @@ class SigninformState extends State<Signinform> {
                           ),
                           validator: (val) =>
                               val.isEmpty ? 'يجب ملأ هذه الخانة' : null,
+                          obscureText: true,
                           onChanged: (val) {
                             setState(
                               () => password = val,
