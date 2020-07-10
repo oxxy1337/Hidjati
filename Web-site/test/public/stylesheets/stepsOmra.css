@@ -79,7 +79,7 @@
        width: 900px;
        height: 600px;
        position: relative;
-       left: 160px;
+       left: 130px;
        bottom:20px;
        border-radius: 20px 10px;
   }
@@ -183,7 +183,7 @@
     width: 900px;
     height: 600px;
     position: relative;
-    left: 160px;
+    left: 130px;
     bottom:20px;
     border-radius: 20px 10px;
 }
@@ -287,7 +287,7 @@ code {
     width: 900px;
     height: 600px;
     position: relative;
-    left: 160px;
+    left: 130px;
     bottom:20px;
     border-radius: 20px 10px;
 }
@@ -391,7 +391,7 @@ code {
     width: 900px;
     height: 600px;
     position: relative;
-    left: 160px;
+    left: 130px;
     bottom:20px;
     border-radius: 20px 10px;
 }
@@ -495,7 +495,7 @@ code {
     width: 900px;
     height: 600px;
     position: relative;
-    left: 160px;
+    left: 130px;
     bottom:20px;
     border-radius: 20px 10px;
 }
@@ -593,17 +593,17 @@ code {
 }
 /*------------------------------------------------------------------------------------------*/
 
-.inputGroup7 {
+.inputGroup6 {
     background-color: rosybrown;
     display: block;
     width: 900px;
     height: 400px;
     position: relative;
-    left: 160px;
+    left: 130px;
     top: 40px;
     border-radius: 20px 10px;
 }
-.inputGroup7 label {
+.inputGroup6 label {
     padding: 12px 30px;
     width: 40%;
     border: 1px solid wheat;
@@ -619,7 +619,7 @@ code {
     transition: color 200ms ease-in;
     overflow: hidden;
 }
-.inputGroup7 label:before {
+.inputGroup6 label:before {
     width: 20px;
     height: 10px;
     border-radius: 50%;
@@ -633,7 +633,7 @@ code {
     opacity: 0;
     z-index: -1;
 }
-.inputGroup7 label:after {
+.inputGroup6 label:after {
     width: 32px;
     height: 32px;
     content: '';
@@ -651,21 +651,21 @@ code {
     cursor: pointer;
     transition: all 200ms ease-in;
 }
-.inputGroup7 input:checked ~ label {
+.inputGroup6 input:checked ~ label {
     color: #016151;
     border-radius: 20px 10px;
 }
-.inputGroup7 input:checked ~ label:before {
+.inputGroup6 input:checked ~ label:before {
     transform: translate(-50%, -50%) scale3d(56, 56, 1);
     opacity: 1;
    
 }
-.inputGroup7 input:checked ~ label:after {
+.inputGroup6 input:checked ~ label:after {
     background-color: #098a72;
     border-color: #016151;
     
 }
-.inputGroup7 input {
+.inputGroup6 input {
     width: 32px;
     height: 32px;
     order: 1;
