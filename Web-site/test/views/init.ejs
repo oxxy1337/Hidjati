@@ -79,21 +79,43 @@ option{
   color: #af5f61;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 </style>
 
 
 </head>
 <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-  <a class="navbar-brand" href="/" style="position: relative;left:150px"><h3>حجتي</h3></a>
+  <a class="navbar-brand" href="/" style="position: relative;left:100px"><img src="/images/logo.png" style="width: 180px;height: 150px;position: relative;top: 20px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
   
-      <li class="nav-item dropdown" style="position: relative;left:1000px;">
+      <li class="nav-item dropdown" style="position: relative;left:750px;">
         <div class="chip" style="background-color: rosybrown;">
         <img src="/images/avatar.png" alt="Person" width="96" height="96">
         <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
@@ -110,36 +132,34 @@ option{
 <body style="overflow-x: hidden;">
   <div class="main-container">
 
-    <section  style="width: 90%;height: 550px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 10px; background-image:url(/images/back.png);background-size: cover;">
+    <section  style="width: 90%;height: 800px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 10px; background-image:url(/images/back.png);background-size: cover;">
 
     <h1 style="text-align: center;color: white;">للمواصلة يجب اعداد ملفك</h1>
-    <h3 style="color: white;position: relative;top: 10px;left:300px">اختر</h3>
-    <a><img class="zoom" style="width: 200px;height: 200px; float: left;position: relative;left: 50px;top:40px;" src="/images/4.png" onclick="choose('omra')"></a>
+    <!---
+
+
     <h2 style="position: relative;left: 300px;bottom:10px;color: white;">حج </h2>
     <div class="item button-pressure" style="position: relative;left:50px;top: 20px;"><a ><button class="HajType "onclick="choose('ifrad')">الإفراد<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>من مناسك الحج </span><span> نية الحج وحده ثم الإعتمار بعد الفراغ  </span><span></span></marquee></button></a> 
     
     </div>
     
-    <div class="item button-pressure" style="position: relative;left: 200px;bottom: 40px;"><a ><button  class="HajType "  onclick="choose('tama')">التمتع<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>العمرة وحدها ثم نية الحج</span></marquee></button></a>
+    <div class="item button-pressure" style="position: relative;left: 200px;bottom: 40px;"><a >
+      <button  class="HajType "  onclick="choose('tama')">التمتع<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>العمرة وحدها ثم نية الحج</span></marquee></button></a>
     </div>
   
-    <div class="item button-pressure" style="position: relative;left: 350px;bottom: 100px;"><a><button class="HajType " onclick="choose('ikran')">القران<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>نية الحج و العمرة معا بعد يوم التروية</span></marquee></button></a>
+    <div class="item button-pressure" style="position: relative;left: 350px;bottom: 100px;"><a>
+      <button class="HajType " onclick="choose('ikran')">القران<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>نية الحج و العمرة معا بعد يوم التروية</span></marquee></button></a>
     </div>
- <a href="#"> <img class=" zoom"style="width: 200px;height: 200px;float: right;position: relative;right: 600px;bottom:200px;" src="/images/3.png"></a>
- <h1 style="position: relative;left: 400px;bottom: 20px;color: white;">&#8601;</h1>
- <h1 style="position: relative;left: 480px;bottom: 70px;color: white;">&#8595;</h1>
- <h1 style="position: relative;left: 550px;bottom: 130px;color: white;">&#8600;</h1>
- <h2 style="position: relative;left:80px;bottom: 400px;color: white;">عمرة</h2></a>
- <hr style="border:none;border-left:1px solid white; height: 480px;position: relative;left:720px ;bottom: 480px;">
+  -->
 
+ <h6 style="color: white;position: relative;left: 400px; top: 200px;">لتحديد الميقات يرجى تاكيد هذه المعلومات</h6>
+<button onclick="choose0()" class="btn btn-success" style="position: relative;top:200px;left:520px;" type="submit">تاكيد</button>
 
- <h4 style="color: white;position: relative;left: 740px; bottom: 950px;">لتحديد الميقات يرجى تحديد هذه المعلومات</h4>
-<button onclick="choose0()" class="btn btn-success" style="position: relative;bottom: 650px;left: 950px;" type="submit">تاكيد</button>
 
 <div class="airport">
 
-  <h5 style="position: relative;bottom: 980px;left: 900px;color: white;">مطار الانطلاق</h5>
-<select id="select1" name="departureAirport"  size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
+  <h5 style="position: relative;bottom: 10px;left: 800px;color: white;">مطار الانطلاق</h5>
+<select id="select1" name="departureAirport"  size="2"  style="position: relative;bottom: 10px;left: 700px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
   <option value="1" >1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -155,8 +175,8 @@ option{
 </select>
 <div>
 <div class="air">
-  <h5 style="position: relative;bottom: 980px;left: 900px;color: white;">مطار الوصول</h5>
-  <select id="select2" name="arrivalAirport" size="2"  style="position: relative;bottom: 980px;left: 780px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
+  <h5 style="position: relative;bottom: 150px;left: 140px;color: white;">مطار الوصول</h5>
+  <select id="select2" name="arrivalAirport" size="2"  style="position: relative;bottom: 145px;left: 50px;overflow: scroll;margin: 0;border: 2px solid #ccc;font-size: 16px; -webkit-overflow-scrolling: touch;width: 400px;height: 100px;overflow-x: hidden;">
  <option value="1" > 1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -174,6 +194,25 @@ option{
 </select>
 
 </div>
+<h4 style="color: white;position: relative;top: 50px;left: 480px;">اي مراحل تود اتباعها </h4>
+
+<div  style="position: relative;left: 690px;top: 285px;">
+  <a ><button class="btn btn-primary" class="HajType " onclick="choose('ikran')">حج القران</button></a>
+  <span class="tooltiptext">Tooltip text</span>
+
+</div>
+<img  style="width: 200px;height: 200px;position: relative;left: 200px;top:40px;" 
+  src="/images/4.png" >
+ <div class="item button-pressure" style="position: relative;left: 260px;top: 50px;"><a ><button class="btn btn-primary"  onclick="choose('omra')">العمرة</button></a>
+ </div>
+  <img style="width: 170px;height: 200px;position: relative;left: 750px;bottom: 200px;" src="/images/3.png"></a>
+  <div class="item button-pressure" style="position: relative;left:790px;bottom: 190px;">
+    <a ><button class="btn btn-primary" class="HajType " onclick="choose('ifrad')">حج الإفراد</button></a>
+  </div>
+  <div class="item button-pressure" style="position: relative;left: 900px;bottom: 230px;">
+    <a ><button class="btn btn-primary" class="HajType " onclick="choose('tama')">حج التمتع</button></a>
+  </div>
+  
 
 </section>
 
