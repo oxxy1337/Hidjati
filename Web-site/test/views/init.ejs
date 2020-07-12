@@ -79,29 +79,6 @@ option{
   color: #af5f61;
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
 
 </style>
 
@@ -148,7 +125,7 @@ option{
     </div>
   
     <div class="item button-pressure" style="position: relative;left: 350px;bottom: 100px;"><a>
-      <button class="HajType " onclick="choose('ikran')">القران<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>نية الحج و العمرة معا بعد يوم التروية</span></marquee></button></a>
+      <button class="HajType " onclick="choose('ikran')">القران<marquee scrollamount="3" direction="right" style="font-size: 25px;"><span>نية الحج و العمرة معا بعد يوم التروية </span></marquee></button></a>
     </div>
   -->
 
@@ -197,19 +174,18 @@ option{
 <h4 style="color: white;position: relative;top: 50px;left: 480px;">اي مراحل تود اتباعها </h4>
 
 <div  style="position: relative;left: 690px;top: 285px;">
-  <a ><button class="btn btn-primary" class="HajType " onclick="choose('ikran')">حج القران</button></a>
-  <span class="tooltiptext">Tooltip text</span>
-
+  <a ><button class="btn btn-primary"  data-toggle="tooltip" data-placement="top" title="نية الحج و العمرة معا بعد يوم التروية" class="HajType " onclick="choose('ikran')">حج القران</button></a>
 </div>
 <img  style="width: 200px;height: 200px;position: relative;left: 200px;top:40px;" 
   src="/images/4.png" >
  <div class="item button-pressure" style="position: relative;left: 260px;top: 50px;"><a ><button class="btn btn-primary"  onclick="choose('omra')">العمرة</button></a>
  </div>
   <img style="width: 170px;height: 200px;position: relative;left: 750px;bottom: 200px;" src="/images/3.png"></a>
-  <div class="item button-pressure" style="position: relative;left:790px;bottom: 190px;">
-    <a ><button class="btn btn-primary" class="HajType " onclick="choose('ifrad')">حج الإفراد</button></a>
+  <div style="position: relative;left:790px;bottom: 190px;">
+    <a ><button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="نية الحج وحده ثم الإعتمار بعد الفراغ من مناسك الحج" class="HajType " onclick="choose('ifrad')">حج الإفراد</button></a>
   </div>
-  <div class="item button-pressure" style="position: relative;left: 900px;bottom: 230px;">
+  
+  <div class="item button-pressure"  data-toggle="tooltip" data-placement="bottom" title="العمرة وحدها ثم نية الحج " style="position: relative;left: 900px;bottom: 230px;">
     <a ><button class="btn btn-primary" class="HajType " onclick="choose('tama')">حج التمتع</button></a>
   </div>
   
