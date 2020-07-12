@@ -5,7 +5,7 @@ import 'package:school/objects/ApiResponce.dart';
 import 'package:school/objects/User.dart';
 
 class UserServices {
-  static const api = 'http://5d507e3faa26.ngrok.io';
+  static const api = 'https://fathomless-woodland-82354.herokuapp.com';
 
   static Future<ApiResponce<User>> getUser(String userId) {
     return http.get(api + "/admin/users/" + userId).then((data) {
