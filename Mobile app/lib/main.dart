@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:school/Screens/signUp.dart';
+import 'package:school/visitor/HomeVisitor.dart';
 
 void main() {
   runApp(MyApp());
-  
+
 }
 class MyApp extends StatefulWidget{
   @override
@@ -15,12 +15,12 @@ class MyApp extends StatefulWidget{
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-     return MaterialApp(
-       home: Sup(),
+    return MaterialApp(
+      home: HomeVisitor(),
 
 
-     );
-}
+    );
+  }
 }
            
         
