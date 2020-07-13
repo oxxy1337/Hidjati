@@ -10,7 +10,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const fileStore = require('session-file-store')(session);
-const axios = require('axios');
 
 const app = express();
 

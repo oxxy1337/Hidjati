@@ -20,29 +20,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Web-site/test/public/jquery.min.js"></script>    
+
   
   </head>
   <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-   <a class="navbar-brand" href="/" style="position: relative;left:150px">  <img src="/images/logo.png" style="width:250px;height: 160px;position: relative;top: 20px;left: 850px;"></a>
+   <a class="navbar-brand" href="/" style="position: relative;left:150px">  <img src="/images/logo.png"  id="zoom" style="width:250px;height: 160px;position: relative;top: 20px;left: 840px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        
-        <li class="nav-item" style="position: relative;right:200px;">
-          <a style="text-decoration: none;" class="nav-link" href="/Login" >   
-            <button type="button" style="background-color: #af5f61;" class="btn btn-default"> 
-          <h6 style="color: white;"> تسجيل الدخول  </h6>
+        <button id="en" class="translate" style="position:relative;left:200px;">English</button>
+
+        <li class="nav-item" style="position: relative;right:280px;" >
+          <a  style="text-decoration: none;" class="nav-link" href="/Login" >   
+            <button type="button" style="background-color: #af5f61;" class="btn btn-default"  id="zoom"> 
+          <h6 class="lang" key="login" style="color: white;" > تسجيل دخول    </h6>
           </button></a>
         </li>
-        <li class="nav-item" style="position: relative;right: 200px;">
+        <li  class="nav-item" style="position: relative;right: 270px;">
           <a style="text-decoration: none;" class="nav-link" href="/register" > 
-              <button type="button" style="background-color: #af5f61;" class="btn btn-default"> 
-        <h6 style="color: white;">اشتراك </h6> 
+              <button type="button" style="background-color: #af5f61;" class="btn btn-default"  id="zoom"> 
+        <h6 class="lang" key="sign"  style="color: white;">اشتراك </h6> 
           </button></a>
          </li>
-         
+         <button id="ar" class="translate" style="position:relative;right:20px;">Arabic</button>
+
       </ul>
     </div>
   </nav>
@@ -58,16 +62,16 @@
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div class="nav2">
-            <h1 style="text-align: center;position:relative;left:150px;color: white; top: 30px;font-family:arab; animation: bounce; animation-duration: 5s;">حجتي</h1>
-            <h2 style="text-align: center; position:relative;left:150px;color: white; top: 30px;animation: bounce; animation-duration: 5s;">دليلك للحج و العمرة</h2>
-            <h4 style="text-align: center;position:relative;left:130px;color: white; top: 70px;font-family: arab;">...للمزيد</h4>
-            <a style="text-decoration: none;position: relative;top: 80px;left:220px;" class="nav-link" href="/register"  >
-              <button type="button" class="btn btn-default" style="width: 100px;background-color: white;font-family: arab;"> 
+            <h1  class="lang" key="hidjati" style="text-align: center;position:relative;left:150px;color: white; top: 30px;font-family:arab; animation: bounce; animation-duration: 5s;">حجتي</h1>
+            <h2  class="lang" key="guide" style="text-align: center; position:relative;left:150px;color: white; top: 30px;animation: bounce; animation-duration: 5s;">دليلك للحج و العمرة</h2>
+            <h4  class="lang" id="more" key="more" style="text-align: center;position:relative;left:240px;color: white; top: 70px;font-family: arab;">...للمزيد</h4>
+            <a id="reg"  style="text-decoration: none;position: relative;top: 30px;left:210px;" class="nav-link" href="/register"  >
+              <h4 class="lang" key="register" style="font-family: arab;color: antiquewhite;" > 
               اشتراك
-              </button></a>
+              </h4></a>
            
-              <h6 style="position: relative;top: 150px;left: 400px;color: white;">  حمل تطبيق حجتي مجانا على</h6>
-              <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 105px;left: 230px;"></a>
+              <h6 class="lang" key="playstore" style="position: relative;top: 150px;left: 400px;color: white;" id="tstore">  حمل تطبيق حجتي مجانا على</h6>
+              <a href="#"><img src="/images/s.png" id="store" style="width: 150px;height: 45px;position: relative;top: 105px;left: 230px;" ></a>
            </div>
         </div>
         <div class="col-lg-7 order-1 order-lg-5 " >
@@ -80,17 +84,17 @@
   </section>
    <!--SECTION 2------------------------------------------------------------------------------->
     <section style="width: 90%;height: 500px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 20px;">
-      <h2 class="customfont" style="color: #af5f61	; text-align: center;">ما هي وجهتك؟</h2>
-      <a href="/Go"><img class="zoom" style="width: 400px;height: 330px; float: left;position: relative;left: 200px;bottom: 25px;" src="/images/4.png"></a>
+      <h2 class="lang" key="direction" class="customfont" style="color: #af5f61	; text-align: center;">ما هي وجهتك؟</h2>
+      <a href="/Go"><img class="zoom" style="width: 400px;height: 330px; float: left;position: relative;left: 100px;bottom: 25px;" src="/images/4.png"></a>
 
-     <h2 style="position: relative;left: 400px;top: 320px;color: #af5f61;">حج </h2>
+     <h2 class="lang" key="haj" style="position: relative;left: 400px;top: 320px;color: #af5f61;">حج </h2>
        
-       <a href="/Gh"> <img class=" zoom"style="width: 380px;height: 330px;float: right;position: relative;right: 200px;bottom: 70px;" src="/images/3.png"></a>
-       <h2 style="position: relative;right: 50px;top: 280px;color: #af5f61;">عمرة</h2></a>
+       <a href="/Gh"> <img class=" zoom"style="width: 380px;height: 330px;float: right;position: relative;right: 100px;bottom: 70px;" src="/images/3.png"></a>
+       <h2 class="lang" key="omra" style="position: relative;right: 100px;top: 280px;color: #af5f61;">عمرة</h2></a>
       </section>
     <!---SECTION 3----------------------------------------------------------------------------->
     <section style="position: relative;top: 50px;" >
-      <h1 style="text-align: center;">اكتشف تطبيق حجتي</h1>
+      <h1 class="lang" key="discover" style="text-align: center;">اكتشف تطبيق حجتي</h1>
       <div class="section-3" style="position: relative;right: 25px;"> 
         <div id="demo" class="carousel slide" data-ride="carousel" >
 
@@ -137,13 +141,13 @@
 
           <!-- Grid column -->
           <div class="col-md-6 mt-md-0 mt-3">
-           <h5 style="text-align:center; position: relative;top: 30px;left:50px;">حمل تطبيق حجتي مجانا على</h5>
+           <h5 class="lang" key="playstore2" style="text-align:center; position: relative;top: 30px;left:50px;">حمل تطبيق حجتي مجانا على</h5>
            <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
 
             <!-- Content -->
-            <h5 style="text-align:justify;position: relative;bottom: 45px;left: 30px;">اشترك للمزيد</h5>
-            <a style="text-decoration: none;position: relative;bottom: 35px;left: 30px;" class="nav-link" href="/SignUp"  >
-              <button type="button" class="btn btn-default" style="width: 100px;background-color: white;"> 
+            <h5 class="lang" key="login2" style="text-align:justify;position: relative;bottom: 45px;left: 30px;">اشترك للمزيد</h5>
+            <a  style="text-decoration: none;position: relative;bottom: 35px;left: 30px;" class="nav-link" href="/register"  >
+              <button class="lang" key="reg1" type="button" class="btn btn-default" style="width: 100px;background-color: white;border-radius: 5px;"> 
               اشتراك
               </button></a>
           </div>
@@ -155,22 +159,9 @@
           <div class="col-md-3 mb-md-0 mb-3">
 
             <!-- Links -->
-            <h5 style="position:relative;right:50px;top:30px">تابع حجتي على</h5>
+            <h5 class="lang" key="follow" style="position:relative;left:200px;top:30px">تابع حجتي على</h5>
 
-            <ul class="list-unstyled" style="position: relative;top: 40px;">
-              <li>
-                <a href="/Gh">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
+           
 
           </div>
           <!-- Grid column -->
@@ -181,20 +172,7 @@
             <!-- Links -->
             <h5 class="text-uppercase"></h5>
 
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
+           
 
           </div>
           <!-- Grid column -->
@@ -208,7 +186,7 @@
       <!-- Footer Links -->
 
       <!-- Copyright -->
-      <div class="footer-copyright text-center py-2" style="position: relative;bottom: 150px;">© 2020 Copyright:
+      <div class="footer-copyright text-center py-2" style="position: relative;bottom: 100px;">© 2020 Copyright:
         <a href="https://esi-sba.dz/">ESI SBA</a>
       </div>
       <!-- Copyright -->
@@ -224,9 +202,17 @@
     <script>
       $('.carousel').carousel()
     </script>
+
+
+
+
+    
    <!---Boostrap libraries-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/js/IndexLang.js"></script>
+
   </body>
 
 </html>
