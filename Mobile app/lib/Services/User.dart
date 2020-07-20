@@ -31,7 +31,9 @@ class UserServices {
   static Future<ApiResponce<User>> loginUser(
       TextEditingController mail, TextEditingController pass) {
     final user = LoginUser(email: mail.text, password: pass.text);
-    return http.post(api + "/user/login", body: user.toJson()).then((data) {
+    return http
+        .post(api + "/user/mobilelogin", body: user.toJson())
+        .then((data) {
       if (data.statusCode == 200) {
         final jsonData = json.decode(data.body);
         final user = User(
@@ -47,7 +49,7 @@ class UserServices {
       } else
         return ApiResponce<User>(error: true, error_msg: 'can\'t login');
     }).catchError((_) =>
-        ApiResponce<User>(error: true, error_msg: "something went wrong"));
+            ApiResponce<User>(error: true, error_msg: "something went wrong"));
   }
 
   static Future<ApiResponce<User>> registerUser(TextEditingController uname,
