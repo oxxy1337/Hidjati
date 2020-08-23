@@ -104,8 +104,8 @@ class _SecondPageState extends State<OmraVisitor> with TickerProviderStateMixin 
             Padding(
               padding: EdgeInsets.only(left: 50.0),
               child: Text(
-                "لا تنسى الالتزام و قراءة الاحاديث",
-                style: TextStyle(color: Colors.white70),
+                "للمزيد من المعلومات و الادعية يرجى تسجيل الدخول",
+                style: TextStyle(color: Colors.red),
               ),
             ),
             Spacer(
