@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:school/Screens/Hadj.dart';
+import 'package:school/Screens/Miqaat.dart';
 import 'package:school/Screens/omra.dart';
 import 'package:school/Screens/CurvedNavigationBar.dart';
 import 'package:school/objects/User.dart';
@@ -63,6 +64,15 @@ class Home_main extends State<Home> {
             );
             }
 
+            if (index==3){  Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return  Miqaat();
+                },
+              ),
+
+            );
+            }
           },
         ),
 
