@@ -25,6 +25,7 @@ var arrLang = new Array();
 
 
 
+
     //Arabic content
     arrLang['ar']['hidjati'] = 'حجتي';
     arrLang['ar']['guide'] = 'دليلك للحج و العمرة';
@@ -65,7 +66,7 @@ var arrLang = new Array();
     });
 
     $('#en').click(function(){
-        document.getElementById("ar").style.left = "40px";
+        document.getElementById("ar").style.left = "10px";
         document.getElementById("store").style.left = "400px";
         document.getElementById("tstore").style.left = "100px";
         document.getElementById("more").style.left = "120px";

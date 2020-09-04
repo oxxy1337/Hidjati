@@ -136,7 +136,7 @@
           <div class="chip" style="background-color: rosybrown;">
           <img src="/images/avatar.png" alt="Person" width="96" height="96">
           <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-        <h6 style="color: white; position: relative;top: 5px;right: 9px;">USERNAME </h6> 
+        <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %></h6> 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">اكمال مراحلي</a>
@@ -236,9 +236,8 @@
                 <input id="option3" name="option3" type="checkbox"/>
                 <label for="option3" class="finish">أتممت هذه المرحلة</label>
                 <h2  style="position: relative;bottom: 50px; text-align: center;left: 230px;"> التاسع من ذي الحجة</h2>
-                <h3 style="position: relative;bottom: 100px;left: 30px;"> ادعية هذه المرحلة</h3>
-              <img src="/images/dua-hands.png" style="width:50px;height: 50px;position: relative;bottom: 145px;left: 260px;">
-                
+                <button class="btn" id="myBtn" style="position: relative;bottom: 100px;left: 30px;border-color: #f8f4f0;">ادعيةهذه المرحلة</button>   
+                <img src="/images/dua-hands.png" style="width:50px;height: 50px;position: relative;bottom:100px;left: 60px;">
                 <h4 style="color: white; position: relative;text-align:center;bottom: 80px;">الانطلاق إلى عرفات بعد صلاة الفجر</h4>
                 <h5 style="text-align: center;position: relative;bottom: 80px;">&#8595;</h5>
                 <h4 style="color: white; position: relative;text-align:center;bottom: 80px;">الوصول إلى عرفات</h4>
@@ -256,10 +255,9 @@
                 <input id="option4" name="option4" type="checkbox"/>
                 <label for="option4" class="finish">أتممت هذه المرحلة</label>
                 <h2  style="position: relative;bottom: 50px; text-align: center;left: 230px;"> العاشر من ذي الحجة</h2>
-                <h3 style="position: relative;bottom: 100px;left: 30px;"> ادعية هذه المرحلة</h3>
-              <img src="/images/dua-hands.png" style="width:50px;height: 50px;position: relative;bottom: 145px;left: 260px;">
-
-              <h4 style="color: white; position: relative;text-align:center;bottom: 120px;">السير إلى منى بعد صلاة الصبح و قبل طلوع الشمس</h4>
+                <button class="btn" id="myBtn" style="position: relative;bottom: 100px;left: 30px;border-color: #f8f4f0;">ادعيةهذه المرحلة</button>   
+                <img src="/images/dua-hands.png" style="width:50px;height: 50px;position: relative;bottom:100px;left: 60px;">
+              <h4 style="color: white; position: relative;text-align:center;bottom: 110px;">السير إلى منى بعد صلاة الصبح و قبل طلوع الشمس</h4>
               <h5 style="text-align: center;position: relative;bottom: 120px;">&#8595;</h5>
               <h4 style="color: white; position: relative;text-align:center;bottom: 120px;">رمي جمرة العقبة</h4>
               <h5 style="text-align: center;position: relative;bottom: 120px;">&#8595;</h5>
@@ -282,21 +280,23 @@
                 <input id="option5" name="option5" type="checkbox"/>
                 <label for="option5" class="finish">أتممت هذه المرحلة</label>
                 <h2  style="position: relative;bottom: 50px; text-align: center;left: 230px;"> من11 الى13 ذي الحجة  </h2>
-                <h3 style="position: relative;bottom: 100px;left: 30px;"> ادعية هذه المرحلة</h3>
-              <img src="/images/dua-hands.png" style="width:50px;height: 50px;position: relative;bottom: 145px;left: 260px;">
-              <h1 style="color: white; position: relative;text-align:center;bottom: 120px;">رمي الجمرات الثلاث: الصغرى – الوسطى – الكبرى </h1>
+                <button class="btn" id="myBtn" style="position: relative;bottom: 100px;left: 30px;border-color: #f8f4f0;">ادعيةهذه المرحلة</button>   
+                <img src="/images/dua-hands.png" style="width:50px;height: 50px;position: relative;bottom:100px;left: 60px;">
+              <h2 style="color: white; position: relative;text-align:center;bottom: 100px;">رمي الجمرات الثلاث: الصغرى – الوسطى – الكبرى </h2>
               <h3 style="text-align: center;position: relative;bottom: 120px;"> &#8595;</h3>
               <h1 style="color: white; position: relative;text-align:center;bottom: 120px;">العودة إلى مكة لطواف الوداع</h1>
               <h3 style="text-align: center;position: relative;bottom: 120px;">&#8595;</h3>
               <h1  style="color: green; position: relative;text-align:center;bottom: 120px;">نهاية الحج</h1>
+              <img src="/images/travel.png" style="width: 200px;height: 150px; position: relative;bottom: 70px;left: 350px;">
+
               </div>
 
               <div class="inputGroup6" style="display: none;">
                 <input id="option6" name="option6" type="checkbox"/>
-                <label for="option6" style="text-align:center;">أتممت العمرة</label>
-                 <h2 style="text-align: center;position: relative;top: 80px;" >في حال أراد الحاج القارن أن يقدم سعي الحج على طواف الإفاضة فبإمكانه
+                <label for="option6" style="text-align:center;">أتممت الحج</label>
+                 <h2 style="text-align: center;position: relative;top: 80px;color: white;" >في حال أراد الحاج القارن أن يقدم سعي الحج على طواف الإفاضة فبإمكانه
                   ذلك بأن ينشئ طواف نفل قبل التوجه إلى منى ويسعى بعده سعي الحج </h2>
-                  <h1 style="position: relative;bottom: 150px;left: 400px;">فائدة</h1>
+                  <h1 style="position: relative;bottom: 150px;left: 400px;color: white;">فائدة</h1>
   
                  </div>
            </div>
@@ -305,7 +305,8 @@
 
      </section>
   <!-- Footer ------------------------------------------------------------------------------->
-  <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;" >
+  <!-- Footer ------------------------------------------------------------------------------->
+  <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -314,70 +315,49 @@
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-         <h5 style="text-align:center; position: relative;top: 30px;">حمل تطبيق حجتي مجانا على</h5>
+        <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+         <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
          <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+
+          <!-- Content -->
+          
         </div>
         <!-- Grid column -->
 
+        
         <hr class="clearfix w-100 d-md-none pb-3">
 
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="lang" key="follow" style="position:relative;left:200px;top:30px">تابع حجتي على</h5>
 
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
+         
 
         </div>
+        <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase"></h5>
 
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
+         
 
         </div>
         <!-- Grid column -->
 
       </div>
       <!-- Grid row -->
+      <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
 
     </div>
-    <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://esi-sba.dz" style="text-decoration: none;color:black;">ESI SBA</a>
+    <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+      <a href="https://esi-sba.dz/"> ESI SBA</a>
     </div>
     <!-- Copyright -->
 

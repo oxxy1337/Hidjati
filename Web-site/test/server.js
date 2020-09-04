@@ -13,6 +13,7 @@ const fileStore = require('session-file-store')(session);
 
 const app = express();
 
+
 const auth = require('./middlewares/auth');
 
 const connect = mongoose.connect('mongodb://localhost:27017/Product', {useNewUrlParser: true, useFindAndModify: false});
@@ -56,6 +57,10 @@ app.route('/')
 app.route('/profile')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('Profile'));
+
+app.route('/advices')
+.all(userController.redirectIfNotLoggedIn)
+.get((_, res) => res.render('Advices'));
 
 app.route('/places')
 .get((req, res, next)=>{
