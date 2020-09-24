@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:school/Screens/Hadj.dart';
 import 'package:school/Screens/Miqaat.dart';
+import 'package:school/Screens/agence.dart';
 import 'package:school/Screens/omra.dart';
 import 'package:school/Screens/CurvedNavigationBar.dart';
 import 'package:school/objects/User.dart';
@@ -41,8 +42,8 @@ class Home_main extends State<Home> {
             Icon(Icons.home, size: 30),
             Icon(Icons.local_library, size: 30),
             Icon(Icons.map, size: 30),
-            Icon(Icons.person, size: 30),
-            Icon(Icons.notifications_active, size: 30),
+            Icon(Icons.airplanemode_active, size: 30),
+            Icon(Icons.store_mall_directory, size: 30),
 
           ],
           onTap: (index) {
@@ -73,6 +74,16 @@ class Home_main extends State<Home> {
 
             );
             }
+            if (index==4){  Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return  Agence();
+                },
+              ),
+
+            );
+            }
+
           },
         ),
 

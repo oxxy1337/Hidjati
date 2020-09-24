@@ -42,7 +42,7 @@ class _QuranPageState extends State<QuranPage> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/Rectangle.png"),
+              image: AssetImage("assets/images/Rectangle1.png"),
               fit: BoxFit.cover,
             )
         ),
