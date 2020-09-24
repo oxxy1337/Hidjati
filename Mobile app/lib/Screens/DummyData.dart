@@ -23,48 +23,38 @@ List<TodoObject> todos = [
       TaskObject("ويحرم على المسلم – محرما كان أم غير محرم ذكرا كان أم أنثى- قتل صيد الحرم والمعاونة في قتله ، ويحرم تنفيره من مكانه ، ويحرم قطع شجر الحرم ونباته الأخضر."),
 
       TaskObject("ارفع صوتك بالتلبية قائلا<لبيك اللهم لبيك , لبيك لا شريك لك لبيك , إن الحمد و النعمة لك و الملك , لا شريك لك>و المرأة تقول بقدر ما يسمع نفسها ومن بجنبها من النساء أو محارمها."),
-      TaskObject(""),
+
     ],
 
 
   }),
   TodoObject.import("الطواف", "الطواف", 3, ColorChoices.choices[2],  {
     DateTime(2018, 5, 3): [
-      TaskObject("Meet Clients"),
-      TaskObject("Design Sprint"),
-      TaskObject("Icon Set Design for Mobile"),
-      TaskObject("HTML/CSS Study"),
+      TaskObject("يستحب في بداية الطواف أن يستقبل الكعبة بحيث يكون الحجر الأسود عن يمينه ثم ينتقل ليستقبل الحجر و ينوي الطواف"),
+      TaskObject("يستلم الحجر ويقبله إن أمكن ذلك."),
+      TaskObject("إذا تعذر تقبيله يلمسه بيده اليمنى (استلام) ويقبل يده."),
+      TaskObject("إذا تعذر ذلك يقف بمواجهة الحجر الأسود ويشير إليه بيديه مرة واحدة فقط ويقول بسم الله والله أكبر ثم يبدأ الطواف."),
     ],
 
 
   }),
 
-  TodoObject.import("مقام ابراهيم", "مقام ابراهيم", 4, ColorChoices.choices[0],  {
-    DateTime(2018, 5, 3): [
-      TaskObject("Meet Clients"),
-      TaskObject("Design Sprint"),
-      TaskObject("Icon Set Design for Mobile"),
-      TaskObject("HTML/CSS Study"),
-    ],
-
-
-  }),
   TodoObject.import("زمزم", "زمزم", 5, ColorChoices.choices[1],  {
     DateTime(2018, 5, 3): [
-      TaskObject("Meet Clients"),
-      TaskObject("Design Sprint"),
-      TaskObject("Icon Set Design for Mobile"),
-      TaskObject("HTML/CSS Study"),
+      TaskObject("ثم بعد ذلك يستحب أن يأتي زمزم فيشرب ويتضلع ويقول عند شربه:اللهم بلغني أن رسول الله قال: (ماء زمزم لما شرب له) وإني أشربه وأدعو: (اللهم إني أسألك علماً نافعاً ورزقاً واسعاً وشفاء من كل داء)."),
+
     ],
 
 
   }),
   TodoObject.import("السعي", "السعي", 5, ColorChoices.choices[2],  {
     DateTime(2018, 5, 3): [
-      TaskObject("Meet Clients"),
-      TaskObject("Design Sprint"),
-      TaskObject("Icon Set Design for Mobile"),
-      TaskObject("HTML/CSS Study"),
+      TaskObject("يصعد إلى الصفا بحيث يرى الكعبة (إذا أمكن) من باب الصفا ويقول حين الصعود:(إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلا جُنَاحَ عَلَيْهِ أَنْ يَطَّوَّفَ بِهِمَا وَمَنْ تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ عَلِيم)."),
+      TaskObject("ثم يصل إلى المروة فهذا شوط واحد فيتم سبعة أشواط يبدأ أولها بالصفا وينتهي آخرها بالمروة."),
+      TaskObject("بعد ختام الشوط السابع من السعي يستحب صلاة ركعتين, وفي الحرم أفضل."),
+      TaskObject("ويستحب أن يجمع في السعي بين الأذكار والدعوات وما تيسر من القرآن الكريم."),
+      TaskObject("لا يشترط الاضطباع في السعي عند الحنفية (أما عند الشافعية فنعم)"),
+      TaskObject("لا تشترط الطهارة لصحة السعي ولكن باعتبار أن المسعى أصبح داخل الحرم فيستحب ذلك."),
     ],
 
 
