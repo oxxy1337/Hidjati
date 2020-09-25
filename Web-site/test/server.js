@@ -87,6 +87,8 @@ app.route('/in3')
 .get((_, res) => res.render('./Admin/index3'));
 app.route('/in4')
 .get((_, res) => res.render('./Admin/index4'));
+app.route('/admin')
+.get((_, res) => res.render('./Admin/login'));
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
