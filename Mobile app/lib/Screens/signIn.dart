@@ -32,7 +32,7 @@ class SigninformState extends State<Signinform> {
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage("assets/images/Rectangle.png"),
+              image: AssetImage("assets/images/Rectangle1.png"),
               fit: BoxFit.cover,
             )),
             padding: EdgeInsets.all(10),
