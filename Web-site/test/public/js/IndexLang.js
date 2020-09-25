@@ -19,6 +19,8 @@ var arrLang = new Array();
     arrLang['en']['omra'] = 'Umrah';
     arrLang['en']['discover'] = 'Discover Hidjati mobile app';
     arrLang['en']['follow'] = 'Follow us on';
+    arrLang['en']['about'] = 'About us ';
+
 
 
 
@@ -42,6 +44,8 @@ var arrLang = new Array();
     arrLang['ar']['omra'] = 'عمرة';
     arrLang['ar']['discover'] = 'اكتشف تطبيق حجتي';
     arrLang['ar']['follow'] = '  تابع حجتي على';
+    arrLang['ar']['about'] = ' عن فريقنا';
+
 
 
 

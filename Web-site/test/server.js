@@ -76,13 +76,22 @@ app.route('/places')
     });
 });
 
-app.route('/Go')
-.get((_, res) => res.render('GuideOmra'));
+
 app.route('/loc')
 .get((_, res) => res.render('places'));
+app.route('/dashboard')
+.get((_, res) => res.render('./Admin/index'));
+app.route('/in2')
+.get((_, res) => res.render('./Admin/index2'));
+app.route('/in3')
+.get((_, res) => res.render('./Admin/index3'));
+app.route('/in4')
+.get((_, res) => res.render('./Admin/index4'));
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
+app.route('/Go')
+.get((_, res) => res.render('GuideOmra'));
 
 app.route('/init')
 .all(userController.redirectIfNotLoggedIn, (req, res, next)=>{if(req.user.type) return res.redirect('/'+req.user.type);next()})
