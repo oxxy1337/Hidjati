@@ -8,6 +8,7 @@
 
     <!-- Title -->
     <title>حجتي | وكالات السفر </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -42,20 +43,19 @@
     transform-style: preserve-3d;
   }
   
-  .flip-box:hover .flip-box-inner {
-    transform: rotateY(180deg);
-  }
+  
   
   .flip-box-front, .flip-box-back {
     position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: 15%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   
   .flip-box-front {
-    background-color: #bbb;
+    background-color: rosybrown;
     color: black;
   }
   
@@ -85,19 +85,33 @@
         </button></a>
       </li>
       
-      <li class="nav-item dropdown" style="position: relative;left:650px;">
-          <div class="chip" style="background-color: rosybrown;">
-          <img src="/images/avatar.png" alt="Person" width="96" height="96">
-          <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-        <h6 style="color: white; position: relative;top: 5px;right: 9px;"></h6> 
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">اكمال مراحلي</a>
-            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
-            <a class="dropdown-item" href="/logout">خروج</a>
-            </div>
+      <li class="nav-item dropdown" style="position: relative;left:350px;">
+        <div class="chip" style="background-color: rosybrown;">
+        <img src="/images/avatar.png" alt="Person" width="96" height="96">
+        <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+      <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %> </h6> 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%if (user.type =='tama')
+          { %>
+         <a  href="/tama" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+        <% } %> 
+        <%if (user.type =='omra')
+         { %>
+          <a   href="/omra" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+           <% } %> 
+        <%if (user.type =='ikran')
+           { %>
+           <a   href="/ikran" style="text-decoration: none;color: black;position: relative;left: 20px;" >
+           <% } %> 
+          <%if (user.type =='ifrad')
+           { %>
+           <a  href="/ifrad" style="text-decoration: none;color: black;position: relative;left: 20px;">
+          <% } %> مواصلة مراحلي</a>          <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
+          <a class="dropdown-item" href="/logout">خروج</a>
           </div>
-        </li>
+        </div>
+      </li>
       
     </ul>
   </div>
@@ -110,13 +124,13 @@
       <%} else{%> 
       <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">جمعنا لك روابط احسن الوكالات السياحية </h3>    
       <% for(agency of data.data) {%>      
-      <div class="flip-box" style="display: inline-block;padding: 5px 5px 5px 5px; ">
+      <div class="flip-box" style="display: inline-block;padding: 5px 5px 5px 5px; position: relative;left: 100px;top:30px">
         <div class="flip-box-inner">
           <div class="flip-box-front"> 
-            <h2><%= agency.name %></h2>
-          </div>
-          <div class="flip-box-back">
-            <h2><%= agency.discription%></h2>
+            <h2 style="color: white;"><%= agency.name %></h2>
+            <p style="position: relative;color: white;"><%= agency.discription%></p>
+            <h4 style="color: white;"><%= agency.adress%></h4>
+            <h4 style="color: white;"><%= agency.phone%></h4>
           </div>
         </div>
       </div>
@@ -125,6 +139,68 @@
       <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No API response</h3>
   <%}%>
   </section>
+  <!-- Footer ------------------------------------------------------------------------------->
+  <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+         <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
+         <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+
+          <!-- Content -->
+          
+        </div>
+        <!-- Grid column -->
+
+        
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
+          <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
+          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+
+
+         
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase"></h5>
+
+         
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+      <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+      <a href="https://esi-sba.dz/"> ESI SBA</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
  <!---Boostrap libraries-->
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>

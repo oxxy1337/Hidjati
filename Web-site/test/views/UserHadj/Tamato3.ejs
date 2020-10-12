@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حجتي | الحاج المفرد</title>
+    <title>حجتي | الحاج المتمتع</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -139,8 +140,22 @@
         <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %></h6> 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">اكمال مراحلي</a>
-            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
+            <%if (user.type =='tama')
+            { %>
+           <a  href="/tama" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+          <% } %> 
+          <%if (user.type =='omra')
+           { %>
+            <a   href="/omra" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+             <% } %> 
+          <%if (user.type =='ikran')
+             { %>
+             <a   href="/ikran" style="text-decoration: none;color: black;position: relative;left: 20px;" >
+             <% } %> 
+            <%if (user.type =='ifrad')
+             { %>
+             <a  href="/ifrad" style="text-decoration: none;color: black;position: relative;left: 20px;">
+            <% } %> مواصلة مراحلي</a>            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
             <a class="dropdown-item" href="/logout">خروج</a>
             </div>
           </div>

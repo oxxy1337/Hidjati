@@ -8,7 +8,7 @@
 
     <!-- Title -->
     <title>حجتي | Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/images/kaaba01.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
 
     <!--Animate.css-->
@@ -140,7 +140,22 @@
         <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %> </h6> 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">اكمال مراحلي</a>
+             <%if (user.type =='tama')
+               { %>
+              <a  href="/tama" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+             <% } %> 
+             <%if (user.type =='omra')
+              { %>
+               <a   href="/omra" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+                <% } %> 
+             <%if (user.type =='ikran')
+                { %>
+                <a   href="/ikran" style="text-decoration: none;color: black;position: relative;left: 20px;" >
+                <% } %> 
+               <%if (user.type =='ifrad')
+                { %>
+                <a  href="/ifrad" style="text-decoration: none;color: black;position: relative;left: 20px;">
+               <% } %> مواصلة مراحلي</a>
             <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
             <a class="dropdown-item" href="/logout">خروج</a>
             </div>
@@ -155,11 +170,11 @@
     <header>
     </header>
   <!--SECTION1------------------------------------------------------------------------------->
-  <section style="width: 90%;height: 500px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color:white;position: relative;left: 65px;top: 10px;">
+  <section style="width: 90%;height: 500px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color:#DDC2BE;position: relative;left: 65px;top: 10px;">
     
-    <img src="/images/c2.png" style="width: 1145px; height: 500px; border-radius: 25px; position: relative;top:0px;right:épx;">
+    <img src="/images/kika.png" style="width: 1145px; height: 500px; border-radius: 25px; position: relative;top:0px;right:épx;">
     <div class="container">
-      <a class="button" href="#popup"><button id="zoom" style="border-radius: 7px;position: relative;left:100px;bottom:-45px;width:350px;height:40px;background-color: rosybrown;color: white;"><h3>معلومات الاحرام</h3>
+      <a class="button" href="#popup"><button id="zoom" style="border-radius: 17px;position: relative;left:100px;bottom:-45px;width:350px;height:40px;background-color:#af5f61;color: white;"><h3>معلومات الاحرام</h3>
       </button> </a>
       <div class="popup" id="popup">
         <div class="popup-inner">
@@ -311,9 +326,24 @@
 
         </div>
       </div>
-     
-        <a  href="">
-      <button id="zoom" style="border-radius: 7px;position: relative;right: 370px;bottom:300px;width: 350px;height:40px;background-color: rosybrown;color: white;"><h3> التوجه الى المراحل</h3>
+      <%if (user.type =='tama')
+      { %>
+        <a  href="/tama">
+     <% } %> 
+     <%if (user.type =='omra')
+     { %>
+       <a  href="/omra">
+    <% } %> 
+    <%if (user.type =='ikran')
+    { %>
+      <a  href="/ikran">
+   <% } %> 
+    <%if (user.type =='ifrad')
+      { %>
+        <a  href="/ifrad">
+     <% } %> 
+      <button  id="zoom" style="border-radius: 17px;position: relative;right:350px;bottom:300px;width: 350px;height:40px;background-color: #af5f61;color: white;">
+        <h3> التوجه الى المراحل</h3>
       </button> </a>
     </div>
 
