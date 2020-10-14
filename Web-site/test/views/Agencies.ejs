@@ -85,60 +85,42 @@
         </button></a>
       </li>
       
-      <li class="nav-item dropdown" style="position: relative;left:350px;">
-        <div class="chip" style="background-color: rosybrown;">
-        <img src="/images/avatar.png" alt="Person" width="96" height="96">
-        <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-      <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %> </h6> 
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%if (user.type =='tama')
-          { %>
-         <a  href="/tama" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
-        <% } %> 
-        <%if (user.type =='omra')
-         { %>
-          <a   href="/omra" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
-           <% } %> 
-        <%if (user.type =='ikran')
-           { %>
-           <a   href="/ikran" style="text-decoration: none;color: black;position: relative;left: 20px;" >
-           <% } %> 
-          <%if (user.type =='ifrad')
-           { %>
-           <a  href="/ifrad" style="text-decoration: none;color: black;position: relative;left: 20px;">
-          <% } %> مواصلة مراحلي</a>          <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
-          <a class="dropdown-item" href="/logout">خروج</a>
-          </div>
-        </div>
-      </li>
+
       
     </ul>
   </div>
 </nav>
-<body class="index" id="to-top" style="overflow-x: hidden;">
-  <section id="hero" style="height: 700px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">
-    <%if(data){ %> 
+<body class="index" id="to-top" style="background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;">
+  <section id="hero" style="height: 700px;width: 90%;border-radius: 30px; background-size: cover		;position: relative;left: 75px;">
+    <% if(data){ %> 
       <%if(!data.data.length){ %>
         <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No agencies found in the db </h3>    
       <%} else{%> 
-      <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">جمعنا لك روابط احسن الوكالات السياحية </h3>    
-      <% for(agency of data.data) {%>      
-      <div class="flip-box" style="display: inline-block;padding: 5px 5px 5px 5px; position: relative;left: 100px;top:30px">
-        <div class="flip-box-inner">
-          <div class="flip-box-front"> 
-            <h2 style="color: white;"><%= agency.name %></h2>
-            <p style="position: relative;color: white;"><%= agency.discription%></p>
-            <h4 style="color: white;"><%= agency.adress%></h4>
-            <h4 style="color: white;"><%= agency.phone%></h4>
+        <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">جمعنا لك روابط احسن الوكالات السياحية </h3>  
+        <div class="row"> 
+        <% for(agency of data.data) {%>      
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="card h-100">
+              <% if (!agency.pictures.length) {%> 
+              <a href="/agency"><img class="card-img-top" src="images/agency-avatar.jpg" alt=""></a>
+              <% } else { %> 
+              <a href="/agency"><img class="card-img-top" src="<% agency.pictures[0] %>" alt=""></a>
+              <% } %> 
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/agency"><%= agency.name %></a>
+                </h4>
+                <p class="card-text"><%= agency.discription%></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <%}}%>
-    <%} else{%>
-      <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No API response</h3>
-  <%}%>
-  </section>
+        <%}%>
+        </div> 
+      <%}%>
+      <%} else{%>
+        <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No API response</h3>
+      <%}%>
+  </section> 
   <!-- Footer ------------------------------------------------------------------------------->
   <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
 

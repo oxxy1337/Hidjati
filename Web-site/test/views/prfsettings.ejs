@@ -15,6 +15,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
    -->  <!-- Templates core CSS -->
     <link href="/stylesheets/application.css" rel="stylesheet">
+    <link href="/stylesheets/prfsettings.css" rel="stylesheet">
     <!-- Boostrap libraries -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
@@ -35,75 +36,7 @@
  
   background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;
   }
-  .card {
-position: relative;
-top: 70px;
-left:400px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-max-width: 300px;
-margin: auto;
-text-align: center;
-}
 
-.change {
-border: none;
-outline: 0;
-display: inline-block;
-padding: 8px;
-color: white;
-text-align: center;
-cursor: pointer;
-width: 50%;
-font-size: 18px;
-position: relative;
-bottom:180px;
-left: 150px;
-
-}
-
-a {
-text-decoration: none;
-font-size: 15px;
-color: black;
-}
-
-.change:hover, a:hover {
-opacity: 0.7;
-}
-
-.user-row {
-  margin-bottom: 14px;
-}
-
-.user-row:last-child {
-  margin-bottom: 0;
-}
-
-.dropdown-user {
-  margin: 13px 0;
-  padding: 5px;
-  height: 100%;
-}
-
-.dropdown-user:hover {
-  cursor: pointer;
-}
-
-.table-user-information > tbody > tr {
-  border-top: 1px solid rgb(221, 221, 221);
-}
-
-.table-user-information > tbody > tr:first-child {
-  border-top: 0;
-}
-
-
-.table-user-information > tbody > tr > td {
-  border-top: 0;
-}
-.toppad
-{margin-top:20px;
-}
 @font-face {
 font-family: "arab";
 src: url(../fonts/ae_Cortoba.ttf) format("truetype");
@@ -153,77 +86,85 @@ font-weight: 100;
       </ul>
     </div>
   </nav>
+  <style>
+
+
+  </style>
   <body class="index" id="to-top" style="overflow-x: hidden;">
     <section >
-      <div class="container">
-        <div class="row">
-        <div class="col-md-6  toppad  col-md-offset-3 col-sm-12 col-sm-offset-3">
-            
-            <div >
-              <a href="/prfsettings"  style="background-color:darkgray; border-radius: 1rem; padding: 1rem;">الإعدادات</a>
-            </div>
+        <div class="container"> 
+            <div class="col-md-12">  
+                <div class="col-md-4">      
+                    <div class="portlet light profile-sidebar-portlet bordered">
+                        <div class="profile-userpic">
+                            <img src="images/avatar.png" class="img-responsive" alt=""> </div>
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name"> <%= user.first_name %>  <%= user.last_name %>  </div>
+                            <div class="profile-usertitle-job"> <%= user.username %>  </div>
+                        </div>
 
-          
-         
-        </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 toppad" >
-     
-     
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h3 class="panel-title" style="text-align: center;" ><%=user.username%> </h3>
-              </div>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-md-3 col-lg-3 " text-align="center"> <img alt="User Pic" src="images/avatar.png" class="img-circle img-responsive"> </div>
-                  
 
-                  <div class=" col-md-9 col-lg-9 "> 
-                    <table class="table table-user-information" style="text-align: center;">
-                      <tbody>
-                        <tr>
-                          <td><%= user.first_name %> </td>
-                          <td>: الإسم</td>
-                        </tr>
-                        <tr>
-                          <td><%= user.last_name %> </td>
-                          <td>: اللقب</td>
-                        </tr>
-                        <tr>
-                          <td><% if (user.gender=="male") { %> 
-                            ذكر
-                          <% } else {%>
-                            أنثى
-                          <% } %> 
-                          </td>
-                          <td>: الجنس</td>
-                        </tr>
-                        <% if (user.type) {%> 
-                        <tr>
-                          <td><%= user.type %> </td>
-                          <td>: نوع المناسك</td>
-                        </tr>
-                        <% } %> 
-                        <tr>
-                          <td><%= user.email %> </td>
-                          <td> البريد اﻹلكتروني</td>
-                        </tr>
-
-                      </tbody>
-                    </table>
-                  </div>
+                    </div>
                 </div>
-              </div>
-                <div class="panel-footer" style="height: 50px;">
-                         
-                  <span class="pull-right">
-                      <a href="/prfsettings" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                  </span>
+                <div class="col-md-8"> 
+                    <div class="portlet light bordered">
+                        <div class="portlet-title tabbable-line">
+                            <div style="text-align: center;">
+                            <div class="caption caption-md">
+                               
+                                <span class="caption-subject font-blue-madison bold uppercase"><h4> معلوماتك </h4></span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="home">
+                                        
+                                        
+                                        <form method="POST" >
+                                          <div class="form-group col-md-10 col-md-offset-7"  >
+                                            <input name="first_name"style="text-align: right;" type="text" class="form-control" id="inputName" placeholder="الإسم">
+                                          </div>
+                                            <div class="form-group col-md-10 col-md-offset-7">
+                                            <input name="last_name" style="text-align: right;" type="text" class="form-control" id="inputLastName" placeholder="اللقب">
+                                          </div>
+                                        
+                                          <div class="form-group col-md-10 col-md-offset-7">
+                                            <input name="username" style="text-align: right;" type="text" class="form-control" id="inputUserName" placeholder="إسم المستخدم">
+                                          </div>
+                                          <div class="form-group" style="text-align: right;">
+                                            <label for="InputEmail1">البريد اﻹلكتروني</label>
+                                            <input name="email" style="text-align: right;" type="email" class="form-control" id="InputEmail1" placeholder="البريد اﻹلكتروني">
+                                          </div>
+                                          <div class="form-group"style="text-align: right;">
+                                            <label for="InputPassword1">تغيير كلمة السر</label>
+                                            <input name="password" style="text-align: right;" type="password" class="form-control" id="InputPassword1" placeholder="كلمة السر">
+                                          </div>
+                                          <div class="form-group" style="width: 400px; overflow-wrap: break-word;">
+                                            <label for="InputFile">صورة الملف الشخصي</label>
+                                            <label class="btn btn-primary">
+                                                <i class="fa fa-image"></i>إختر الصورة<input name="picture" type="file" accept="image/*" >
+                                                </label>
+                                          </div>
+
+                                          
+                                          <button type="submit" class="btn btn-default">حفظ</button>
+                                        </form>
+                                    </div>
+                                    </div>
+ 
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
-        </div>
-      </div>    </section>
+            </div>    
+    </section>
     <!-- Side nav -->
     <!-- Footer ------------------------------------------------------------------------------->
     <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 100px; height: 280px;" >

@@ -66,7 +66,7 @@ app.route('/places')
 .get((req, res, next)=>{
     axios({
         method: 'get',
-        url: 'http://localhost:3000/place'
+        url: api+'place'
     })
     .then((resp)=>{
         res.render('places', {data: resp.data})
@@ -130,7 +130,7 @@ app.route('/agencies')
 .get((req, res, next)=>{
     axios({
         method: 'get',
-        url: 'http://localhost:3000/agency'
+        url: api+'agency'
     })
     .then((resp)=>{
         res.render('Agencies', {data: resp.data});
@@ -153,6 +153,26 @@ app.route('/register')
 .all(userController.redirectIfLoggedIn)
 .get((_, res) => res.render('SignUp'))
 .post(userController.create);
+
+app.route('/passwdreset')
+.all(userController.redirectIfLoggedIn)
+.get((_, res) => res.render('passwdreset'));
+//.post(userController.create);
+
+app.route('/forgetpasswd')
+.get((_, res) => res.render('forgetpasswd'))
+
+app.route('/feedback')
+.get((_, res) => res.render('feedback'))
+
+app.route('/error')
+.get((_, res) => res.render('error'));
+
+app.route('/agency')
+.get((_, res) => res.render('agency'));
+
+app.route('/prfsettings')
+.get((_, res) => res.render('prfsettings'));
 
 app.get('/test', (req, res)=>{res.json(req.user)});
 
