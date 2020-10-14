@@ -1,5 +1,5 @@
 //test block
-const api = 'http://cd6962d8.ngrok.io/user/login';
+const api = 'http://localhost:3000/';
 const userController = require('./controllers/user');
 /////
 const axios = require('axios');
@@ -138,7 +138,25 @@ app.route('/agencies')
     .catch(()=>{
         res.render('Agencies', {data: null});
     });
-}); 
+});
+
+app.route('/agency/:agencyId')
+.get((req, res, next)=>{
+    //console.log(api+'agency/'+ req.params.agencyId);
+    axios({
+        method: 'get',
+        url: api+'agency/'+ req.params.agencyId
+    })
+    .then((resp)=>{
+        res.render('agency', {data: resp.data});
+    })
+    .catch(()=>{
+        res.render('Agencies', {data: null});
+    });
+});
+
+app.route('/agency')
+.get((_, res) => res.redirect('/agencies'))
 
 app.route('/login')
 .all(userController.redirectIfLoggedIn)
@@ -168,8 +186,6 @@ app.route('/feedback')
 app.route('/error')
 .get((_, res) => res.render('error'));
 
-app.route('/agency')
-.get((_, res) => res.render('agency'));
 
 app.route('/prfsettings')
 .get((_, res) => res.render('prfsettings'));

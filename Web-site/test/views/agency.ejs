@@ -10,8 +10,8 @@
     <title> وكالة سفر | حجتي</title>
     <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
     <style>
         body {
         padding-top: 56px;
@@ -35,16 +35,20 @@
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="images/agency-avatar.jpg" alt="">
+        <% if (data.data.pictures.length > 0) { %>
+          <img class="img-fluid rounded mb-4 mb-lg-0" src="<%= data.data.pictures[0] %>  " alt="">
+        <% } else {%>
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="/images/agency-avatar.jpg" alt="">
+        <% } %> 
       </div>
       <!-- /.col-lg-8 -->
       <div class="col-lg-5" style="background-color: darkgray; border-radius: 0.5em; ">
-        <h1 class="font-weight-light">agency-name</h1>
+        <h1 class="font-weight-light"><%= data.data.name %> </h1>
        
         <hr>
         <hr>
         <br>    
-        <p>agency description</p>
+        <p><%= data.data.discription %></p>
       </div>
       <!-- /.col-md-4 -->
     </div>
@@ -61,9 +65,12 @@
             <br>
             <div class="card-text">
                 <h6>العنوان</h6>
-                <p> 48937493098409</p>
-                <h6 >ساعات العمل</h6>
-                <p> something@fkdls</p>
+                <p>
+                <%= data.data.adress %>
+              </p>
+
+                <h6>ساعات العمل</h6>
+                <p> <%= data.data.openingHours %></p>
             </div>
         </div>
         </div>
@@ -76,7 +83,7 @@
             <br>
             <div class="card-text">
                 <h6>مجال الأسعار</h6>
-                <p>48937493098409</p>
+                <p><%= data.data.priceRange %></p>
 
             </div>
           </div>
@@ -90,9 +97,9 @@
             <br>
             <div class="card-text">
                 <h6>الهاتف</h6>
-                <p> 48937493098409</p>
+                <p> <%= data.data.phone %></p>
                 <h6>البريد الإلكتروني</h6>
-                <p> something@fkdls</p>
+                <p> <%= data.data.email %></p>
             </div>
           </div>
         </div>

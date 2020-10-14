@@ -102,13 +102,13 @@
           <div class="col-lg-4 col-sm-6 mb-4">
             <div class="card h-100">
               <% if (!agency.pictures.length) {%> 
-              <a href="/agency"><img class="card-img-top" src="images/agency-avatar.jpg" alt=""></a>
+              <a href="/agency/<%= agency._id %> "><img class="card-img-top" src="images/agency-avatar.jpg" alt=""></a>
               <% } else { %> 
-              <a href="/agency"><img class="card-img-top" src="<% agency.pictures[0] %>" alt=""></a>
+              <a href="/agency/<%= agency._id %>"><img class="card-img-top" src="<% agency.pictures[0] %>" alt=""></a>
               <% } %> 
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="/agency"><%= agency.name %></a>
+                  <a href="/agency/<%= agency._id %>"><%= agency.name %></a>
                 </h4>
                 <p class="card-text"><%= agency.discription%></p>
               </div>
