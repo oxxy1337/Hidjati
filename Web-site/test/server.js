@@ -16,7 +16,7 @@ const app = express();
 
 const auth = require('./middlewares/auth');
 
-const connect = mongoose.connect('mongodb://localhost:27017/Product', {useNewUrlParser: true, useFindAndModify: false});
+const connect = mongoose.connect('mongodb+srv://user0:user0password@hadjati.mryf0.gcp.mongodb.net/hadjati?retryWrites=true&w=majority', {useNewUrlParser: true, useFindAndModify: false});
 
 connect.then((db)=>{
     console.log('connected to the db');

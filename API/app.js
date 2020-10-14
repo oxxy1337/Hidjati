@@ -26,13 +26,23 @@ const initRouter = require('./routes/InitUpdate');
 
 const connect = mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useFindAndModify: false});
 
+const app = express();
+
+/* app.use((req, res, next)=>{
+    if(req.headers['apikey'] != process.env.API_KEY) return res.status(404).json({succes: false,data:{}, msg:"not auth"})
+    next();
+}); */
+
+app.use((req, res, next)=>{
+    console.log(req.body);
+    next();
+})
+
 connect.then((db)=>{
     console.log("connected succefully to the db");
 });
 
-const app = express();
-
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit:'50mb'}));
 app.use(bodyParser.urlencoded({extended: true}));
 //app.use('/uploads', express.static(__dirname+'/public'));
 app.use(morgan('common', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}));
@@ -61,12 +71,6 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
-});
-
-app.all('/',bodyParser.json(),(req, res, next)=>{
-    //res.json({a: req.session, b: req.user, c: res.locals})
-    console.log(req.body);
-    res.json({succes: true});
 });
 
 app.use('/track', trackRouter);

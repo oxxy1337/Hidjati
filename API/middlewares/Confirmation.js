@@ -12,7 +12,9 @@ module.exports = {
         User.findById(id)
         .then((user)=>{
             if(user){
-                resp = user;
+                let ruser = ({...user}._doc);
+                delete ruser.password;
+                resp = ruser;
                 if(!user.confirmed){
                     user.confirmed = true;
                     user.save();
@@ -21,7 +23,9 @@ module.exports = {
             Admin.findById(id)
             .then((admin)=>{
                 if(admin){
-                    resp = admin;
+                    let radmin = ({...admin}._doc);
+                    delete radmin.password;
+                    resp = radmin;
                     if(!admin.confirmed){
                         admin.confirmed = true;
                         admin.save();

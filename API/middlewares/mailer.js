@@ -7,7 +7,7 @@ const transporter = mailer.createTransport({
     service: 'gmail',
     auth: {
         user: process.env.MAILER_USER,
-        pass: process.env.MAILER_PASS
+        pass: "AB 171999"
     }
 });
 
@@ -22,8 +22,11 @@ module.exports = {
                 html: `Hello ${user.username}, confirm your acocunt <a href="${url}">Here.</a> `
                 };
             transporter.sendMail(mailOptions, (err, info)=>{
+                console.log("slamat here");
                 const msg = (!err) ? 'email sent' : 'mailer err';
-                res.status(200).json({succes:true, data: user, message: msg, mailerErr: err});
+                let ruser = ({...user}._doc);
+                delete ruser.password;
+                res.status(200).json({succes:true, data: ruser, message: msg, mailerErr: err});
             });
         });
     },
@@ -38,7 +41,7 @@ module.exports = {
                 };
             transporter.sendMail(mailOptions, (err, info)=>{
                 const msg = (!err) ? 'email sent' : 'mailer err';
-                res.status(200).json({succes: true, data: user, message: msg, mailerErr: err});
+                res.status(200).json({succes: true, data: {}, message: msg, mailerErr: err});
             });
         });
     }
