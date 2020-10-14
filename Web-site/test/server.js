@@ -186,6 +186,14 @@ app.route('/feedback')
 app.route('/error')
 .get((_, res) => res.render('error'));
 
+app.route('/nav')
+.get((_, res) => res.render('navbar'));
+
+app.route('/nav2')
+.get((_, res) => res.render('navbar2'));
+
+app.route('/nav3')
+.get((_, res) => res.render('navbar3'));
 
 app.route('/prfsettings')
 .get((_, res) => res.render('prfsettings'));

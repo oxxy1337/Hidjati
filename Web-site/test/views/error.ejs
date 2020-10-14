@@ -1,6 +1,17 @@
 <!DOCTYPE html>
  <html lang="en"> 
  <head>
+   <style>
+     * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+   </style>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -36,29 +47,31 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <style>
-    body { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8yOS8xMiKqq3kAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABHklEQVRIib2Vyw6EIAxFW5idr///Qx9sfG3pLEyJ3tAwi5EmBqRo7vHawiEEERHS6x7MTMxMVv6+z3tPMUYSkfTM/R0fEaG2bbMv+Gc4nZzn+dN4HAcREa3r+hi3bcuu68jLskhVIlW073tWaYlQ9+F9IpqmSfq+fwskhdO/AwmUTJXrOuaRQNeRkOd5lq7rXmS5InmERKoER/QMvUAPlZDHcZRhGN4CSeGY+aHMqgcks5RrHv/eeh455x5KrMq2yHQdibDO6ncG/KZWL7M8xDyS1/MIO0NJqdULLS81X6/X6aR0nqBSJcPeZnlZrzN477NKURn2Nus8sjzmEII0TfMiyxUuxphVWjpJkbx0btUnshRihVv70Bv8ItXq6Asoi/ZiCbU6YgAAAABJRU5ErkJggg==);}
+  
 .error-template {padding: 40px 15px;text-align: center; background-color: white; border-radius: 2rem; height: 350px;  position: relative;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
 </style>>
 </head>
 <body style="background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;">
-    <a href="/"> <img src="/images/logo.png" style="width: 300px;height: 200px;position: relative;left: 50px;top: 20px;"></a>   
+  <nav>
+      <%- include('header'); -%> 
+    </nav>
     <section>
-        <div class="container">
+        <div class="container" style="padding: 40px;">
             <div class="row">
                 <div class="col-md-12">
                     <div class="error-template">
-                        <h1>
-                            هذه الصفحة غير متوفرة</h1>
-                        <h2>
-                            404 </h2>
-                        <div class="error-details">
+                        <h1 style="font-size: 40px;">
+                            هذه الصفحة غير متوفرة
+                          </h1>
+                            <h2 style="font-size: 30px;"> 404 </h2>
+                        <div class="error-details" style="font-size: 18px;">
                             .قد يكون الرابط الذي استخدمته معطّلاً، أو قد تكون الصفحة تمت إزالتها
                         </div>
                         <div class="error-actions">
-                            <a href="/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span> الصفحة الرئيسية </a>
-                            <a href="/feedback" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> مراسلة فريق العمل </a>
+                            <a href="/" class="btn btn-primary btn-lg" style="font-size: 15px;"><span class="glyphicon glyphicon-home"></span> الصفحة الرئيسية </a>
+                            <a href="/feedback" class="btn btn-default btn-lg" style="font-size: 15px;"><span class="glyphicon glyphicon-envelope"></span> مراسلة فريق العمل </a>
                         </div>
                     </div>
                 </div>

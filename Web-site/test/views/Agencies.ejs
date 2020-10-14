@@ -66,32 +66,18 @@
   }
   </style>
 </head>
-<nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-  <a class="navbar-brand" href="/" style="position: relative;left:150px"><img src="/images/logo.png" style="width:200px;height: 160px;position: relative;top: 20px;right: 100px;"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item" style="position: relative;left:1000px;">
-        <a style="text-decoration: none;" class="nav-link" href="/places" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-        <h6 style="color: white;">مواقع سياحية</h6>
-        </button></a>
-      </li>
-      <li class="nav-item" style="position: relative;left:1000px;">
-        <a style="text-decoration: none;" class="nav-link" href="#" >  
-       <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-        <h6 style="color: white;">نصائح و توجيهات</h6>
-        </button></a>
-      </li>
+
+<body class="index" id="to-top" style="background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;">
+    
+         <nav>
+      <%- include('header'); -%> 
+    </nav>
       
 
-      
-    </ul>
-  </div>
-</nav>
-<body class="index" id="to-top" style="background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;">
-  <section id="hero" style="height: 700px;width: 90%;border-radius: 30px; background-size: cover		;position: relative;left: 75px;">
+<br>
+<br>
+
+  <section style="height: 80%;width: 90%;border-radius: 30px; background-size: cover		;position: relative;left: 75px;">
     <% if(data){ %> 
       <%if(!data.data.length){ %>
         <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No agencies found in the db </h3>    
