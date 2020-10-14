@@ -6,8 +6,8 @@ const agencyRouter = express.Router();
 
 agencyRouter.route('/')
 .get(aController.getAgency);
-/* 
+
 agencyRouter.route('/:agencyId')
 .get(aController.getAgency);
- */
+
 module.exports = agencyRouter;

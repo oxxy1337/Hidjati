@@ -4,8 +4,7 @@ var arrLang = new Array();
 
 
     // English content
-    arrLang['en']['hidjati'] = 'Hidjati';
-    arrLang['en']['guide'] = 'Your guide for Hajj and Umrah';
+    arrLang['en']['guide'] = 'Hidjati...Your guide for Hajj and Umrah';
     arrLang['en']['more'] = 'For more..';
     arrLang['en']['register'] = 'Register';
     arrLang['en']['playstore'] = 'Download Hidjati App for free on';
@@ -29,8 +28,7 @@ var arrLang = new Array();
 
 
     //Arabic content
-    arrLang['ar']['hidjati'] = 'حجتي';
-    arrLang['ar']['guide'] = 'دليلك للحج و العمرة';
+    arrLang['ar']['guide'] = 'حجتي ...دليلك للحج و العمرة';
     arrLang['ar']['more'] = '..للمزيد'
     arrLang['ar']['login2'] = '..للمزيد'
     arrLang['ar']['register'] = 'اشتراك';
@@ -70,22 +68,37 @@ var arrLang = new Array();
     });
 
     $('#en').click(function(){
-        document.getElementById("ar").style.left = "10px";
-        document.getElementById("store").style.left = "400px";
-        document.getElementById("tstore").style.left = "100px";
-        document.getElementById("more").style.left = "120px";
-        document.getElementById("reg").style.left = "450px";
-        document.getElementById("reg").style.top = "25px";
+        document.getElementById("ar").style.right = "140px";
+        document.getElementById("store").style.left = "320px";
+        document.getElementById("store").style.top = "240px";
+        document.getElementById("tstore").style.left = "45px";
+        document.getElementById("tstore").style.top = "280px";
+        document.getElementById("more").style.left = "10px";
+        document.getElementById("reg").style.left = "400px";
+        document.getElementById("reg").style.top = "125px";
+        document.getElementById("dow").style.left = "50px";
+        document.getElementById("li1").style.bottom = "150px";
+
+
+
+
+
 
 
 
      });
 
      $('#ar').click(function(){
-      
+      document.getElementById("ar").style.right = "180px";
       document.getElementById("more").style.left = "240px";
-      document.getElementById("reg").style.left = "210px";
-      document.getElementById("store").style.left = "230px";
-      document.getElementById("tstore").style.left = "400px";
+      document.getElementById("reg").style.left = "280px";
+      document.getElementById("store").style.left = "20px";
+      document.getElementById("store").style.top = "280px";
+      document.getElementById("tstore").style.left = "200px";
+      document.getElementById("tstore").style.top = "320px";
+      document.getElementById("li1").style.bottom = "105px";
+      document.getElementById("dow").style.left = "150px";
+
+
     });
     

@@ -1,5 +1,5 @@
 //test block
-const api = 'http://cd6962d8.ngrok.io/user/login';
+const api = 'http://localhost:3000/';
 const userController = require('./controllers/user');
 /////
 const axios = require('axios');
@@ -66,7 +66,7 @@ app.route('/places')
 .get((req, res, next)=>{
     axios({
         method: 'get',
-        url: 'http://localhost:3000/place'
+        url: api+'place'
     })
     .then((resp)=>{
         res.render('places', {data: resp.data})
@@ -130,7 +130,7 @@ app.route('/agencies')
 .get((req, res, next)=>{
     axios({
         method: 'get',
-        url: 'http://localhost:3000/agency'
+        url: api+'agency'
     })
     .then((resp)=>{
         res.render('Agencies', {data: resp.data});
@@ -138,7 +138,25 @@ app.route('/agencies')
     .catch(()=>{
         res.render('Agencies', {data: null});
     });
-}); 
+});
+
+app.route('/agency/:agencyId')
+.get((req, res, next)=>{
+    //console.log(api+'agency/'+ req.params.agencyId);
+    axios({
+        method: 'get',
+        url: api+'agency/'+ req.params.agencyId
+    })
+    .then((resp)=>{
+        res.render('agency', {data: resp.data});
+    })
+    .catch(()=>{
+        res.render('Agencies', {data: null});
+    });
+});
+
+app.route('/agency')
+.get((_, res) => res.redirect('/agencies'))
 
 app.route('/login')
 .all(userController.redirectIfLoggedIn)
@@ -153,6 +171,32 @@ app.route('/register')
 .all(userController.redirectIfLoggedIn)
 .get((_, res) => res.render('SignUp'))
 .post(userController.create);
+
+app.route('/passwdreset')
+.all(userController.redirectIfLoggedIn)
+.get((_, res) => res.render('passwdreset'));
+//.post(userController.create);
+
+app.route('/forgetpasswd')
+.get((_, res) => res.render('forgetpasswd'))
+
+app.route('/feedback')
+.get((_, res) => res.render('feedback'))
+
+app.route('/error')
+.get((_, res) => res.render('error'));
+
+app.route('/nav')
+.get((_, res) => res.render('navbar'));
+
+app.route('/nav2')
+.get((_, res) => res.render('navbar2'));
+
+app.route('/nav3')
+.get((_, res) => res.render('navbar3'));
+
+app.route('/prfsettings')
+.get((_, res) => res.render('prfsettings'));
 
 app.get('/test', (req, res)=>{res.json(req.user)});
 

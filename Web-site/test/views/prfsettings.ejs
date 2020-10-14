@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+ <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>حجتي | Profile</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
+
+
+    <!--Animate.css-->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+   -->  <!-- Templates core CSS -->
+    <link href="/stylesheets/application.css" rel="stylesheet">
+    <link href="/stylesheets/prfsettings.css" rel="stylesheet">
+    <!-- Boostrap libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<style>
+  body {
+ 
+  background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;
+  }
+
+@font-face {
+font-family: "arab";
+src: url(../fonts/ae_Cortoba.ttf) format("truetype");
+font-style: normal;
+font-weight: 100;
+}
+</style>
+  </head>
+  <nav>
+    <%- include('header'); -%> 
+  </nav>
+  <style>
+    div,input,label,h4,button { font-size: 18px;}
+
+  </style>
+  <body class="index" id="to-top" style="overflow-x: hidden;">
+    <section >
+        <div class="container" style="margin-top: 50px;"> 
+            <div class="col-md-12">  
+                <div class="col-md-4">      
+                    <div class="portlet light profile-sidebar-portlet bordered">
+                        <div class="profile-userpic">
+                            <img src="images/avatar.png" class="img-responsive" alt=""> </div>
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name"> <%= user.first_name %>  <%= user.last_name %>  </div>
+                            <div class="profile-usertitle-job"> <%= user.username %>  </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-8"> 
+                    <div class="portlet light bordered">
+                        <div class="portlet-title tabbable-line">
+                            <div style="text-align: center;">
+                            <div class="caption caption-md">
+                               
+                                <span class="caption-subject font-blue-madison bold uppercase"><h4 style="font-size: 25px;"> معلوماتك </h4></span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="home">
+                                        
+                                        
+                                        <form method="POST" >
+                                          <div class="form-group col-md-10 col-md-offset-7"  >
+                                            <input name="first_name" style="text-align: right; font-size: 18px;" type="text" class="form-control" id="inputName" placeholder="الإسم">
+                                          </div>
+                                            <div class="form-group col-md-10 col-md-offset-7">
+                                            <input name="last_name" style="text-align: right; font-size: 18px;" type="text" class="form-control" id="inputLastName" placeholder="اللقب">
+                                          </div>
+                                        
+                                          <div class="form-group col-md-10 col-md-offset-7">
+                                            <input name="username" style="text-align: right; font-size: 18px;" type="text" class="form-control" id="inputUserName" placeholder="إسم المستخدم">
+                                          </div>
+                                          <div class="form-group" style="text-align: right;">
+                                            <label for="InputEmail1"> تغيير البريد اﻹلكتروني</label>
+                                            <input name="email" style="text-align: right; font-size: 18px;" type="email" class="form-control" id="InputEmail1" placeholder="البريد اﻹلكتروني">
+                                          </div>
+                                          <div class="form-group"style="text-align: right;">
+                                            <label for="InputPassword1">تغيير كلمة السر</label>
+                                            <input name="password" style="text-align: right; font-size: 18px;" type="password" class="form-control" id="InputPassword1" placeholder="كلمة السر">
+                                          </div>
+                                          <div class="form-group" style="width: 400px; overflow-wrap: break-word;">
+                                            <label for="InputFile">صورة الملف الشخصي</label>
+                                            <label class="btn btn-primary">
+                                                <i class="fa fa-image"></i>إختر الصورة<input name="picture" type="file" accept="image/*" >
+                                                </label>
+                                          </div>
+
+                                          
+                                          <button type="submit" class="btn btn-default" style="font-size: 20px;background-color: aqua;">حفظ</button>
+                                        </form>
+                                    </div>
+                                    </div>
+ 
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>    
+    </section>
+    <!-- Side nav -->
+    <!-- Footer ------------------------------------------------------------------------------->
+    <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 100px; height: 280px;" >
+
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+           <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
+           <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+
+            <!-- Content -->
+            
+          </div>
+          <!-- Grid column -->
+
+          
+          <hr class="clearfix w-100 d-md-none pb-3">
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
+            <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+            <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
+            <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+  
+
+           
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase"></h5>
+
+           
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+        <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+        <a href="https://esi-sba.dz/"> ESI SBA</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+   
+ <!---Boostrap libraries-->
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
+
+
+    
+
+
+    </body>
+    </html>

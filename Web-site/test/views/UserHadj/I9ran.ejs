@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حجتي | الحاج القارن</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -139,8 +140,22 @@
         <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %></h6> 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">اكمال مراحلي</a>
-            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
+            <%if (user.type =='tama')
+            { %>
+           <a  href="/tama" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+          <% } %> 
+          <%if (user.type =='omra')
+           { %>
+            <a   href="/omra" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
+             <% } %> 
+          <%if (user.type =='ikran')
+             { %>
+             <a   href="/ikran" style="text-decoration: none;color: black;position: relative;left: 20px;" >
+             <% } %> 
+            <%if (user.type =='ifrad')
+             { %>
+             <a  href="/ifrad" style="text-decoration: none;color: black;position: relative;left: 20px;">
+            <% } %> مواصلة مراحلي</a>            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
             <a class="dropdown-item" href="/logout">خروج</a>
             </div>
           </div>
@@ -170,8 +185,8 @@
 </section>  
     <!--SECTION2-------------------------------------------------------------------------------------------------->
     <section  style="height: 800px;width: 90%; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top:40px;" >
-      <button id="prev"  class="btn btn-primary" style="position:relative;top: 650px;left:400px" >المرحلة السابقة</button>
-      <button id="next"  class="btn btn-primary" style="position:relative;top: 650px;left:600px">المرحلة التالية</button>
+      <button id="prev"  class="btn btn-primary" style="position:relative;top: 650px;left:460px;background-color: #af5f61;" >المرحلة السابقة</button>
+      <button id="next"  class="btn btn-primary" style="position:relative;top: 650px;left:460px;background-color: #af5f61;">المرحلة التالية</button>
           <div class="main"  >
             <div class="inputGroup1" style="display: none;">
               <input id="option1" name="option1" type="checkbox"/>
@@ -331,7 +346,11 @@
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="lang" key="follow" style="position:relative;left:200px;top:30px">تابع حجتي على</h5>
+          <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
+          <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
+          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+
 
          
 
@@ -363,15 +382,6 @@
 
   </footer>
   <!-- Footer -->
-
-
-
-
-
-
-
-
-  
       <script>
       AOS.init();
     $(document).ready(function(){

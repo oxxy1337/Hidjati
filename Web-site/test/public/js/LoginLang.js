@@ -25,6 +25,7 @@ var arrLang = new Array();
     arrLang['en']['tun'] = 'Tunisia';
     arrLang['en']['choose'] = 'Choose';
     arrLang['en']['username'] = 'Username';
+    arrLang['en']['reset'] = 'Forgot Password';
 
 
 
@@ -49,8 +50,9 @@ var arrLang = new Array();
     arrLang['ar']['follow'] = '  تابع حجتي على';
     arrLang['ar']['fill'] = 'املا خانات المعلومات للدخول ';
     arrLang['ar']['fill2'] = 'املا خانات المعلومات للاشتراك ';
-    arrLang['ar']['noacc'] = ' ليس لديك حساب';
+    arrLang['ar']['noacc'] = 'ليس لديك حساب؟';
     arrLang['ar']['email'] = 'البريد الالكتروني';
+    arrLang['ar']['mdp'] = 'كلمة السر';
     arrLang['ar']['fname'] = ' الاسم';
     arrLang['ar']['lname'] = ' اللقب';
     arrLang['ar']['choose'] = 'اختر ';
@@ -60,6 +62,7 @@ var arrLang = new Array();
     arrLang['ar']['mrc'] = 'المغرب';
     arrLang['ar']['male'] = 'ذكر';
     arrLang['ar']['female'] = 'انثى';
+    arrLang['ar']['reset'] = 'هل نسيت كلمة المرور؟';
 
 
 
