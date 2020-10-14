@@ -36,7 +36,7 @@ module.exports = {
                     bcrypt.hash(req.body.password, salt, async(err, hash)=>{
                         if(err) return res.status(500).json({succes: false, message:"something went wrong"});
                         user.password = hash;
-                        await user.save();
+                        await user.save({validateBeforeSave: false });
                         let ruser = ({...user}._doc);
                         delete ruser.password;
                         res.status(200).json({succes: true, data: ruser, message: 'Password has been reset'});
@@ -50,7 +50,7 @@ module.exports = {
                         bcrypt.hash(req.body.password, salt, async (err, hash)=>{
                             console.log(admin);
                             admin.password = hash;
-                            await admin.save();
+                            await admin.save({validateBeforeSave: false });
                             console.log(admin);
                             let radmin = ({...admin}._doc);
                             delete radmin.password;

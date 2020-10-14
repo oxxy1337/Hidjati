@@ -14,7 +14,7 @@ const transporter = mailer.createTransport({
 module.exports = {
     sendEmailConfirmation : (req, res, user)=>{
         jwt.sign({userId: user._id}, process.env.CONFIRMATION_SECRET, {expiresIn: '24h'}, (err, Token)=>{
-            const url = `http://localhost:3000/confirmation/${Token}`;
+            const url = `http://localhost:4000/confirmation/${Token}`;
             const mailOptions = {
                 from: process.env.MAILER_USER,
                 to: user.email,
@@ -32,7 +32,7 @@ module.exports = {
     },
     sendEmailResetPassword: (req, res, user)=>{
         jwt.sign({userId: user._id}, process.env.RESETPASS_SECRET, {expiresIn: '1h'}, (err, Token)=>{
-            const url = `http://localhost:3000/resetpassword/${Token}`;
+            const url = `http://localhost:4000/resetpassword/${Token}`;
             const mailOptions = {
                 from: process.env.MAILER_USER,
                 to: user.email,

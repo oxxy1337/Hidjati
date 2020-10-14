@@ -13,7 +13,7 @@ const adminRouter = express.Router();
 adminRouter.route('/login')
 .post(/* uController.redirectIfLoggedIn , validator.loginValidation ,*/aController.connectAdmin);
 
-adminRouter.use(aController.isAdmin);
+//adminRouter.use(aController.isAdmin);
 
 adminRouter.route('/operations')
 .get(aController.getAdmin)

@@ -4,7 +4,6 @@ const Place = require('../models/place');
 
 module.exports = {
     getPlace : (req, res, next)=>{
-        console.log(req.params);
         if(req.params.placeId) Place.findById(req.params.placeId).then((place)=>{res.status(200).json({succes:true,data: place, message: "Place found"});}).catch(next)
         /* else if(req.query.type) Place.findOne({type: req.query.type}).then((place)=>{res.status(200).json({succes:true,data: place, message: "Place found"});}).catch(next)
         else if(req.query.name) Place.findOne({name: req.query.name}).then((place)=>{res.status(200).json({succes:true,data: place, message: "Place found"});}).catch(next)

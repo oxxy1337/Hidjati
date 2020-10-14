@@ -1,5 +1,6 @@
+require('dotenv').config();
+
 //test block
-const api = 'http://localhost:3000/';
 const userController = require('./controllers/user');
 /////
 const axios = require('axios');
@@ -10,13 +11,17 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const fileStore = require('session-file-store')(session);
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
+const User = require('./models/user');
 const app = express();
 
 
 const auth = require('./middlewares/auth');
+const reset = require('./middlewares/resetPass');
 
-const connect = mongoose.connect('mongodb+srv://user0:user0password@hadjati.mryf0.gcp.mongodb.net/hadjati?retryWrites=true&w=majority', {useNewUrlParser: true, useFindAndModify: false});
+const connect = mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useFindAndModify: false});
 
 connect.then((db)=>{
     console.log('connected to the db');
@@ -27,7 +32,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session({
     name: 'session-id',
-    secret: 'here we put the secret key',
+    secret: process.env.SESSION_SECRET,
     cookie: {
         maxAge: 60*10000
       },
@@ -51,7 +56,7 @@ app.set('view engine','ejs');
 app.route('/')
 .get((req, res) => {
     if(!req.user) return res.render('index');
-    return res.render('home', {data: req.user});
+    return res.redirect('/home');
 });
 
 app.route('/profile')
@@ -64,9 +69,13 @@ app.route('/advices')
 
 app.route('/places')
 .get((req, res, next)=>{
+    console.log(process.env.API_URL+'/place');
     axios({
         method: 'get',
-        url: api+'place'
+        url: process.env.API_URL+'/place',
+        headers: {
+            'apikey':'123456789'
+        }
     })
     .then((resp)=>{
         res.render('places', {data: resp.data})
@@ -130,7 +139,10 @@ app.route('/agencies')
 .get((req, res, next)=>{
     axios({
         method: 'get',
-        url: api+'agency'
+        url: process.env.API_URL+'/agency',
+        headers: {
+            'apikey':'123456789'
+        }
     })
     .then((resp)=>{
         res.render('Agencies', {data: resp.data});
@@ -145,7 +157,10 @@ app.route('/agency/:agencyId')
     //console.log(api+'agency/'+ req.params.agencyId);
     axios({
         method: 'get',
-        url: api+'agency/'+ req.params.agencyId
+        url: process.env.API_URL+'/agency/'+ req.params.agencyId,
+        headers: {
+            'apikey':'123456789'
+        }
     })
     .then((resp)=>{
         res.render('agency', {data: resp.data});
@@ -163,28 +178,89 @@ app.route('/login')
 .get((_, res)=> res.render('Login'))
 .post(auth.logInUser);
 
+app.route('/home')
+.all(userController.redirectIfNotLoggedIn, userController.isInit)
+.get((_, res)=> res.render('home'))
+
 app.route('/logout')
 .all(userController.redirectIfNotLoggedIn)
-.get(userController.logout);
+.get(userController.logout, (req, res, next)=>{
+    res.render('Login');
+});
+
+app.route('/confirmation/:token')
+.get(async (req, res, next)=>{
+    const id = await jwt.verify(req.params.token, process.env.CONFIRMATION_SECRET).userId;
+        User.findById(id)
+        .then(async (user)=>{
+            if(user){
+                if(!user.confirmed){
+                    user.confirmed = true;
+                    await user.save({ validateBeforeSave: false });
+                    res.render('Login');
+                }
+            }
+        })
+        .catch(next);
+    }
+);
 
 app.route('/register')
 .all(userController.redirectIfLoggedIn)
 .get((_, res) => res.render('SignUp'))
 .post(userController.create);
 
-app.route('/passwdreset')
+app.route('/resetpassword/:passToken')
 .all(userController.redirectIfLoggedIn)
-.get((_, res) => res.render('passwdreset'));
+.get((_, res) => res.render('passwdreset'))
+.post(reset.resetPass, (req, res, next)=>{
+    console.log("here");
+    res.render('passwdreset');
+});
+
 //.post(userController.create);
 
 app.route('/forgetpasswd')
-.get((_, res) => res.render('forgetpasswd'))
+.get((req, res) => res.render('forgetpasswd'))
+.post((req, res, next)=> {
+    axios.post(process.env.API_URL+'/resetpassword',
+        {
+            email: req.body.email
+        },
+        {
+        headers: {
+            'apikey':'123456789'
+        }
+    }
+    )
+    .then((resp)=>{
+         res.render('forgetpasswd', resp);                   //here front
+    })
+    .catch((err)=>{res.render('error', err)});
+});
 
 app.route('/feedback')
 .get((_, res) => res.render('feedback'))
+.post((_, res)=> {
+    axios({
+        method: 'post',
+        url: process.env.API_URL + '/feedback',
+        data: {
+            _id: res.locals.user,
+            subject: req.body.subject,
+            note: req.body.note,
+            content: req.body.content
+        },
+        headers: {
+            'apikey':'123456789'
+        }
+    })
+    .then(resp=>{
+        res.render('feedback', {resp});
+    })
+});
 
-app.route('/error')
-.get((_, res) => res.render('error'));
+app.use((_, res) => res.render('error'));
 
 app.route('/nav')
 .get((_, res) => res.render('navbar'));

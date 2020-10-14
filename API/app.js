@@ -32,11 +32,11 @@ const app = express();
     if(req.headers['apikey'] != process.env.API_KEY) return res.status(404).json({succes: false,data:{}, msg:"not auth"})
     next();
 }); */
-
+/* 
 app.use((req, res, next)=>{
     console.log(req.body);
     next();
-})
+}) */
 
 connect.then((db)=>{
     console.log("connected succefully to the db");
