@@ -5,9 +5,9 @@ const Place = require('../models/place');
 module.exports = {
     getPlace : (req, res, next)=>{
         if(req.params.placeId) Place.findById(req.params.placeId).then((place)=>{res.status(200).json({succes:true,data: place, message: "Place found"});}).catch(next)
-        else if(req.query.type) Place.findOne({type: req.query.type}).then((place)=>{res.status(200).json({succes:true,data: place, message: "Place found"});}).catch(next)
+        /* else if(req.query.type) Place.findOne({type: req.query.type}).then((place)=>{res.status(200).json({succes:true,data: place, message: "Place found"});}).catch(next)
         else if(req.query.name) Place.findOne({name: req.query.name}).then((place)=>{res.status(200).json({succes:true,data: place, message: "Place found"});}).catch(next)
-        else
+         */else
         Place.find({})
         .then((places)=>{
             res.status(200).json({succes:true, data: places, message: "all places"});
@@ -23,7 +23,7 @@ module.exports = {
                     res.status(200).json({succes:true, data: place, message: "Place created"});
                 });
             }else{
-                res.json({succes:false, data: {}, message: "Place exist"});
+                res.status(400).json({succes:false, data: {}, message: "Place exist"});
             }
         })
         .catch(next);
@@ -33,7 +33,7 @@ module.exports = {
         else
         Place.deleteMany({})
         .then((info)=>{
-            res.status(200).json({succes:true, data: place, message: "all Places deleted"});
+            res.status(200).json({succes:true, data: info, message: "all Places deleted"});
         })
         .catch(next);
     },

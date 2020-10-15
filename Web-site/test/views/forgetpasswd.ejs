@@ -25,7 +25,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="jquery.min.js"></script>    
 
-    <link href="/stylesheets/register_theme.css" rel="stylesheet">
+  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -39,9 +39,11 @@
 
   </head>
   <body style="background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;">
-    <a href="/"> <img src="/images/logo.png" style="width: 300px;height: 200px;position: relative;left: 50px;top: 20px;"></a>   
-    <section>
+    <nav > <%- include('header'); -%> 
+    </nav>   <section>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+
         <div class="form-gap" style="padding-top: 70px;"></div>
        <div class="container">
            <div class="row">
@@ -50,20 +52,20 @@
                      <div class="panel-body">
                        <div class="text-center">
                          <h3><i class="fa fa-envelope fa-4x"></i></h3>
-                         <h2 class="text-center">نسيت كلمة المرور؟</h2>
-                         <p>يمكنك إستقبال بريد إعادة تعيينها</p>
+                         <h2 class="text-center" style="font-size: 30px;">نسيت كلمة المرور؟</h2>
+                         <p style="font-size: 20px;">يمكنك إستقبال بريد إعادة تعيينها</p>
                          <div class="panel-body">
            
                            <form id="register-form" role="form" autocomplete="off" class="form" method="post" action="/forgetpasswd">
            
                              <div class="form-group">
                                <div class="input-group">
-                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-                                 <input id="email" name="email" placeholder="البريد الإلكتروني" class="form-control"  type="email">
+                                 <span class="input-group-addon" style="padding-right: 23px;" ><i class="glyphicon glyphicon-envelope color-blue" style=" margin-right:30px"></i></span>
+                                 <input id="email" name="email" placeholder="البريد الإلكتروني" class="form-control"  type="email" style="font-size: 18px;">
                                </div>
                              </div>
                              <div class="form-group">
-                               <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="إرسال" type="submit">
+                               <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="إرسال" type="submit" style="font-size: 18px;">
                              </div>
                              
                              <input type="hidden" class="hide" name="token" id="token" value=""> 
@@ -79,67 +81,64 @@
 
   </section>
     <!-- Footer ------------------------------------------------------------------------------->
-    <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;height: 400px;" >
+    <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
 
       <!-- Footer Links -->
       <div class="container-fluid text-center text-md-left">
-
+  
         <!-- Grid row -->
         <div class="row">
-
+  
           <!-- Grid column -->
-          <div class="col-md-6 mt-md-0 mt-3">
-           <h5 class="lang" key="playstore" style="text-align:center; position: relative;top: 30px;right:50px;">حمل تطبيق حجتي مجانا على</h5>
-           <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 150px;"></a>
-
+          <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+           <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
+           <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+  
             <!-- Content -->
             
           </div>
           <!-- Grid column -->
-
+  
+          
           <hr class="clearfix w-100 d-md-none pb-3">
-
+  
           <!-- Grid column -->
           <div class="col-md-3 mb-md-0 mb-3">
-
+  
             <!-- Links -->
             <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
             <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
             <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
             <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
   
-
+  
            
-
+  
           </div>
           <!-- Grid column -->
-
+  
           <!-- Grid column -->
           <div class="col-md-3 mb-md-0 mb-3">
-
+  
             <!-- Links -->
             <h5 class="text-uppercase"></h5>
-
+  
            
-
+  
           </div>
           <!-- Grid column -->
-
+  
         </div>
         <!-- Grid row -->
-        <hr style="border:none;border-left:1px solid bisque; height: 200px;position: relative;left:550px ;bottom: 100px;">
-
+        <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
+  
       </div>
-
-      <!-- Footer Links -->
-
+  
       <!-- Copyright -->
-      <div class="footer-copyright text-center py-2" style="position: relative;bottom: 50px;">© 2020 Copyright:
-        <a href="https://esi-sba.dz/">ESI SBA</a>
+      <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+        <a href="https://esi-sba.dz/"> ESI SBA</a>
       </div>
-      <!-- Copyright -->
-
-    </footer>
+      <!-- Co
     <!-- Footer -->
 
     <script type="text/javascript" src="/js/LoginLang.js"></script>

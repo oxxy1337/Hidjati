@@ -110,64 +110,14 @@
 }
 </style>
 </head>
-<nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-  <a href="/"> <img src="/images/logo.png" style="position: relative;left: 45px;top:30px" width="160px;height:120px;"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="/agencies" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;"> وكالات سفر متاحة  </h6>
-          </button></a>
-        </li>
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="/places" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;">مواقع سياحية</h6>
-          </button></a>
-        </li>
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="#" >  
-         <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;">نصائح و توجيهات</h6>
-          </button></a>
-        </li>
-        <li class="nav-item dropdown" style="position: relative;left:380px;">
-          <div class="chip" style="background-color: rosybrown;">
-          <img src="/images/avatar.png" alt="Person" width="96" height="96">
-          <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-        <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %></h6> 
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%if (user.type =='tama')
-            { %>
-           <a  href="/tama" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
-          <% } %> 
-          <%if (user.type =='omra')
-           { %>
-            <a   href="/omra" style="text-decoration: none;color: black;position: relative;left: 20px;"> 
-             <% } %> 
-          <%if (user.type =='ikran')
-             { %>
-             <a   href="/ikran" style="text-decoration: none;color: black;position: relative;left: 20px;" >
-             <% } %> 
-            <%if (user.type =='ifrad')
-             { %>
-             <a  href="/ifrad" style="text-decoration: none;color: black;position: relative;left: 20px;">
-            <% } %> مواصلة مراحلي</a>            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
-            <a class="dropdown-item" href="/logout">خروج</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav> <%- include('../header'); -%> 
+</nav>
   <body class="index" id="to-top" style="overflow-x: hidden;">
    
     <!-- Side nav -->
     <header>
     </header>
+    <br><br><br><br>
     <!--SECTION 1------------------------------------------------------------------------------>
     
   <section style="height: 600px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">

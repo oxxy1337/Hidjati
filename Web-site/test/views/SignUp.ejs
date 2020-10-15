@@ -80,7 +80,7 @@
                       <hr>
                       <div style="background-color: azure; padding: 1em; position:absolute; border-radius: 2rem; padding-top: 1.5rem; ">
                         <label for="male">ذكر</label>
-                        <input style="margin: 0 30px 0 10px;" type="radio" id="male" name="genderM" value="male" autofocus>
+                        <input style="margin: 0 30px 0 10px;" type="radio" id="male" name="genderM" value="male" checked autofocus raquired>
                         <label for="female">أنثى</label>
                         <input style="margin: 0 10px 0 10px;" type="radio" id="female" name="genderF" value="female">
                         
@@ -91,9 +91,9 @@
                       <br>
   
                      <div class="form-label-group">
-                      <select  class="form-control custom-select" style="border-radius: 2rem; width: 100%;" >
-                          <option value="" selected="" hidden disabled>إختر بلدك</option>
-                          <option value="dz" >الجزائر</option>
+                      <select  class="form-control custom-select" style="border-radius: 2rem; width: 100%;" autofocus required >
+                          <option value=""  hidden disabled>إختر بلدك</option>
+                          <option value="dz" selected="" >الجزائر</option>
                           <option value="tn">تونس</option>
                           <option value="mr">المغرب</option>
                           
