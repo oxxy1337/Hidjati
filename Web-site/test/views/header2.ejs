@@ -17,9 +17,10 @@
        <button id="ar" class="translate" style="margin-right: 100px ; margin-left: 10px; border-radius: 20px;background-color: #af5f61;">Ar</button>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li><a href="/places">مواقع سياحية</a></li>
-          <li><a href="/agencies">وكالات سفر</a></li>
+
           <% if (user) { %>
+            <li><a href="/places">مواقع سياحية</a></li>
+            <li><a href="/agencies">وكالات سفر</a></li>
             <li><a href="/<%= user.type %> ">مناسكي</a></li>
             <li><a href="/feedback">راسلنا</a></li>
 
