@@ -163,7 +163,15 @@ td {
                         </tr>
                         <% if (user.type) {%> 
                         <tr>
-                          <td><%= user.type %> </td>
+                          <% if (user.type == "tama") { %>
+                            <td>حج التمتع</td>
+                          <% }else if (user.type =="ifrad") { %>
+                          <td>حج الإفراد</td>
+                          <% }else if (user.type =="ikran") { %>
+                          <td>حج القران</td>
+                          <% }else if (user.type =="omra") { %>
+                            <td>عمرة</td>
+                          <% } %> 
                           <td>: نوع المناسك</td>
                         </tr>
                         <% } %> 
