@@ -50,6 +50,6 @@ module.exports = {
     },
     logInUser: passport.authenticate('User', {
         successRedirect: '/',
-        failureRedirect: '/login'
+        failureRedirect: '/home'
     })
 };

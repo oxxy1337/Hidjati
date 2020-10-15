@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const flightSchema = new Schema({
     departureAirport: {
         type: String,
-        required: true
+        required: false
     },
     d_departureTime: {
         type: Date,

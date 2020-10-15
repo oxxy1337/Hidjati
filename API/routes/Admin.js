@@ -11,14 +11,7 @@ const validator = require('../middlewares/validation');
 const adminRouter = express.Router();
 
 adminRouter.route('/login')
-
-/* .get((req, res, next)=>{
-    if(req.user) return res.status(200).json({succes: true, data: {}, message: 'already logged in'})
-    res.status(200).json({sucess: true, data: {}, message: 'logged in'});
-})
- */
-
-.post(/* uController.redirectIfLoggedIn , */validator.loginValidation ,aController.connectAdmin);
+.post(/* uController.redirectIfLoggedIn , validator.loginValidation ,*/aController.connectAdmin);
 
 //adminRouter.use(aController.isAdmin);
 
@@ -28,6 +21,7 @@ adminRouter.route('/operations')
 .delete(aController.deleteAdmin);
 
 adminRouter.route('/operations/:adminId')
+.patch(aController.updateAdmin)
 .get(aController.getAdmin)
 .delete(aController.deleteAdmin);
 
@@ -36,8 +30,10 @@ adminRouter.route('/users')
 .post(uController.createUser)
 .delete(uController.deleteUser);
 
-adminRouter.route('/users/userId')
+
+adminRouter.route('/users/:userId')
 .get(uController.getUser)
+.patch(uController.updateUser)
 .delete(uController.deleteUser);
 
 adminRouter.route('/places')

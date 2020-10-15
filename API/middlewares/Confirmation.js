@@ -6,25 +6,29 @@ const User = require('../models/pelerin');
 const Admin = require('../models/admin');
 
 module.exports = {
-    confirmAccount : (req, res, next)=>{
+    confirmAccount : async (req, res, next)=>{
         var resp;
-        const id = jwt.verify(req.params.token, process.env.CONFIRMATION_SECRET).userId;
+        const id = await jwt.verify(req.params.token, process.env.CONFIRMATION_SECRET).userId;
         User.findById(id)
-        .then((user)=>{
+        .then(async(user)=>{
             if(user){
-                resp = user;
+                let ruser = ({...user}._doc);
+                delete ruser.password;
+                resp = ruser;
                 if(!user.confirmed){
                     user.confirmed = true;
-                    user.save();
+                    await user.save({validateBeforeSave: false });
                 }
             }else
             Admin.findById(id)
-            .then((admin)=>{
+            .then(async (admin)=>{
                 if(admin){
-                    resp = admin;
+                    let radmin = ({...admin}._doc);
+                    delete radmin.password;
+                    resp = radmin;
                     if(!admin.confirmed){
                         admin.confirmed = true;
-                        admin.save();
+                        await admin.save({validateBeforeSave: false });
                     }
                 }
             })
