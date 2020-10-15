@@ -115,13 +115,13 @@ include("../core/funcs.php");
 		$data = array("email"=>$_POST["email"],"password"=>$_POST["pass"]);
 		$out  = json_decode(post(URL_API,"admin/login",json_encode($data),"POST",""));
 		
-		
+		print_r($out);
 		if($out->succes == true){
 			$_SESSION["log"]="ok";
 			$_SESSION["jwt"]=$out->tok;
 			$_SESSION["isAdmin"]=$out->data->isAdmin;
-			
-			echo '<script>alert("Login success"); window.location.replace("../dashboard");</script>';
+			//setcookie("jwt", $out->tok, time() + (86400 * 30), "/");
+			echo '<script>alert("Login success"); window.location.replace("../dash");</script>';
 			$_SESSION["data"] = $out->data;
 		}else{
 			echo '<script>alert("Login failed");</script>'	;
