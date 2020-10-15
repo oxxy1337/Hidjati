@@ -63,6 +63,11 @@ app.route('/profile')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('Profile'));
 
+app.route('/prfsettings')
+.all(userController.redirectIfNotLoggedIn)
+.get((_, res) => res.render('prfsettings'));
+
+
 app.route('/advices')
 .all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.render('Advices'));
@@ -271,8 +276,8 @@ app.route('/nav2')
 app.route('/nav3')
 .get((_, res) => res.render('navbar3'));
 
-app.route('/prfsettings')
-.get((_, res) => res.render('prfsettings'));
+
+
 
 app.get('/test', (req, res)=>{res.json(req.user)});
 
