@@ -86,23 +86,9 @@ app.route('/places')
         res.render('places', {data: resp.data})
     })
     .catch(()=>{
-        res.render('Agencies', {data: null});
+        res.render('places', {data: null});
     });
 });
-
-
-app.route('/loc')
-.get((_, res) => res.render('places'));
-app.route('/dashboard')
-.get((_, res) => res.render('./Admin/index'));
-app.route('/in2')
-.get((_, res) => res.render('./Admin/index2'));
-app.route('/in3')
-.get((_, res) => res.render('./Admin/index3'));
-app.route('/in4')
-.get((_, res) => res.render('./Admin/index4'));
-app.route('/admin')
-.get((_, res) => res.render('./Admin/login'));
 
 app.route('/Gh')
 .get((_, res) => res.render('GuideHadj'));
@@ -141,6 +127,7 @@ app.route('/omra')
 .get(userController.isInit, (_, res) => res.render('UserOmra'));
 
 app.route('/agencies')
+.all(userController.redirectIfNotLoggedIn)
 .get((req, res, next)=>{
     axios({
         method: 'get',
@@ -158,6 +145,7 @@ app.route('/agencies')
 });
 
 app.route('/agency/:agencyId')
+.all(userController.redirectIfNotLoggedIn)
 .get((req, res, next)=>{
     //console.log(api+'agency/'+ req.params.agencyId);
     axios({
@@ -176,6 +164,7 @@ app.route('/agency/:agencyId')
 });
 
 app.route('/agency')
+.all(userController.redirectIfNotLoggedIn)
 .get((_, res) => res.redirect('/agencies'))
 
 app.route('/login')
@@ -246,7 +235,7 @@ app.route('/forgetpasswd')
 
 app.route('/feedback')
 .get((_, res) => res.render('feedback'))
-.post((_, res)=> {
+.post((req, res)=> {
     axios({
         method: 'post',
         url: process.env.API_URL + '/feedback',
