@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:school/Screens/Hadj_Ifrad.dart';
-import 'package:school/Screens/Hadj_Qiraan.dart';
-import 'package:school/Screens/Hadj_Tamatoaa.dart';
+
 import 'package:school/slime/slimy_card.dart';
 
 class Agence extends StatefulWidget {
@@ -79,7 +77,7 @@ class _AgencePage extends State<Agence> {
             Navigator.of(context).push(
               new MaterialPageRoute(
                 builder: (context) {
-                  return new Hadj_Ifrad();
+                  return ;
                 },
               ),
             );
@@ -112,7 +110,7 @@ class _AgencePage extends State<Agence> {
             Navigator.of(context).push(
               new MaterialPageRoute(
                 builder: (context) {
-                  return new Hadj_Tamtoaa();
+                  return ;
                 },
               ),
             );
@@ -146,6 +144,70 @@ class _AgencePage extends State<Agence> {
       ],
     );
   }
+  Widget fourthtopCardWidget(String imagePath) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          height: 50,
+          width: 70,
+
+        ),
+        SizedBox(height: 1),
+        FlatButton(
+          onPressed: (){
+            Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return ;
+                },
+              ),
+            );
+          },
+          textColor: Color(0xff2d3142),
+          child: Text('وكالة اسفار',style: TextStyle(fontFamily: 'AeCortoba',fontSize: 30)
+
+          ),
+
+        ),
+        SizedBox(height: 15),
+
+        SizedBox(height: 10),
+      ],
+    );
+  }
+  Widget fivetopCardWidget(String imagePath) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          height: 50,
+          width: 70,
+
+        ),
+        SizedBox(height: 1),
+        FlatButton(
+          onPressed: (){
+            Navigator.of(context).push(
+              new MaterialPageRoute(
+                builder: (context) {
+                  return ;
+                },
+              ),
+            );
+          },
+          textColor: Color(0xff2d3142),
+          child: Text('وكالة الوجدان',style: TextStyle(fontFamily: 'AeCortoba',fontSize: 30)
+
+          ),
+
+        ),
+        SizedBox(height: 15),
+
+        SizedBox(height: 10),
+      ],
+    );
+  }
 
   // This widget will be passed as Bottom Card's Widget.
   Widget firstCardWidget() {
@@ -163,6 +225,30 @@ class _AgencePage extends State<Agence> {
   Widget secondCardWidget() {
     return Text(
       ' Tél : +213 (0) 48 51 79 98. Fax : +213 (0) 48 51 68 44',
+      style: TextStyle(
+        fontFamily: 'AeCortoba',
+        fontSize: 10,
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+  Widget fourthCardWidget() {
+    return Text(
+      '  Tél : +213 (0) 48 51 79 98. Fax : +213 (0) 48 51 68 44',
+      style: TextStyle(
+        fontFamily: 'AeCortoba',
+        fontSize: 10,
+        color: Colors.black,
+        fontWeight: FontWeight.w500,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+  Widget fiveCardWidget() {
+    return Text(
+      '  Tél : +213 (0) 48 51 79 98. Fax : +213 (0) 48 51 64 44',
       style: TextStyle(
         fontFamily: 'AeCortoba',
         fontSize: 10,

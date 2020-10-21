@@ -50,29 +50,7 @@ class _QuranPageState extends State<QuranPage> {
           future: _load,
           builder: (context, AsyncSnapshot<List<Surah>> snapshot) {
             if (snapshot.hasData) {
-              // return GroupedListView(
-              //     elements: snapshot.data,
-              //     groupBy: (Surah surah) => int.parse(surah.juz.index),
-              //     groupSeparatorBuilder: _buildGroupSeparator,
-              //     sort: true,
-              //     itemBuilder: (context, surah) {
-              //       return ListTile(
-              //         leading: Text(surah.index),
-              //         title: Text(surah.title),
-              //         subtitle: Text('${surah.type} - ${surah.count} verses'),
-              //         onTap: () {
-              //           print(surah.title);
-              //           Provider.of<SurahProvider>(context, listen: false)
-              //               .setSurah(surah.index, surah.title);
-              //           return Navigator.push(
-              //             context,
-              //             MaterialPageRoute(
-              //               builder: (context) => SurahPage(),
-              //             ),
-              //           );
-              //         },
-              //       );
-              //     });
+
               return ListView.builder(
                   itemCount: snapshot.data.length,
                   physics: const AlwaysScrollableScrollPhysics(),

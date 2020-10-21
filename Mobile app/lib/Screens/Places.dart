@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class Places extends StatefulWidget {
   @override
   Places_map createState() => new Places_map();
@@ -229,7 +230,7 @@ class HomePageState extends State<HomePage> {
           _controller.complete(controller);
         },
         markers: {
-          Marker1,Marker2,Marker3,Marker4,Marker5,Marker6
+            Marker1,Marker2,Marker3,Marker4,Marker5,Marker6
         },
       ),
     );

@@ -5,7 +5,7 @@ import 'package:school/objects/ApiResponce.dart';
 import 'package:school/objects/User.dart';
 
 class UserServices {
-  static const api = 'https://fathomless-woodland-82354.herokuapp.com';
+  static const api = 'https://calm-mountain-09462.herokuapp.com';
 
   static Future<ApiResponce<User>> getUser(String userId) {
     return http.get(api + "/admin/users/" + userId).then((data) {
