@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Hidjati | جحتي</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/images/kaaba01.png" />
+    <title>تسجيل الدخول | حجتي</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
 
     <!--Animate.css-->
@@ -22,7 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/Web-site/test/public/jquery.min.js"></script>    
+    <script type="text/javascript" src="/jquery.min.js"></script>    
 
 
 <!-- Google Fonts -->
@@ -30,40 +30,37 @@
 
   </head>
   <body style="background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;">
-    <button id="en" class="translate" style="position:relative;left:700px;border-radius: 20px;background-color: white;top:30px">English</button>
-    <button id="ar" class="translate" style="position:relative;left:700px;border-radius: 20px;background-color: white;top: 30px;">Arabic</button>
+    <nav > <%- include('header2'); -%> 
+    </nav>
 
-    <a href="/"> <img src="/images/logo.png" style="width: 300px;height: 200px;position: relative;left: 50px;top: 20px;"></a>
+
     <!--SECTION 1------------------------------------------------------------------------------>
-  <section  >
+  <section style="height: 700px;"  >
 
+    
+    <a href="/"> <img src="/images/logo.png" style="width: 300px;height: 200px;position: relative;right: 60px;top: 30px;"></a>
+    <img src="/images/qu.png" style="width: 400px;height: 300px;position: relative;top: 150px;right: 240px;">
     <div class="container" style="float: lef;">
       <div class="row">
-        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center" style="color: white;">
-          <div class="nav2" style=" position: relative;bottom: 70px; right: 200px;">
-            <h1 class="lang" key="hidjati"  style="text-align: center;position:relative; top: 30px; animation: bounce; animation-duration: 5s;">حجتي</h1>
-            <h2  class="lang" key="guide" style="text-align: center; position:relative; top: 30px;animation: bounce; animation-duration: 5s;">دليلك للحج  و العمرة</h2>
-            <h4 class="lang" key="fill"  style="text-align: center; position:relative; top: 100px;animation: bounce; animation-duration: 5s;">املا خانات المعلومات للدخول    
-            </h4>
 
-           
-           <h6 class="lang" key="playstore2" style="position: relative;bottom: 620px; left: 400px;">حمل الآن مجانا تطبيق حجتي</h6>
-            
-           </div>
-        </div>
-        
 <div class="row justify-content-center">
     <div class="col-md-6">
-    <div class="card" style="position: relative;left: 550px; width: 300px;bottom:50px;">
-    <header class="card-header">
-        <a href="/register" class="float-right btn btn-outline-primary mt-1"><h6 class="lang" key="register">اشتراك</h6></a>
-        <h4  class="lang" key="login" >الدخول</h4>
+ 
+    <div class="card" style="position: relative;left: 550px; width: 300px;bottom:200px;">
+      
+      <header class="card-header" style="height: 60px;background-color: #DDC2BE;">
+        <a  style="text-decoration: none;" class="nav-link" href="/register" >   
+        <button type="button" style="background-color: #af5f61;position: relative;left: 170px;bottom:10px;" class="btn btn-default"  id="zoom"> 
+          <h6 class="lang" key="login" style="color: white;" >اشتراك</h6>
+          </button></a>    
+        <h4  class="lang" key="login" style="position: relative;bottom:55px;" >الدخول</h4>
     </header>
     <article class="card-body">
     <form action="/login" method="post">
+
         
         <div class="form-group">
-            <label class="lang" key="email">البريد الالكتروني   </label>
+            <label class="lang" key="email">البريد الالكتروني  </label>
             <input type="email" class="form-control" placeholder="" name="email">
         </div> <!-- form-group end.// -->
         <div class="form-group">
@@ -77,6 +74,7 @@
     </form>
     </article> <!-- card-body end .// -->
     <div class="border-top card-body text-center" ><h6 class="lang" key="noacc"> ليس لديك حساب؟ </h6>  <a href="/register" class="lang" key="register">اشتراك</a></div>
+    <div class="border-top card-body text-center" ><a href="/forgetpasswd" class="lang"  key="reset">هل نسيت كلمة المرور؟</a></div>
     </div> <!-- card.// -->
     </div> <!-- col.//-->
     
@@ -91,7 +89,7 @@
 
   </section>
    <!-- Footer ------------------------------------------------------------------------------->
-   <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;height: 400px;" >
+   <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -100,15 +98,16 @@
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-         <h5 class="lang" key="playstore" style="text-align:center; position: relative;top: 30px;right:80px;">حمل تطبيق حجتي مجانا على</h5>
-         <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 120px;"></a>
+        <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+         <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
+         <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
 
           <!-- Content -->
           
         </div>
         <!-- Grid column -->
 
+        
         <hr class="clearfix w-100 d-md-none pb-3">
 
         <!-- Grid column -->
@@ -121,8 +120,6 @@
           <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
 
 
-
-         
          
 
         </div>
@@ -141,19 +138,15 @@
 
       </div>
       <!-- Grid row -->
-      <hr style="border:none;border-left:1px solid bisque; height: 200px;position: relative;left:550px ;bottom: 100px;">
+      <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
 
     </div>
 
-    <!-- Footer Links -->
-
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-2" style="position: relative;bottom: 50px;">© 2020 Copyright:
-      <a href="https://esi-sba.dz/">ESI SBA</a>
+    <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+      <a href="https://esi-sba.dz/"> ESI SBA</a>
     </div>
-    <!-- Copyright -->
-
-  </footer>
+    
     <!-- Footer -->
     <script type="text/javascript" src="/js/LoginLang.js"></script>
 

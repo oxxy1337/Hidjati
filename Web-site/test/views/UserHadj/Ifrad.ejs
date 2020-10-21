@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حجتي | الحاج المتمتع</title>
+    <title>حجتي | الحاج المفرد</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -109,50 +110,14 @@
 }
 </style>
 </head>
-<nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-  <a href="/"> <img src="/images/logo.png" style="position: relative;left: 45px;top:30px" width="150px;height:80px;"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="/agencies" >   <button id="zoom" type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;"> وكالات سفر متاحة  </h6>
-          </button></a>
-        </li>
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="/places" >   <button id="zoom" type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;">مواقع سياحية</h6>
-          </button></a>
-        </li>
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="#" >  
-         <button id="zoom" type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;">نصائح و توجيهات</h6>
-          </button></a>
-        </li>
-        <li class="nav-item dropdown" style="position: relative;left:380px;">
-          <div class="chip" style="background-color: rosybrown;">
-          <img src="/images/avatar.png" alt="Person" width="96" height="96">
-          <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-        <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %></h6> 
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">اكمال مراحلي</a>
-            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
-            <a class="dropdown-item" href="/logout">خروج</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav> <%- include('../header'); -%> 
+</nav>
   <body class="index" id="to-top" style="overflow-x: hidden;">
    
     <!-- Side nav -->
     <header>
     </header>
+    <br><br><br><br>
     <!--SECTION 1------------------------------------------------------------------------------>
   <section style="height: 600px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">
     <h1 style="text-align: center;color:white; position: relative;top: 100px;">المخطط المنطقي للحاج المفرد </h1>
@@ -170,8 +135,8 @@
     <!--SECTION2-------------------------------------------------------------------------------------------------->
     
     <section  style="height: 800px;width: 90%; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top:40px;" >
-      <button id="prev"  class="btn btn-primary" style="position:relative;top: 650px;left:400px" >المرحلة السابقة</button>
-      <button id="next"  class="btn btn-primary" style="position:relative;top: 650px;left:600px">المرحلة التالية</button>
+      <button id="prev"  class="btn btn-primary" style="position:relative;top: 650px;left:460px;background-color: #af5f61;" >المرحلة السابقة</button>
+      <button id="next"  class="btn btn-primary" style="position:relative;top: 650px;left:460px;background-color: #af5f61;">المرحلة التالية</button>
           <div class="main"  >
             <div class="inputGroup1" style="display: none;">
               <input id="option1" name="option1" type="checkbox"/>
@@ -300,7 +265,8 @@
 </div>
      </section>
   <!-- Footer ------------------------------------------------------------------------------->
-  <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;" >
+  <!-- Footer ------------------------------------------------------------------------------->
+  <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -309,74 +275,58 @@
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-         <h5 style="text-align:center; position: relative;top: 30px;">حمل تطبيق حجتي مجانا على</h5>
+        <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+         <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
          <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+
+          <!-- Content -->
+          
         </div>
         <!-- Grid column -->
 
+        
         <hr class="clearfix w-100 d-md-none pb-3">
 
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
+          <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
+          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
 
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
+
+         
 
         </div>
+        <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase"></h5>
 
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
+         
 
         </div>
         <!-- Grid column -->
 
       </div>
       <!-- Grid row -->
+      <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
 
     </div>
-    <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://esi-sba.dz" style="text-decoration: none;color:black;">ESI SBA</a>
+    <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+      <a href="https://esi-sba.dz/"> ESI SBA</a>
     </div>
     <!-- Copyright -->
 
   </footer>
+  <!-- Footer -->
   <!-- Footer -->
   <script>
     AOS.init();

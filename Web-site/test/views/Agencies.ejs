@@ -8,6 +8,7 @@
 
     <!-- Title -->
     <title>حجتي | وكالات السفر </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -42,20 +43,19 @@
     transform-style: preserve-3d;
   }
   
-  .flip-box:hover .flip-box-inner {
-    transform: rotateY(180deg);
-  }
+  
   
   .flip-box-front, .flip-box-back {
     position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: 15%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   
   .flip-box-front {
-    background-color: #bbb;
+    background-color: rosybrown;
     color: black;
   }
   
@@ -66,65 +66,109 @@
   }
   </style>
 </head>
-<nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-  <a class="navbar-brand" href="/" style="position: relative;left:150px"><img src="/images/logo.png" style="width:200px;height: 160px;position: relative;top: 20px;right: 100px;"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item" style="position: relative;left:1000px;">
-        <a style="text-decoration: none;" class="nav-link" href="/places" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-        <h6 style="color: white;">مواقع سياحية</h6>
-        </button></a>
-      </li>
-      <li class="nav-item" style="position: relative;left:1000px;">
-        <a style="text-decoration: none;" class="nav-link" href="#" >  
-       <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-        <h6 style="color: white;">نصائح و توجيهات</h6>
-        </button></a>
-      </li>
+
+<body class="index" id="to-top" style="background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;">
+    
+         <nav>
+      <%- include('header'); -%> 
+    </nav>
       
-      <li class="nav-item dropdown" style="position: relative;left:650px;">
-          <div class="chip" style="background-color: rosybrown;">
-          <img src="/images/avatar.png" alt="Person" width="96" height="96">
-          <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-        <h6 style="color: white; position: relative;top: 5px;right: 9px;"></h6> 
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">اكمال مراحلي</a>
-            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
-            <a class="dropdown-item" href="/logout">خروج</a>
-            </div>
-          </div>
-        </li>
-      
-    </ul>
-  </div>
-</nav>
-<body class="index" id="to-top" style="overflow-x: hidden;">
-  <section id="hero" style="height: 700px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">
-    <%if(data){ %> 
+
+<br>
+<br>
+
+  <section style="height: 80%;width: 90%;border-radius: 30px; background-size: cover		;position: relative;left: 75px;">
+    <% if(data){ %> 
       <%if(!data.data.length){ %>
         <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No agencies found in the db </h3>    
       <%} else{%> 
-      <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">جمعنا لك روابط احسن الوكالات السياحية </h3>    
-      <% for(agency of data.data) {%>      
-      <div class="flip-box" style="display: inline-block;padding: 5px 5px 5px 5px; ">
-        <div class="flip-box-inner">
-          <div class="flip-box-front"> 
-            <h2><%= agency.name %></h2>
+        <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">جمعنا لك روابط احسن الوكالات السياحية </h3>  
+        <div class="row"> 
+        <% for(agency of data.data) {%>      
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="card h-100">
+              <% if (!agency.pictures.length) {%> 
+              <a href="/agency/<%= agency._id %> "><img class="card-img-top" src="images/agency-avatar.jpg" alt=""></a>
+              <% } else { %> 
+              <a href="/agency/<%= agency._id %>"><img class="card-img-top" src="<% agency.pictures[0] %>" alt=""></a>
+              <% } %> 
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/agency/<%= agency._id %>"><%= agency.name %></a>
+                </h4>
+                <p class="card-text"><%= agency.discription%></p>
+              </div>
+            </div>
           </div>
-          <div class="flip-box-back">
-            <h2><%= agency.discription%></h2>
-          </div>
+        <%}%>
+        </div> 
+      <%}%>
+      <%} else{%>
+        <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No API response</h3>
+      <%}%>
+  </section> 
+  <!-- Footer ------------------------------------------------------------------------------->
+  <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+         <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
+         <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+
+          <!-- Content -->
+          
         </div>
+        <!-- Grid column -->
+
+        
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
+          <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
+          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+
+
+         
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase"></h5>
+
+         
+
+        </div>
+        <!-- Grid column -->
+
       </div>
-      <%}}%>
-    <%} else{%>
-      <h3 style="text-align: center;color: white;position: relative;top:50px; margin-bottom:5%;">No API response</h3>
-  <%}%>
-  </section>
+      <!-- Grid row -->
+      <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+      <a href="https://esi-sba.dz/"> ESI SBA</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
  <!---Boostrap libraries-->
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>

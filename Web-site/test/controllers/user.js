@@ -13,7 +13,10 @@ module.exports = {
             first_name: req.body.first_name,
             last_name: req.body.last_name ,
             //natio: req.body.natio || 'algerie' need to add natio in the model
-            }
+        },
+        headers: {
+            'apikey':'123456789'
+        }
         })
         .then((resp)=>{
             req.login(resp.data.data, (err)=>{
@@ -34,7 +37,7 @@ module.exports = {
     }, 
     logout: (req, res, next)=>{
         req.logOut();
-        res.status(200).json({succes: true, data:{}, message: 'logged out!'});
+        next();
     },
     isInit: (req, res, next)=>{
         if(!req.user.type) return res.redirect('/init');

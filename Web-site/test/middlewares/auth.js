@@ -19,13 +19,13 @@ passport.use('Admin', new localStrategy({usernameField: 'email'}, (username, pas
     .catch((err)=>done(err));
 }));
 
-passport.use('User', new localStrategy({usernameField: 'email'}, (username, password, done)=>{
+passport.use('User', new localStrategy({usernameField: 'email'}, ( username, password, done)=>{
     User.findOne({email: username})
     .then((user)=>{
-        if(!user) return done(null, false, {message: 'ivalid email'});
+        if(!user) return done(null, false, {message :'ivalid email'});
         
         bcrypt.compare(password, user.password, (err, rep)=>{
-            if(!rep) return done(null, false, {message: 'invalid password'});
+            if(!rep) return done(null, false, {message :'invalid password'});
             return done(null, user);
         });
     })
@@ -50,6 +50,6 @@ module.exports = {
     },
     logInUser: passport.authenticate('User', {
         successRedirect: '/',
-        failureRedirect: '/login'
+        failureRedirect: '/home'
     })
 };

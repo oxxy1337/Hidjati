@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+ <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title> وكالة سفر | حجتي</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <style>
+        body {
+        padding-top: 56px;
+        background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;
+        }
+        p,h1,h2,h6,a {
+            text-align: center;
+        }
+    </style>
+
+  </head>
+  <body>
+<!-- Navigation -->
+<nav>
+  <%- include('header'); -%> 
+</nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <% if (data.data.pictures.length > 0) { %>
+          <img class="img-fluid rounded mb-4 mb-lg-0" src="<%= data.data.pictures[0] %>  " alt="">
+        <% } else {%>
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="/images/agency-avatar.jpg" alt="">
+        <% } %> 
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5" style="background-color: darkgray; border-radius: 0.5em; ">
+        <h1 class="font-weight-light"><%= data.data.name %> </h1>
+       
+        <hr>
+        <hr>
+        <br>    
+        <p><%= data.data.discription %></p>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100" style="background-color: cadetblue; border-radius: 0.5rem;">
+          <div class="card-body">
+            <h2 class="card-title">معلومات الوكالة</h2>
+            <br>
+            <div class="card-text">
+                <h6>العنوان</h6>
+                <p>
+                <%= data.data.adress %>
+              </p>
+
+                <h6>ساعات العمل</h6>
+                <p> <%= data.data.openingHours %></p>
+            </div>
+        </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100" style="background-color: cadetblue; border-radius: 0.5rem;">
+          <div class="card-body">
+            <h2 class="card-title">الأسعار</h2>
+            <br>
+            <div class="card-text">
+                <h6>مجال الأسعار</h6>
+                <p><%= data.data.priceRange %></p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100" style="background-color: cadetblue; border-radius: 0.5rem;">
+          <div class="card-body">
+            <h2 class="card-title">معلومات الإتصال</h2>
+            <br>
+            <div class="card-text">
+                <h6>الهاتف</h6>
+                <p> <%= data.data.phone %></p>
+                <h6>البريد الإلكتروني</h6>
+                <p> <%= data.data.email %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+         <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
+         <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+
+          <!-- Content -->
+          
+        </div>
+        <!-- Grid column -->
+
+        
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
+          <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
+          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+
+
+         
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase"></h5>
+
+         
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+      <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+      <a href="https://esi-sba.dz/"> ESI SBA</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+
+</body>
+
+</html>

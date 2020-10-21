@@ -8,12 +8,12 @@
 
     <!-- Title -->
     <title>حجتي | Profile</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/images/kaaba01.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
 
     <!--Animate.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
-    <!-- Templates core CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+   -->  <!-- Templates core CSS -->
     <link href="/stylesheets/application.css" rel="stylesheet">
     <!-- Boostrap libraries -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,100 +23,178 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 <style>
-    .card {
-  position: relative;
-  top: 70px;
-  left:400px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
+  body {
+ 
+  background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;
+  }
+  .card {
+position: relative;
+top: 70px;
+left:400px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 300px;
+margin: auto;
+text-align: center;
 }
 
 .change {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  width: 50%;
-  font-size: 18px;
-  position: relative;
-  bottom:180px;
-  left: 150px;
-  
+border: none;
+outline: 0;
+display: inline-block;
+padding: 8px;
+color: white;
+text-align: center;
+cursor: pointer;
+width: 50%;
+font-size: 18px;
+position: relative;
+bottom:180px;
+left: 150px;
+
 }
 
 a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
+text-decoration: none;
+font-size: 15px;
+color: black;
 }
 
 .change:hover, a:hover {
-  opacity: 0.7;
+opacity: 0.7;
+}
+
+.user-row {
+  margin-bottom: 14px;
+}
+
+.user-row:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-user {
+  margin: 13px 0;
+  padding: 5px;
+  height: 100%;
+}
+
+.dropdown-user:hover {
+  cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+  border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+  border-top: 0;
+}
+.toppad
+{margin-top:20px;
+}
+@font-face {
+font-family: "arab";
+src: url(../fonts/ae_Cortoba.ttf) format("truetype");
+font-style: normal;
+font-weight: 100;
+}
+td {
+  font-size: 17px;
 }
 </style>
   </head>
-  <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
-    <a class="navbar-brand" href="/" style="position: relative;left:150px"><img src="/images/logo.png" style="width:200px;height: 160px;position: relative;top: 20px;right: 100px;"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="/agencies" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;"> وكالات سفر متاحة  </h6>
-          </button></a>
-        </li>
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="/places" >   <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;">مواقع سياحية</h6>
-          </button></a>
-        </li>
-        <li class="nav-item" style="position: relative;left:900px;">
-          <a style="text-decoration: none;" class="nav-link" href="#" >  
-         <button type="button" style="background-color: #af5f61;border-radius: 20px 20px; height: 40px;position: relative;right: 700px;" class="btn btn-default"> 
-          <h6 style="color: white;">نصائح و توجيهات</h6>
-          </button></a>
-        </li>
-        <li class="nav-item dropdown" style="position: relative;left:280px;">
-          <div class="chip" style="background-color: rosybrown;">
-          <img src="/images/avatar.png" alt="Person" width="96" height="96">
-          <a style="text-decoration: none;" class="nav-link dropdown-toggle" href="/profile" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
-        <h6 style="color: white; position: relative;top: 5px;right: 9px;"> <%= user.username %></h6> 
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">اكمال مراحلي</a>
-            <a class="dropdown-item" href="/profile">عرض الملف الشخصي</a>
-            <a class="dropdown-item" href="/logout">خروج</a>
-            </div>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
+  <nav>
+    <%- include('header'); -%> 
   </nav>
   <body class="index" id="to-top" style="overflow-x: hidden;">
-    <section style="width: 90%;height: 500px; box-shadow:5px 10px rosybrown; border-radius: 30px; background-color: #f8f4f0;position: relative;left: 75px;top: 20px;">
-        <div class="card">
-            <img src="/images/avatar.png" alt="John" style="width:100%">
-            <h1><%= user.username %> </h1>
+    <section >
+      <div class="container">
+        <div class="row">
+        <div class="col-md-6  toppad  col-md-offset-3 col-sm-12 col-sm-offset-3">
+            
+            <div >
+              <a href="/prfsettings"  style="background-color:darkgray; border-radius: 1rem; padding: 1rem;">الإعدادات</a>
+            </div>
+            
+        </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 toppad" >
+     
+     
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title" style="text-align: center;" ><%=user.username%> </h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-3 col-lg-3 " text-align="center"> <img alt="User Pic" src="images/avatar.png" class="img-circle img-responsive"> </div>
+                  
+
+                  <div class=" col-md-9 col-lg-9 "> 
+                    <table class="table table-user-information" style="text-align: center;">
+                      <tbody>
+                        <tr>
+                          <td><%= user.first_name %> </td>
+                          <td>: الإسم</td>
+                        </tr>
+                        <tr>
+                          <td><%= user.last_name %> </td>
+                          <td>: اللقب</td>
+                        </tr>
+                        <tr>
+                          <td><% if (user.gender=="male") { %> 
+                            ذكر
+                          <% } else {%>
+                            أنثى
+                          <% } %> 
+                          </td>
+                          <td>: الجنس</td>
+                        </tr>
+                        <% if (user.type) {%> 
+                        <tr>
+                          <% if (user.type == "tama") { %>
+                            <td>حج التمتع</td>
+                          <% }else if (user.type =="ifrad") { %>
+                          <td>حج الإفراد</td>
+                          <% }else if (user.type =="ikran") { %>
+                          <td>حج القران</td>
+                          <% }else if (user.type =="omra") { %>
+                            <td>عمرة</td>
+                          <% } %> 
+                          <td>: نوع المناسك</td>
+                        </tr>
+                        <% } %> 
+                        <tr>
+                          <td><%= user.email %> </td>
+                          <td> البريد اﻹلكتروني</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer" style="height: 50px;">
+                         
+                  <span class="pull-right">
+                      <a href="/prfsettings" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                  </span>
+                </div>
+            </div>
           </div>
-          <div class="custom-file" style="width: 500px;position: relative;left: 150px;bottom: 50px;background-color: rosybrown;">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile" style="background-color: rosybrown;color: white;text-align: center;">تغيير الصورة الشخصية</label>
-          </div>          
-          <p><button class="change" style="background-color: rosybrown;width: 500px;">تغيير اسم المستخدم</button></p>
-    </section>
+        </div>
+      </div>    </section>
     <!-- Side nav -->
     <!-- Footer ------------------------------------------------------------------------------->
     <footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 100px; height: 280px;" >

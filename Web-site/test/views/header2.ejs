@@ -1,0 +1,80 @@
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+
+
+  <link href="/stylesheets/headerstyle.css" rel="stylesheet">
+  
+  
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+   
+       <a href="/" class="logo mr-auto"><img src="/images/logo2.png" style="width: 10rem; height: 10rem;" alt="" ></a>
+       <button id="en" class="translate" style="border-radius: 20px;background-color: #af5f61;">En</button>
+       <button id="ar" class="translate" style="margin-right: 100px ; margin-left: 10px; border-radius: 20px;background-color: #af5f61;">Ar</button>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+
+          <% if (user) { %>
+            <li><a href="/places">مواقع سياحية</a></li>
+            <li><a href="/agencies">وكالات سفر</a></li>
+            <li><a href="/<%= user.type %> ">مناسكي</a></li>
+            <li><a href="/feedback">راسلنا</a></li>
+
+          <% } else {%>
+            <li><a href="/Go">عمرة</a></li>
+            <li><a href="/Gh">حج</a></li>
+
+          <% } %>   
+
+          <li><a href="/">الرئيسية</a></li>
+
+          <% if (user) { %>
+            <li class="drop-down">
+              <a href="/profile">
+                <% if (user.picturesUrls.length>0) { %>
+                  
+                <% } else { %>
+              
+                  <img src="/images/avatar.png" class="rounded-circle" width="30"> 
+              
+                <% } %> 
+                <img src="/images/avatar.png" class="rounded-circle" width="30"> 
+              <%= user.username %> 
+              </a>
+              <ul>
+                <li><a href="/profile">الملف الشخصي</a></li>
+                <li><a href="/prfsettings">الإعدادات</a></li>
+                <li><a href="/logout">تسجيل الخروج</a></li>
+              </ul>
+            </li>
+
+
+            <% } else {%> 
+          <li><a href="/login">تسجيل الدخول</a></li>
+          <li><a href="/register">فتح حساب</a></li>
+          <% } %> 
+          
+         
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src=" /vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src=" /vendor/php-email-form/validate.js"></script>
+  <script src=" /vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src=" /vendor/counterup/counterup.min.js"></script>
+  <script src=" /vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src=" /vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src=" /vendor/venobox/venobox.min.js"></script>
+  <script src=" /vendor/aos/aos.js"></script>
+
+  <script src=" /js/main.js"></script>
+

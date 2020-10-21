@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+ <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>مراسلة فريق العمل | حجتي</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+  </head>
+  <style>
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background-image: url(/images/back.png);background-size: cover;overflow-x: hidden;
+
+}
+
+h1 {
+    margin-bottom: 40px
+}
+
+label {
+    color: #333
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 40px;
+    font-size: 30px;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+
+
+h1,
+p {
+    text-align: center
+}
+
+h1 {
+    margin-top: 150px
+}
+
+p {
+    font-size: 1.2rem
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 14px
+    }
+
+    p {
+        font-size: 12px
+    }
+}
+</style>
+  <body>
+    <%- include('header'); -%> 
+<section>
+	<div class="container"> <div class=" text-center mt-5 ">
+
+        <h1>أترك لنا تعليقا</h1>
+    </div>
+    <div class="row ">
+        <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+                    <div class="container">
+                        <form id="contact-form" role="form" method="POST" action="/feedback">
+                            <div class="controls">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 col-lg-7 ">
+                                        <div class="form-group" > <label class="control-label col-lg-12" style="text-align: center;" for="form_subject">الموضوع</label> <input id="form_subject" type="text" name="subject" class="form-control" placeholder="أدخل عنوانا من فضلك" style="text-align: center;" required="required" data-error="يجب وضع عنوان"> </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row justify-content-center" >
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label  class="control-label col-lg-12" style="text-align: center;">كيف تقيم حجتي</label> <div class="box box-orange box-example-1to10">
+                                            <div class="rating"> <input type="radio" name="note" value="5" id="5"><label for="5">☆</label> <input type="radio" name="note" value="4" id="4"><label for="4">☆</label> <input type="radio" name="note" value="3" id="3"><label for="3">☆</label> <input type="radio" name="note" value="2" id="2"><label for="2">☆</label> <input type="radio" name="note" value="1" id="1"><label for="1">☆</label>
+                                            </div>
+                                              </div>
+                                             </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group"> <label for="form_message" class="control-label col-lg-12" style="text-align: right;">المحتوى </label> <textarea id="form_message" name="content" class="form-control" placeholder="أكتب رسالتك هنا" rows="4" required="required" data-error="أترك رسالة من فضلك" style="text-align: right;"></textarea> </div>
+                                    </div>
+                                    <div class="col-md-12"> <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="إرسال"> </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> <!-- /.8 -->
+        </div> <!-- /.row-->
+    </div>
+</div>
+</section>
+<footer class="page-footer font-small blue pt-4" style="background-color: #af5f61;position: relative;top: 200px; height: 280px;" >
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3" style="position: relative;right: 150px;">
+         <h5 style="text-align:center; position: relative;top: 30px;left: 50px;">حمل تطبيق حجتي مجانا على</h5>
+         <a href="#"><img src="/images/s.png" style="width: 150px;height: 45px;position: relative;top: 50px;left: 250px;"></a>
+
+          <!-- Content -->
+          
+        </div>
+        <!-- Grid column -->
+
+        
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
+          <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
+          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+
+
+         
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase"></h5>
+
+         
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+      <hr style="border:none;border-left:1px solid bisque; height: 150px;position: relative;left:550px ;bottom: 90px;">
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="position: relative;bottom: 70px;">© 2020 Copyright:
+      <a href="https://esi-sba.dz/"> ESI SBA</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+  <script type="text/javascript" src="/js/LoginLang.js"></script>
+</body>
+</html>

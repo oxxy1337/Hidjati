@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 adminSchema = new Schema({
     isAdmin:{
         type: Boolean,
-        default: true
+        default: false
     },
     confirmed:{
         type: Boolean,

@@ -8,7 +8,7 @@
 
     <!-- Title -->
     <title>حجتي | Hidjati</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/images/kaaba01.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/kab.png" />
 
 
     <!--Animate.css-->
@@ -22,63 +22,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/Web-site/test/public/jquery.min.js"></script>    
+    <script type="text/javascript" src="/jquery.min.js"></script>    
 
   
   </head>
-  <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
+<!--   <nav class="navbar navbar-expand-lg  " style="background-color:white;height: 80px;">
    <a class="navbar-brand" href="/" style="position: relative;left:150px">  <img src="/images/logo.png"  id="zoom" style="width:250px;height: 160px;position: relative;top: 20px;left: 840px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <img src="/images/en.png" style="width: 25px;height: 30px;position: relative;left: 200px;top: 13px;">
-        <button id="en" class="translate" style="position:relative;left:200px;border-radius: 20px;background-color: #af5f61;">English</button>
+        <button id="en" class="translate" style="position:relative;left:50px;border-radius: 20px 0;background-color: #af5f61;color: white;border-color: rosybrown;">En</button>
 
-        <li class="nav-item" style="position: relative;right:280px;" >
+        <li class="nav-item" style="position: relative;right:240px;" >
           <a  style="text-decoration: none;" class="nav-link" href="/Login" >   
             <button type="button" style="background-color: #af5f61;" class="btn btn-default"  id="zoom"> 
           <h6 class="lang" key="login" style="color: white;" > تسجيل دخول    </h6>
           </button></a>
         </li>
-        <li  class="nav-item" style="position: relative;right: 270px;">
+        <li  class="nav-item" style="position: relative;right: 250px;">
           <a style="text-decoration: none;" class="nav-link" href="/register" > 
               <button type="button" style="background-color: #af5f61;" class="btn btn-default"  id="zoom"> 
         <h6 class="lang" key="sign"  style="color: white;">اشتراك </h6> 
           </button></a>
          </li>
-         <button id="ar" class="translate" style="position:relative;right:20px;border-radius: 20px;background-color: #af5f61;">Arabic</button>
+         <button id="ar" class="translate" style="position:relative;right:170px;border-radius: 20px 0;background-color: #af5f61;color: white;border-color: rosybrown;">Ar</button>
 
       </ul>
     </div>
-  </nav>
+  </nav> -->
+  
   <body class="index" id="to-top" style="overflow-x: hidden;">
    
     <!-- Side nav -->
-    <header>
-    </header>
+    <nav> <%- include('header2'); -%> 
+    </nav>
+   
     <!--SECTION 1------------------------------------------------------------------------------>
-  <section id="hero" style="height: 500px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">
+  <section  style=" margin-top: 90px; margin-top: 100px; height: 500px;width: 90%;box-shadow:5px 10px rgb(66, 50, 50);border-radius: 30px; background-image:url(/images/back.png);background-size: cover		;position: relative;left: 75px;">
 
     <div class="container">
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div class="nav2">
-            <h1  class="lang" key="hidjati" style="text-align: center;position:relative;left:150px;color: white; top: 30px;font-family:arab; animation: bounce; animation-duration: 5s;">حجتي</h1>
-            <h2  class="lang" key="guide" style="text-align: center; position:relative;left:150px;color: white; top: 30px;animation: bounce; animation-duration: 5s;">دليلك للحج و العمرة</h2>
-            <h4  class="lang" id="more" key="more" style="text-align: center;position:relative;left:240px;color: white; top: 70px;font-family: arab;">...للمزيد</h4>
-            <a id="reg"  style="text-decoration: none;position: relative;top: 30px;left:210px;" class="nav-link" href="/register"  >
+            <h2  class="lang" key="guide" id="dow" style="text-align: center; position:relative;left:150px;color: white; top: 150px;animation: bounce; animation-duration: 5s;">حجتي ...دليلك للحج و العمرة</h2>
+            <h4  class="lang" id="more" key="more" style="text-align: center;position:relative;left:240px;color: white; top: 170px;font-family: arab;">...للمزيد</h4>
+            <a href="/register" id="reg"  style="text-decoration: none;position: relative;top: 125px;left:270px;" class="nav-link" "  >
               <h4 class="lang" key="register" style="font-family: arab;color: antiquewhite;" > 
               اشتراك
               </h4></a>
            
-              <h6 class="lang" key="playstore" style="position: relative;top: 150px;left: 400px;color: white;" id="tstore">  حمل تطبيق حجتي مجانا على</h6>
-              <a href="#"><img src="/images/s.png" id="store" style="width: 150px;height: 45px;position: relative;top: 105px;left: 230px;" ></a>
+              <h6 class="lang" key="playstore" style="position: relative;top: 320px;left: 200px;color: white;" id="tstore">  حمل تطبيق حجتي مجانا على</h6>
+              <a href="#"><img src="/images/s.png" id="store" style="width: 150px;height: 45px;position: relative;top: 280px;left: 30px;" ></a>
            </div>
         </div>
         <div class="col-lg-7 order-1 order-lg-5 " >
-          <img style="width: 530px; height: 450px; position: relative;bottom:215px;left:590px;" src="images/li.png" class="img-fluid animated" alt="">
+          <img style="width: 530px; height: 400px; position: relative;bottom:108px;left:590px;" id="li1" src="images/li.png" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -162,14 +162,13 @@
           <div class="col-md-3 mb-md-0 mb-3">
 
             <!-- Links -->
-            <h5 class="lang" key="follow" style="position:relative;left:215px;top:30px">تابع حجتي على</h5>
-            <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
-          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">
-          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:200px;top:40px;width: 50px;height: 50px;">  
+            <h5 class="lang" key="follow" style="position:relative;left:130px;top:30px">تابع حجتي على</h5>
+            <img src="/images/fb.png" class="lang" key="follow" style="position:relative;left:120px;top:40px;width: 50px;height: 50px;">  
+          <img src="/images/insta.png" class="lang" key="follow" style="position:relative;left:120px;top:40px;width: 50px;height: 50px;">
+          <img src="/images/linked.png" class="lang" key="follow" style="position:relative;left:120px;top:40px;width: 50px;height: 50px;">  
 
 
-           
-
+          <a style="text-decoration:underline;color: white;" href="/register"><h5 class="lang" key="about" style="position:relative;left:370px;bottom:50px"> عن فريقنا </h5></a>
           </div>
           <!-- Grid column -->
 
@@ -194,7 +193,7 @@
 
       <!-- Copyright -->
       <div class="footer-copyright text-center py-2" style="position: relative;bottom: 100px;">© 2020 Copyright:
-        <a href="https://esi-sba.dz/">ESI SBA</a>
+        <a href="https://esi-sba.dz/" style="text-decoration: none;color: white;">ESI SBA</a>
       </div>
       <!-- Copyright -->
 
@@ -205,7 +204,7 @@
    
 
 
-    <script src="/public/js/main.js"></script>
+    <script src="js/main.js"></script>
     <script>
       $('.carousel').carousel()
     </script>
